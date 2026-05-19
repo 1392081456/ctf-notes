@@ -33,7 +33,10 @@ Each lab follows the [`TEMPLATE.md`](TEMPLATE.md) layout:
 2. **Attack Chain** — one-line summary
 3. **Step-by-Step Reproduction** — environment, fingerprinting, payload construction, exploitation, verification
 4. **Lessons Learned** — common reproduction traps (class file version mismatches, module-system reflection blocks, etc.)
-5. **Mitigation** — vendor patch path + compensating controls + WAF/detection hints
+5. **Defense** (required) — three sub-sections that mirror the attack:
+   - *Hardening* — vendor patch path, configuration changes, dependency trimming, runtime sandboxing
+   - *Detection* — WAF/IDS signatures, log anomalies, behavioral rules (Falco/Sysmon), with a concrete example
+   - *Threat Hunting* — file/memory/log/network IOCs to find a successful breach after the fact
 6. **Tools & References** — vulhub link, upstream advisory, CVE/NVD page
 
 ## Disclaimer

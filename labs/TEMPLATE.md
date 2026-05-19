@@ -81,11 +81,44 @@
 |---|---|---|
 | | | |
 
-## 7. 防御建议
+## 7. Defense（必填 — labs 章节强制项）
 
-1. 
-2. 
-3. 
+Labs writeup 的攻防双视角承诺在此兑现。每个 lab 需要从三个维度补全防御：**Hardening**（缩小攻击面）、**Detection**（实时捕获）、**Threat Hunting**（事后取证）。每节至少 3 条，含 1 个具体的规则/IOC/查询示例。
+
+### 7.1 Hardening — 缩小攻击面
+
+| 措施 | 实施方式 | 阻断哪一步 |
+|---|---|---|
+|  |  |  |
+|  |  |  |
+|  |  |  |
+
+- [ ] 厂商补丁路径（CVE 编号 → 修复版本）
+- [ ] 配置加固（默认凭据/默认 key/默认路径）
+- [ ] 依赖瘦身（移除 gadget chain 入口库）
+- [ ] 运行时最小权限（non-root / read-only FS / drop capabilities）
+- [ ] 网络层（egress filter / 入口 WAF）
+
+### 7.2 Detection — 实时捕获
+
+- [ ] **流量特征**：长度异常 / 熵异常 / 关键字（含示例 WAF/Suricata 规则）
+- [ ] **日志特征**：异常 stack trace / 高频错误（含 SIEM 关联规则）
+- [ ] **行为特征**：进程派生 / 文件落地 / 网络外联（含 Falco/Sysmon 规则）
+
+```
+# 示例规则（替换为实际 payload）
+```
+
+### 7.3 Threat Hunting — 事后取证
+
+- [ ] **文件系统 IOC**：典型落地路径（`find` 一行）
+- [ ] **内存证据**：JVM heap dump / process memory 提取关键对象
+- [ ] **日志回溯**：access log / audit log 怎么搜
+- [ ] **网络流量回查**：NetFlow / pcap 怎么过滤
+
+```bash
+# 示例查询命令
+```
 
 ## 8. 关联
 

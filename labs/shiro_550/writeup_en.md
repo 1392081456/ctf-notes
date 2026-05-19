@@ -187,13 +187,45 @@ root@ebdb3d463e42:/#
 
 ---
 
-## Mitigation
+## Defense
 
-1. **Upgrade Shiro** to ≥ 1.2.5 (uses randomly generated key per deployment)
-2. **Custom key**: Even on older versions, changing the default key defeats automated attacks
-3. **WAF rule**: Flag `rememberMe` cookies > 500 characters (normal < 200, attack > 2000)
-4. **Deserialization filter**: Use JEP 290 / SerialKiller to whitelist deserializable classes
-5. **Least privilege**: Don't run application servers as root
+The same chain that produced RCE here is still in the wild against unpatched Shiro 1.2.x — and the same gadget family (CommonsBeanutils1, CommonsCollections6, etc.) reappears on every Java app with a serialized cookie or session. Three angles to defend it: shrink the attack surface, catch the exploit in flight, and find the breach after the fact.
+
+### Hardening — reduce the attack surface
+
+1. **Upgrade Shiro** to ≥ 1.2.5. Newer versions generate a random AES key per deployment, so a stolen-or-guessed key no longer applies fleet-wide.
+2. **Force a custom `cipherKey`** on older versions you cannot upgrade yet — any non-default key defeats the entire class of automated `kPH+bIxk5D2deZiIxcaaaA==` scanners.
+3. **Restrict the classpath**: remove `commons-beanutils` and `commons-collections` 3.1 from runtime deps if the app does not use them. Without a usable gadget chain, deserialization gives the attacker nothing.
+4. **Enforce a deserialization allow-list** via JEP 290 `ObjectInputFilter` (Java ≥ 9) or [SerialKiller](https://github.com/ikkisoft/SerialKiller) for legacy JVMs. Default-deny everything outside the whitelist.
+5. **Run the JVM as a non-root user** in a read-only filesystem container. Even with RCE the attacker writes nowhere persistent and cannot pivot to host-level paths.
+6. **Strip outbound egress** from the app container. The exploit only matters if `/dev/tcp/<C2>/...` or `curl <C2>` can reach an attacker — egress filtering breaks the reverse-shell step even if RCE lands.
+
+### Detection — spot the exploit in flight
+
+1. **Cookie-length anomaly** is the cheapest signal. Normal `rememberMe` cookies are < 200 bytes; a CB1 payload runs 2000–6000 bytes. Example ModSecurity rule:
+   ```
+   SecRule REQUEST_COOKIES:rememberMe "@gt 500" \
+     "id:1001,phase:1,deny,log,msg:'Suspicious oversized rememberMe cookie'"
+   ```
+2. **Decryption-failure flood**: when an attacker is brute-forcing keys or sending malformed payloads, Shiro logs `DefaultSecurityManager` `Failed to decrypt remember-me cookie` at high frequency. Alert when the rate exceeds ~5/minute per source IP.
+3. **Application-log gadget signature**: any stack trace containing both `org.apache.commons.beanutils.BeanComparator` and `com.sun.org.apache.xalan.internal.xsltc.trax.TemplatesImpl` is exploit-grade — no legitimate Shiro flow touches `TemplatesImpl`. Surface this as a SIEM correlation rule.
+4. **Process-genealogy alert**: the JVM process spawning `/bin/sh`, `/bin/bash`, `nc`, `curl`, `wget`, or `bash -i` is almost never legitimate. Falco rule:
+   ```yaml
+   - rule: JVM spawns shell
+     condition: spawned_process and proc.pname in (java) and proc.name in (bash, sh, nc, curl, wget)
+     priority: CRITICAL
+   ```
+5. **Network**: outbound TCP from the app container to non-allowlisted destinations, especially on uncommon ports (7777, 4444, 1234, 9001), is reverse-shell-shaped.
+
+### Threat Hunting — find the breach after the fact
+
+If detection failed and you are doing post-incident triage:
+
+1. **File system IOCs**: `find / -newer /tmp -type f \( -path '/tmp/*' -o -path '/dev/shm/*' \) 2>/dev/null` — staging directories are favorite drop points. Look specifically for short randomized names (`/tmp/.xK3a9`, `/tmp/rce*`, `/tmp/proof*`).
+2. **JVM heap dump**: `jmap -dump:format=b,file=heap.hprof <pid>` then load in Eclipse MAT, search for instances of `com.sun.org.apache.xalan.internal.xsltc.trax.TemplatesImpl`. Each instance retains a `_bytecodes` byte[] — that is the attacker's compiled `Evil.class`, recoverable verbatim. Use it to fingerprint the actor.
+3. **Access-log replay**: search web access logs for `rememberMe=` values longer than ~400 bytes (`awk -F'rememberMe=' '{print length($2)}'`). Every such request is a candidate exploitation attempt; cross-reference timestamps against process-spawn events.
+4. **Auditd / sysmon process tree**: walk parent → child from any `bash`/`sh` whose parent PID belongs to the JVM. The grandchild process tree typically contains the post-exploitation commands (`id`, `cat /etc/shadow`, `curl http://attacker/`).
+5. **Outbound flow records** (NetFlow / VPC flow logs): filter on `source = app-container-IP` and `destination NOT IN allowlist`. Any sustained connection with byte counts in either direction is plausibly an interactive C2 channel.
 
 ---
 
