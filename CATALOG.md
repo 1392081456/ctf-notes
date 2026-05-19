@@ -303,7 +303,7 @@
 - **ISSUE_TEMPLATE** — `Web/BUUCTF/[GYCTF2020]EasyThinking/web/vendor/topthink/framework/vendor/phpunit/phpunit/.github/ISSUE_TEMPLATE.md` (15 lines)
 - **README** — `Web/BUUCTF/[GYCTF2020]EasyThinking/web/vendor/topthink/framework/vendor/mockery/mockery/docs/README.md` (3 lines)
 
-## Cryptography (8 entries)
+## Cryptography (9 entries)
 
 - **[GHCTF 2025] baby_signin Writeup** — `CRYPTO/[GHCTF 2025]baby_signin/writeup.md` (97 lines)
 - **[GHCTF 2025] EZ_Fermat Writeup** — `CRYPTO/[GHCTF 2025]EZ_Fermat/writeup.md` (79 lines)
@@ -313,6 +313,7 @@
 - **writeup** — `CRYPTO/[UTCTF2020]basic-crypto/writeup.md` (77 lines)
 - **[央企杯 2025] big_e_rsa Writeup** — `CRYPTO/[央企杯 2025]big_e_rsa/writeup.md` (99 lines)
 - **[网鼎杯 2020 青龙组]you_raise_me_up** — `CRYPTO/[网鼎杯 2020 青龙组]you_raise_me_up/[网鼎杯 2020 青龙组]you_raise_me_up.md` (65 lines)
+- **[LitCTF 2025] math** — `crypto/litctf2025_math.md` (~180 lines) — RSA `hint=(p+noise)(q+noise)` leak: Pollard rho on `hint-n` → 40-bit noise → Vieta → (p,q) → flag
 
 ## Miscellaneous & Forensics (12 entries)
 
@@ -328,6 +329,17 @@
 - **[NewStarCTF 公开赛赛道]最后的流量分析** — `Misc/[NewStarCTF 公开赛赛道]最后的流量分析/writeup.md` (89 lines)
 - **[OtterCTF 2018] Name Game — Writeup** — `Misc/[OtterCTF 2018]Name Game/writeup.md` (142 lines)
 - **[鹤城杯 2021] 流量分析 — Writeup** — `Misc/[鹤城杯 2021]流量分析/writeup.md` (140 lines)
+
+### Deep IR writeups added 2026-05-18
+
+These are full English incident-response walkthroughs published under `forensics/` in this repository (not the private `Misc/` study notes above):
+
+- **[长城杯 2024] SnakeBackdoor** — `forensics/changcheng2024_snake_backdoor.md` (~580 lines) — 6-question chain: HTTP brute → Flask SSTI → 33-layer nested loader → RC4 memory shell + binary-trojan dynamic AES key
+- **[0x401 CTF 2025] TECI** — `forensics/0x401_2025_teci.md` (~210 lines) — 8-question chain: .NET NativeAOT trojan + RC4/XOR two-cipher key-swap trap
+- **[Xuanji] Supply-Chain Part 2** — `forensics/xuanji_sc_supply_chain_part2.md` (~150 lines) — multi-stage supply-chain poisoning + reverse-shell backdoor IR
+- **[Xuanji] Supply-Chain Part 3** — `forensics/xuanji_sc_supply_chain_part3.md` (~170 lines) — Jenkins+Gitea CI/CD: webhook hijack, command injection, credential exfil
+- **[铁人三项决赛 2024] APK + Tomcat + PAM** — `forensics/tieren_2024_apk_pam_incident.md` (~280 lines) — 18-question full chain: APK JWT forgery, Behinder per-session AES JSP shell, `/etc/passwd` direct hash injection, PAM `ssh_back_pwd` magic password + `/tmp/.sshlog` credential logger
+- **[玄机 2025] CobaltStrike 流量分析** — `forensics/xuanji_2025_cs_traffic_analysis.md` (~280 lines) — 11-question CS 4.4 IR: stager extraction → 1768.py profile parse → Docker 2375 unauth → `.cobaltstrike.beacon_keys` Java keystore → RSA-1024 priv → metadata raw_aes_key → AES-256-CBC per-session traffic decrypt
 
 ---
 

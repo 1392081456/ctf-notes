@@ -43,6 +43,7 @@ CTFtime: [@colorfulwhitez](https://ctftime.org/user/colorfulwhitez) (team APWN)
 - [GUET-CTF 2019 — encrypt: RC4 + shifted Base64 alphabet](crypto/guetctf2019_encrypt.md) — custom encoding combinations
 - [GKCTF 2021 — XOR: recovering prime factors from XOR + product](crypto/gkctf2021_xor.md) — Hensel-style lifting / product-range pruning / bit-reversal coupling
 - [MRCTF 2020 Easy_RSA — factoring `n` from `φ(n)` and from `e·d`](crypto/mrctf2020_easy_rsa.md) — two-stage Vieta's reduction / small-k brute force
+- [LitCTF 2025 — math: RSA `hint = (p+noise)(q+noise)` leak](crypto/litctf2025_math.md) — Pollard rho on `hint−n` to recover 40-bit noise / Vieta closing to `p, q`
 
 ### Web Exploitation
 
@@ -52,10 +53,16 @@ CTFtime: [@colorfulwhitez](https://ctftime.org/user/colorfulwhitez) (team APWN)
 - [CISCN 2019 Dropbox — PHP Phar deserialization + POP chain](web/ciscn2019_dropbox.md) — `__call` bridge / `GIF89a` stub / `file_exists` trigger
 - [DASCTF 2023 EzFlask — Python class pollution via `__globals__`](web/dasctf2023_ezflask.md) — Flask / recursive merge / `__file__` overwrite
 
-### Forensics
+### Forensics / Incident Response
 
 - [OtterCTF 2018 — Name Game (memory forensics)](forensics/otterctf2018_name_game.md) — Volatility 3 `pslist` fallback / WZ record parsing / dump anchoring
 - [Hecheng Cup 2021 — Traffic Analysis (boolean-blind SQLi PCAP)](forensics/hcb2021_traffic_analysis.md) — `tcp.stream` pairing / frequency cross-validation / `tshark` field extraction
+- [Changcheng Cup 2024 — SnakeBackdoor (Linux trojan + custom protocol)](forensics/changcheng2024_snake_backdoor.md) — 33-layer base64+zlib unpacking / glibc `srand+rand` session key / LD_PRELOAD binary oracle
+- [0x401 CTF 2025 — TECI (.NET NativeAOT trojan)](forensics/0x401_2025_teci.md) — NativeAOT string recon / RC4+XOR dual-key swap trap / length-prefix protocol parsing
+- [Xuanji Supply Chain Part 2 — caterpillar / cheshire-cat / twiddledee](forensics/xuanji_sc_supply_chain_part2.md) — multi-stage supply-chain poisoning + reverse-shell backdoor IR
+- [Xuanji Supply Chain Part 3 — Jenkins + Gitea CI/CD compromise](forensics/xuanji_sc_supply_chain_part3.md) — webhook hijacking / command injection / credential exfiltration
+- [Tieren Triathlon 2024 Finals — APK + Tomcat + PAM backdoor (18-question full chain)](forensics/tieren_2024_apk_pam_incident.md) — JWT role forgery / Behinder per-session AES / PAM `repz cmpsb` magic password / `/tmp/.sshlog` credential exfil
+- [Xuanji Lab 2025 — Cobalt Strike Traffic Analysis (11-question IR)](forensics/xuanji_2025_cs_traffic_analysis.md) — CS 4.4 stager extraction / 1768.py config parse / Docker 2375 unauth → teamserver keystore / RSA-1024 private key recovery / per-session AES traffic decrypt
 
 ---
 
