@@ -356,6 +356,8 @@ Attacker-perspective writeups for published CVEs reproduced in local Docker labs
 - **GeoServer XPath Property Name RCE** — `labs/geoserver_2024_36401/writeup_en.md` (~170 lines) — CVE-2024-36401: OGC `GetPropertyValue` evaluates `valueReference` as XPath/EL → single GET request `Runtime.exec()` as root
 - **JimuReport FreeMarker SSTI RCE** — `labs/jimureport_2023_4450/writeup_en.md` (~170 lines) — CVE-2023-4450: `/jmreport/queryFieldBySql` endpoint renders SQL through FreeMarker → `Execute` class instantiation → command output in response
 - **Nexus Repository Path Traversal** — `labs/nexus_2024_4956/writeup_en.md` (~160 lines) — CVE-2024-4956: Jetty `URIUtil.canonicalPath()` treats empty segments as root → `%2F%2F..%2F` traversal reads arbitrary files (admin.password, configs)
+- **Next.js Middleware Auth Bypass** — `labs/nextjs_2025_29927/writeup_en.md` (~160 lines) — CVE-2025-29927: `x-middleware-subrequest` header with 5× middleware name repetition triggers recursion limit → middleware skipped entirely → auth bypass
+- **Langflow Pre-Auth RCE** — `labs/langflow_2025_3248/writeup_en.md` (~170 lines) — CVE-2025-3248: `/api/v1/validate/code` uses `exec()` on user Python → `@exec()` decorator evaluated at definition time → pre-auth RCE with output in response
 
 ---
 

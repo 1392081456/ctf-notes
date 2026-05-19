@@ -32,6 +32,8 @@ The other chapters of this repo (`pwn`, `reverse`, `crypto`, `web`, `forensics`)
 | [GeoServer — XPath property name evaluation → RCE](geoserver_2024_36401/writeup_en.md) | CVE-2024-36401 | XPath/EL injection in OGC request parameters | ★★☆☆☆ | 2026-05-19 |
 | [JimuReport — FreeMarker SSTI → RCE](jimureport_2023_4450/writeup_en.md) | CVE-2023-4450 | Server-Side Template Injection (FreeMarker) | ★★☆☆☆ | 2026-05-19 |
 | [Nexus Repository — Unauthenticated path traversal](nexus_2024_4956/writeup_en.md) | CVE-2024-4956 | Path traversal via Jetty URI normalization bug | ★★☆☆☆ | 2026-05-19 |
+| [Next.js — Middleware authorization bypass](nextjs_2025_29927/writeup_en.md) | CVE-2025-29927 | Internal header abuse skips middleware auth | ★☆☆☆☆ | 2026-05-19 |
+| [Langflow — Pre-Auth RCE via Python decorator exec](langflow_2025_3248/writeup_en.md) | CVE-2025-3248 | Python code validation endpoint executes decorators | ★★☆☆☆ | 2026-05-19 |
 
 ## Writeup structure
 
