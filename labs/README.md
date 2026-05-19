@@ -30,6 +30,8 @@ The other chapters of this repo (`pwn`, `reverse`, `crypto`, `web`, `forensics`)
 | [TeamCity — Authentication bypass → admin account creation](teamcity_2024_27198/writeup_en.md) | CVE-2024-27198 | Auth bypass (path parameter trick) → REST API abuse | ★★★☆☆ | 2026-05-19 |
 | [Metabase — Pre-Auth JDBC URL injection → RCE](metabase_2023_38646/writeup_en.md) | CVE-2023-38646 | JDBC URL injection (H2 INIT parameter) | ★★★☆☆ | 2026-05-19 |
 | [GeoServer — XPath property name evaluation → RCE](geoserver_2024_36401/writeup_en.md) | CVE-2024-36401 | XPath/EL injection in OGC request parameters | ★★☆☆☆ | 2026-05-19 |
+| [JimuReport — FreeMarker SSTI → RCE](jimureport_2023_4450/writeup_en.md) | CVE-2023-4450 | Server-Side Template Injection (FreeMarker) | ★★☆☆☆ | 2026-05-19 |
+| [Nexus Repository — Unauthenticated path traversal](nexus_2024_4956/writeup_en.md) | CVE-2024-4956 | Path traversal via Jetty URI normalization bug | ★★☆☆☆ | 2026-05-19 |
 
 ## Writeup structure
 

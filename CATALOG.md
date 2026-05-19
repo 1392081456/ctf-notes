@@ -354,6 +354,8 @@ Attacker-perspective writeups for published CVEs reproduced in local Docker labs
 - **TeamCity Authentication Bypass → Admin RCE** — `labs/teamcity_2024_27198/writeup_en.md` (~190 lines) — CVE-2024-27198: Servlet `;.jsp` path-parameter trick bypasses auth → unauthenticated REST API → SYSTEM_ADMIN account creation
 - **Metabase Pre-Auth JDBC RCE** — `labs/metabase_2023_38646/writeup_en.md` (~180 lines) — CVE-2023-38646: Leaked setup-token + H2 JDBC URL `INIT` parameter injection → `CSVWRITE` arbitrary file write / JavaScript trigger RCE
 - **GeoServer XPath Property Name RCE** — `labs/geoserver_2024_36401/writeup_en.md` (~170 lines) — CVE-2024-36401: OGC `GetPropertyValue` evaluates `valueReference` as XPath/EL → single GET request `Runtime.exec()` as root
+- **JimuReport FreeMarker SSTI RCE** — `labs/jimureport_2023_4450/writeup_en.md` (~170 lines) — CVE-2023-4450: `/jmreport/queryFieldBySql` endpoint renders SQL through FreeMarker → `Execute` class instantiation → command output in response
+- **Nexus Repository Path Traversal** — `labs/nexus_2024_4956/writeup_en.md` (~160 lines) — CVE-2024-4956: Jetty `URIUtil.canonicalPath()` treats empty segments as root → `%2F%2F..%2F` traversal reads arbitrary files (admin.password, configs)
 
 ---
 
