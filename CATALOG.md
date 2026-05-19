@@ -343,6 +343,14 @@ These are full English incident-response walkthroughs published under `forensics
 
 ---
 
+## Labs — Vulnerability Reproduction (1 entry)
+
+Attacker-perspective writeups for published CVEs reproduced in local Docker labs (vulhub). Each lab includes a Mitigation section. See `labs/README.md` for chapter overview.
+
+- **Apache Shiro 1.2.4 RememberMe Deserialization RCE** — `labs/shiro_550/writeup_en.md` (~210 lines) — CVE-2016-4437: hardcoded AES key + CommonsBeanutils1 gadget + `TemplatesImpl` bytecode loading + Java 9+ module reflection workaround
+
+---
+
 ## Notes on this catalog
 
 - Lines counts indicate note depth (a 300+ line entry is a full writeup; a 50 line entry is often a quick reference).

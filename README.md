@@ -4,7 +4,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 ![Language](https://img.shields.io/badge/lang-EN-blue)
-![Topics](https://img.shields.io/badge/topics-pwn%20|%20reverse%20|%20crypto%20|%20web%20|%20forensics-red)
+![Topics](https://img.shields.io/badge/topics-pwn%20|%20reverse%20|%20crypto%20|%20web%20|%20forensics%20|%20labs-red)
 
 ## About this repo
 
@@ -64,6 +64,12 @@ CTFtime: [@colorfulwhitez](https://ctftime.org/user/colorfulwhitez) (team APWN)
 - [Tieren Triathlon 2024 Finals — APK + Tomcat + PAM backdoor (18-question full chain)](forensics/tieren_2024_apk_pam_incident.md) — JWT role forgery / Behinder per-session AES / PAM `repz cmpsb` magic password / `/tmp/.sshlog` credential exfil
 - [Xuanji Lab 2025 — Cobalt Strike Traffic Analysis (11-question IR)](forensics/xuanji_2025_cs_traffic_analysis.md) — CS 4.4 stager extraction / 1768.py config parse / Docker 2375 unauth → teamserver keystore / RSA-1024 private key recovery / per-session AES traffic decrypt
 
+### Labs (Vulnerability Reproduction)
+
+Attacker-perspective writeups for published CVEs reproduced in **local Docker labs** (primarily vulhub). Complements the forensics chapter, which covers the defender view of the same vulnerability classes. See [`labs/README.md`](labs/README.md) for the full chapter overview and constraints.
+
+- [Apache Shiro 1.2.4 — `rememberMe` deserialization RCE (CVE-2016-4437)](labs/shiro_550/writeup_en.md) — hardcoded AES key / CommonsBeanutils1 gadget chain / `TemplatesImpl` bytecode loading
+
 ---
 
 ## Full training catalog
@@ -81,7 +87,7 @@ Common patterns I document across writeups:
 
 ## Scope and Disclaimer
 
-Everything documented here concerns challenges from **publicly hosted CTF events and training platforms**. Every binary or service analyzed has been distributed by the organizers for educational purposes. Nothing in this repository is intended to be applied to real systems, third-party services, or production software. Techniques described are general reverse-engineering and exploitation methodology that has been publicly documented in academic literature and conference talks for years.
+Everything documented here concerns challenges from **publicly hosted CTF events, training platforms, and isolated local Docker labs of published CVEs** (vulhub-style). CTF binaries are organizer-distributed for educational purposes; lab targets are vulhub Docker images of vendor-patched software, run on `127.0.0.1` with no remote access. Nothing in this repository is intended to be applied to real systems, third-party services, or production software. Techniques described are general reverse-engineering and exploitation methodology that has been publicly documented in academic literature and conference talks for years.
 
 ## License
 
