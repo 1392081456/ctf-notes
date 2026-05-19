@@ -24,6 +24,8 @@ The other chapters of this repo (`pwn`, `reverse`, `crypto`, `web`, `forensics`)
 | Lab | CVE | Class | Difficulty | Date |
 |---|---|---|---|---|
 | [Apache Shiro 1.2.4 — `rememberMe` deserialization RCE](shiro_550/writeup_en.md) | CVE-2016-4437 | Java deserialization (hardcoded key) | ★★☆☆☆ | 2026-05-16 |
+| [Apache ActiveMQ — OpenWire deserialization RCE](activemq_2023_46604/writeup_en.md) 🚧 | CVE-2023-46604 | Java deserialization (non-HTTP protocol) | ★★★☆☆ | 🚧 WIP |
+| [Jenkins CLI — `expandAtFiles` arbitrary file read → RCE](jenkins_2024_23897/writeup_en.md) 🚧 | CVE-2024-23897 | Arbitrary file read chained to credential decryption | ★★★☆☆ | 🚧 WIP |
 
 ## Writeup structure
 
