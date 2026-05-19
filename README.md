@@ -71,6 +71,8 @@ Attacker-perspective writeups for published CVEs reproduced in **local Docker la
 - [Apache Shiro 1.2.4 — `rememberMe` deserialization RCE (CVE-2016-4437)](labs/shiro_550/writeup_en.md) — hardcoded AES key / CommonsBeanutils1 gadget chain / `TemplatesImpl` bytecode loading
 - [Apache ActiveMQ — OpenWire deserialization RCE (CVE-2023-46604)](labs/activemq_2023_46604/writeup_en.md) — Spring `ClassPathXmlApplicationContext` gadget over OpenWire wire protocol
 - [Jenkins CLI — `expandAtFiles` arbitrary file read → RCE (CVE-2024-23897)](labs/jenkins_2024_23897/writeup_en.md) — args4j `@filename` expansion / anonymous CLI / credential decryption pivot
+- [Grafana — DuckDB SQL injection → RCE (CVE-2024-9264)](labs/grafana_2024_9264/writeup_en.md) — SQL Expressions API / `read_blob()` file read / `shellfs` extension command execution
+- [TeamCity — Authentication bypass → admin RCE (CVE-2024-27198)](labs/teamcity_2024_27198/writeup_en.md) — Servlet path-parameter trick / unauthenticated REST API / admin account creation
 
 ---
 

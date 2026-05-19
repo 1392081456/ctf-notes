@@ -26,6 +26,8 @@ The other chapters of this repo (`pwn`, `reverse`, `crypto`, `web`, `forensics`)
 | [Apache Shiro 1.2.4 — `rememberMe` deserialization RCE](shiro_550/writeup_en.md) | CVE-2016-4437 | Java deserialization (hardcoded key) | ★★☆☆☆ | 2026-05-16 |
 | [Apache ActiveMQ — OpenWire deserialization RCE](activemq_2023_46604/writeup_en.md) | CVE-2023-46604 | Java deserialization (non-HTTP protocol) | ★★★☆☆ | 2026-05-19 |
 | [Jenkins CLI — `expandAtFiles` arbitrary file read → RCE](jenkins_2024_23897/writeup_en.md) | CVE-2024-23897 | Arbitrary file read chained to credential decryption | ★★★☆☆ | 2026-05-19 |
+| [Grafana — DuckDB SQL injection → RCE](grafana_2024_9264/writeup_en.md) | CVE-2024-9264 | SQL injection via DuckDB engine (shellfs extension) | ★★★☆☆ | 2026-05-19 |
+| [TeamCity — Authentication bypass → admin account creation](teamcity_2024_27198/writeup_en.md) | CVE-2024-27198 | Auth bypass (path parameter trick) → REST API abuse | ★★★☆☆ | 2026-05-19 |
 
 ## Writeup structure
 

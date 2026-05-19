@@ -343,13 +343,15 @@ These are full English incident-response walkthroughs published under `forensics
 
 ---
 
-## Labs — Vulnerability Reproduction (3 entries)
+## Labs — Vulnerability Reproduction (5 entries)
 
 Attacker-perspective writeups for published CVEs reproduced in local Docker labs (vulhub). Each writeup includes a three-part Defense chapter (Hardening / Detection / Threat Hunting). See `labs/README.md` for chapter overview.
 
 - **Apache Shiro 1.2.4 RememberMe Deserialization RCE** — `labs/shiro_550/writeup_en.md` (~270 lines) — CVE-2016-4437: hardcoded AES key + CommonsBeanutils1 gadget + `TemplatesImpl` bytecode loading + Java 9+ module reflection workaround + full Defense chapter
 - **Apache ActiveMQ OpenWire Deserialization RCE** — `labs/activemq_2023_46604/writeup_en.md` (~180 lines) — CVE-2023-46604: Spring `ClassPathXmlApplicationContext` gadget over OpenWire TCP/61616; HelloKitty ransomware in-the-wild reference; cgroup v2 JVM workaround documented
 - **Jenkins CLI `expandAtFiles` File Read → RCE** — `labs/jenkins_2024_23897/writeup_en.md` (~200 lines) — CVE-2024-23897: args4j anonymous CLI file read → `secret.key`/`master.key` exfil → Script Console Groovy RCE as root
+- **Grafana DuckDB SQL Injection → RCE** — `labs/grafana_2024_9264/writeup_en.md` (~180 lines) — CVE-2024-9264: SQL Expressions API + DuckDB `read_blob()` file read + `shellfs` extension pipe-to-shell RCE
+- **TeamCity Authentication Bypass → Admin RCE** — `labs/teamcity_2024_27198/writeup_en.md` (~190 lines) — CVE-2024-27198: Servlet `;.jsp` path-parameter trick bypasses auth → unauthenticated REST API → SYSTEM_ADMIN account creation
 
 ---
 
