@@ -28,6 +28,8 @@ The other chapters of this repo (`pwn`, `reverse`, `crypto`, `web`, `forensics`)
 | [Jenkins CLI — `expandAtFiles` arbitrary file read → RCE](jenkins_2024_23897/writeup_en.md) | CVE-2024-23897 | Arbitrary file read chained to credential decryption | ★★★☆☆ | 2026-05-19 |
 | [Grafana — DuckDB SQL injection → RCE](grafana_2024_9264/writeup_en.md) | CVE-2024-9264 | SQL injection via DuckDB engine (shellfs extension) | ★★★☆☆ | 2026-05-19 |
 | [TeamCity — Authentication bypass → admin account creation](teamcity_2024_27198/writeup_en.md) | CVE-2024-27198 | Auth bypass (path parameter trick) → REST API abuse | ★★★☆☆ | 2026-05-19 |
+| [Metabase — Pre-Auth JDBC URL injection → RCE](metabase_2023_38646/writeup_en.md) | CVE-2023-38646 | JDBC URL injection (H2 INIT parameter) | ★★★☆☆ | 2026-05-19 |
+| [GeoServer — XPath property name evaluation → RCE](geoserver_2024_36401/writeup_en.md) | CVE-2024-36401 | XPath/EL injection in OGC request parameters | ★★☆☆☆ | 2026-05-19 |
 
 ## Writeup structure
 

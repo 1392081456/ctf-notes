@@ -352,6 +352,8 @@ Attacker-perspective writeups for published CVEs reproduced in local Docker labs
 - **Jenkins CLI `expandAtFiles` File Read → RCE** — `labs/jenkins_2024_23897/writeup_en.md` (~200 lines) — CVE-2024-23897: args4j anonymous CLI file read → `secret.key`/`master.key` exfil → Script Console Groovy RCE as root
 - **Grafana DuckDB SQL Injection → RCE** — `labs/grafana_2024_9264/writeup_en.md` (~180 lines) — CVE-2024-9264: SQL Expressions API + DuckDB `read_blob()` file read + `shellfs` extension pipe-to-shell RCE
 - **TeamCity Authentication Bypass → Admin RCE** — `labs/teamcity_2024_27198/writeup_en.md` (~190 lines) — CVE-2024-27198: Servlet `;.jsp` path-parameter trick bypasses auth → unauthenticated REST API → SYSTEM_ADMIN account creation
+- **Metabase Pre-Auth JDBC RCE** — `labs/metabase_2023_38646/writeup_en.md` (~180 lines) — CVE-2023-38646: Leaked setup-token + H2 JDBC URL `INIT` parameter injection → `CSVWRITE` arbitrary file write / JavaScript trigger RCE
+- **GeoServer XPath Property Name RCE** — `labs/geoserver_2024_36401/writeup_en.md` (~170 lines) — CVE-2024-36401: OGC `GetPropertyValue` evaluates `valueReference` as XPath/EL → single GET request `Runtime.exec()` as root
 
 ---
 
