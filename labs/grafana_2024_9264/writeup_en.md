@@ -140,6 +140,95 @@ Grafana is deployed on nearly every monitoring stack — a single compromised Vi
 
 ---
 
+### SOC Artifacts
+
+#### Sigma Rule — DuckDB shellfs payload
+
+```yaml
+title: Grafana DuckDB SQL Expression RCE (CVE-2024-9264)
+id: e9d8c7b6-a5b4-c3d2-e1f0-9876543210ab
+status: experimental
+description: Detects Grafana SQL Expressions API abuse via DuckDB shellfs/read_blob
+references:
+  - https://nvd.nist.gov/vuln/detail/CVE-2024-9264
+  - https://grafana.com/security/security-advisories/cve-2024-9264/
+logsource:
+  category: webserver
+detection:
+  selection_path:
+    cs-uri-stem: '/api/ds/query'
+    cs-method: 'POST'
+  selection_payload:
+    cs-body|contains:
+      - 'INSTALL shellfs'
+      - 'LOAD shellfs'
+      - 'read_blob'
+      - 'read_csv('
+  condition: selection_path and selection_payload
+falsepositives:
+  - Internal automation using DuckDB SQL expressions (rare; whitelist by user)
+level: critical
+tags:
+  - attack.execution
+  - attack.t1190
+  - cve.2024.9264
+```
+
+#### Suricata Rule
+
+```
+alert http any any -> $HTTP_SERVERS any (msg:"Grafana DuckDB Shellfs Exploit (CVE-2024-9264)";
+  flow:to_server,established;
+  http.uri; content:"/api/ds/query";
+  http.method; content:"POST";
+  http.request_body; content:"shellfs"; nocase;
+  classtype:attempted-admin; sid:2024009264; rev:1;
+  reference:cve,2024-9264;)
+```
+
+#### Structured IOCs
+
+| Type | Indicator | Confidence |
+|---|---|---|
+| API | `POST /api/ds/query` body contains `"type":"sql"` | Medium |
+| Payload | `INSTALL shellfs`, `LOAD shellfs`, `read_blob('/etc/...` | Critical |
+| Egress | Connection to `extensions.duckdb.org` from Grafana container | High |
+| File | `*.duckdb_extension`, `shellfs*` on Grafana host | Medium |
+| Process | `grafana-server` → `duckdb` → `bash`/`sh` | Critical |
+| User | Viewer-role account submitting `/api/ds/query` requests | High |
+
+#### SIEM Hunting Queries
+
+**Splunk SPL** — query API + duckdb CDN correlation:
+
+```spl
+index=grafana sourcetype=access_log uri_path="/api/ds/query" method=POST
+| join src_ip [search index=netflow dest="extensions.duckdb.org" earliest=-10m@m]
+| table _time src_ip user uri_path
+```
+
+**Microsoft Sentinel KQL** — shellfs keyword hunt:
+
+```kql
+let suspicious = dynamic(["INSTALL shellfs", "LOAD shellfs", "read_blob", "shellfs_lib"]);
+W3CIISLog
+| where csUriStem == "/api/ds/query"
+| where csMethod == "POST"
+| extend body_match = iff(csUriQuery has_any (suspicious), 1, 0)
+| where body_match == 1
+| project TimeGenerated, cIP, csUserName, csUriQuery
+```
+
+**Elastic ES|QL** — duckdb process child:
+
+```esql
+FROM logs-endpoint-* | WHERE process.parent.name == "duckdb"
+| WHERE process.name IN ("bash", "sh", "dash")
+| STATS occurrences = COUNT(*) BY host.name, process.command_line
+```
+
+---
+
 ## Tools & References
 
 - [vulhub/grafana/CVE-2024-9264](https://github.com/vulhub/vulhub/tree/master/grafana/CVE-2024-9264)

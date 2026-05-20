@@ -174,6 +174,92 @@ Jenkins is a high-value target — controllers usually hold SSH keys, cloud toke
 
 ---
 
+### SOC Artifacts
+
+#### Sigma Rule — CLI @file abuse
+
+```yaml
+title: Jenkins CLI expandAtFiles Arbitrary File Read (CVE-2024-23897)
+id: a1b2c3d4-5e6f-7890-abcd-ef0123456789
+status: experimental
+description: Detects Jenkins CLI exploitation via @filename argument expansion
+references:
+  - https://nvd.nist.gov/vuln/detail/CVE-2024-23897
+  - https://www.jenkins.io/security/advisory/2024-01-24/
+logsource:
+  category: webserver
+detection:
+  selection_cli:
+    cs-uri-stem|startswith: '/cli'
+  selection_payload:
+    cs-uri-query|contains: '@'
+  selection_unauth:
+    cs-username: '-'
+  condition: selection_cli and (selection_payload or selection_unauth)
+falsepositives:
+  - Legitimate CLI usage from CI/CD agents (whitelist by source IP)
+level: high
+tags:
+  - attack.discovery
+  - attack.t1083
+  - cve.2024.23897
+```
+
+#### Suricata Rule
+
+```
+alert http any any -> $HTTP_SERVERS any (msg:"Jenkins CLI @file Arbitrary Read (CVE-2024-23897)";
+  flow:to_server,established;
+  http.uri; content:"/cli"; startswith;
+  http.request_body; pcre:"/@\/(etc\/passwd|proc\/|var\/jenkins_home\/secrets)/i";
+  classtype:attempted-recon; sid:2024023897; rev:2;
+  reference:cve,2024-23897;)
+```
+
+#### Structured IOCs
+
+| Type | Indicator | Confidence |
+|---|---|---|
+| URL | `POST /cli` with `Session:` + `Side: download` headers | High |
+| Payload | `@/etc/passwd`, `@/var/jenkins_home/secrets/master.key` | Critical |
+| Process | `java -jar jenkins.war` → shell w/ `curl`/`wget` | Critical |
+| File | New file in `/var/jenkins_home/plugins/` post-exploit | Medium |
+| Credential | Cleartext credentials.xml entries appearing in attacker tooling output | High |
+| Network | Outbound to GitHub/AWS/GCP API endpoints from Jenkins host | Medium |
+
+#### SIEM Hunting Queries
+
+**Splunk SPL** — @file read hunt:
+
+```spl
+index=jenkins sourcetype=access_log uri_path="/cli*"
+| rex field=_raw "@(?<file_read>/[^\s\"]+)"
+| where isnotnull(file_read)
+| stats count values(file_read) as files by src_ip
+| sort -count
+```
+
+**Microsoft Sentinel KQL** — POST /cli without prior auth:
+
+```kql
+W3CIISLog
+| where csUriStem startswith "/cli"
+| where csMethod == "POST"
+| extend hasAt = csUriQuery contains "@"
+| where hasAt or csUserName == "-"
+| project TimeGenerated, cIP, csUriStem, csUriQuery, scStatus
+```
+
+**Splunk SPL** — credential-rotation forensics (post-incident):
+
+```spl
+index=jenkins sourcetype=audit_log action="credential_used"
+| stats earliest(_time) as first, latest(_time) as last, count by credential_id, src_ip
+| where last > relative_time(now(), "-30d@d")
+```
+
+---
+
 ## Tools & References
 
 - [vulhub/jenkins/CVE-2024-23897](https://github.com/vulhub/vulhub/tree/master/jenkins/CVE-2024-23897)

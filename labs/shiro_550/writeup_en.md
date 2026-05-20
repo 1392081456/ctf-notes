@@ -229,6 +229,93 @@ If detection failed and you are doing post-incident triage:
 
 ---
 
+### SOC Artifacts
+
+#### Sigma Rule — oversized rememberMe cookie
+
+```yaml
+title: Apache Shiro RememberMe Deserialization Exploit (CVE-2016-4437)
+id: 7d3d2a91-3cda-4e0d-9c7a-1ba8c2e07a3c
+status: experimental
+description: Detects oversized rememberMe cookies indicative of CB1/CC6 gadget chains
+references:
+  - https://nvd.nist.gov/vuln/detail/CVE-2016-4437
+  - https://shiro.apache.org/security-reports.html
+logsource:
+  category: webserver
+detection:
+  selection:
+    cs-cookie|contains: 'rememberMe='
+  filter_length:
+    cs-cookie|re: 'rememberMe=[A-Za-z0-9+/=]{400,}'
+  condition: selection and filter_length
+falsepositives:
+  - Legitimate long-session deployments with custom cookie size (rare)
+level: high
+tags:
+  - attack.initial_access
+  - attack.t1190
+  - cve.2016.4437
+```
+
+#### Suricata Rule — CB1 base64 magic prefix
+
+```
+alert http any any -> $HTTP_SERVERS any (msg:"Apache Shiro CB1 RememberMe Deserialization (CVE-2016-4437)";
+  flow:to_server,established;
+  http.cookie; content:"rememberMe="; nocase;
+  pcre:"/rememberMe=[A-Za-z0-9+\/=]{400,}/i";
+  classtype:attempted-admin; sid:2016004437; rev:2;
+  reference:cve,2016-4437;)
+```
+
+#### Structured IOCs
+
+| Type | Indicator | Confidence | Notes |
+|---|---|---|---|
+| Cookie | `rememberMe=` ≥ 400 bytes base64 | High | Normal cookies < 200 bytes |
+| Base64 prefix | `gcQAA`, `rO0AB`, `AAEs` in cookie body | High | Java serialization magic |
+| Default key | `kPH+bIxk5D2deZiIxcaaaA==` in config | Critical | Default Shiro key — instant CVE marker |
+| Class trace | `TemplatesImpl` + `BeanComparator` in log stack | Critical | Exploit-grade combination |
+| Process | `java` → `bash`/`sh`/`nc`/`curl`/`wget`/`python` | Critical | No legitimate JVM child |
+| Filesystem | `/tmp/.<random>`, `/dev/shm/<random>` short names | Medium | Post-exploit staging |
+
+#### SIEM Hunting Queries
+
+**Splunk SPL** — oversized rememberMe cookie hunt:
+
+```spl
+index=web sourcetype=access_combined
+| rex field=_raw "rememberMe=(?<rm>[^;]+)"
+| eval rm_len=len(rm)
+| where rm_len>400
+| stats count dc(uri_path) as paths by src_ip, rm_len
+| sort -count
+```
+
+**Microsoft Sentinel KQL** — same hunt against IIS logs:
+
+```kql
+W3CIISLog
+| where csCookie contains "rememberMe="
+| extend rm = extract(@"rememberMe=([^;]+)", 1, csCookie)
+| where strlen(rm) > 400
+| summarize hits=count(), distinct_uris=dcount(csUriStem) by cIP
+| order by hits desc
+```
+
+**Elastic ES|QL** — generic web log hunt:
+
+```esql
+FROM logs-web-* | WHERE cookies.rememberMe IS NOT NULL
+| EVAL rm_len = LENGTH(cookies.rememberMe)
+| WHERE rm_len > 400
+| STATS hits = COUNT(*) BY source.ip
+| SORT hits DESC
+```
+
+---
+
 ## Tools & References
 
 - [vulhub/shiro/CVE-2016-4437](https://github.com/vulhub/vulhub/tree/master/shiro/CVE-2016-4437)

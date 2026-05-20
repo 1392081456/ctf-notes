@@ -147,6 +147,90 @@ TeamCity controllers are high-value CI/CD infrastructure — admin access means 
 
 ---
 
+### SOC Artifacts
+
+#### Sigma Rule — jsp path parameter trick
+
+```yaml
+title: TeamCity Authentication Bypass via jsp Path Parameter (CVE-2024-27198)
+id: f1e2d3c4-b5a6-9870-1234-567890abcdef
+status: experimental
+description: Detects TeamCity auth bypass via servlet path-parameter trick (;.jsp)
+references:
+  - https://nvd.nist.gov/vuln/detail/CVE-2024-27198
+  - https://blog.jetbrains.com/teamcity/2024/03/
+logsource:
+  category: webserver
+detection:
+  selection_query:
+    cs-uri-query|contains: 'jsp=/app/rest/'
+  selection_path:
+    cs-uri-stem|re: ';\.(jsp|css|js|png|html)$'
+  condition: selection_query or selection_path
+falsepositives:
+  - None known — these patterns have no legitimate use in TeamCity
+level: critical
+tags:
+  - attack.initial_access
+  - attack.t1190
+  - cve.2024.27198
+```
+
+#### Suricata Rule (consolidated)
+
+```
+alert http any any -> $HTTP_SERVERS 8111 (msg:"TeamCity Auth Bypass jsp Path Param (CVE-2024-27198)";
+  flow:to_server,established;
+  http.uri; pcre:"/(\?|&)jsp=\/app\/rest\/|;\.(jsp|css|js|png)$/i";
+  classtype:attempted-admin; sid:2024027198; rev:2;
+  reference:cve,2024-27198;)
+```
+
+#### Structured IOCs
+
+| Type | Indicator | Confidence |
+|---|---|---|
+| URL query | `?jsp=/app/rest/` | Critical |
+| URL path | Path ending in `;.jsp`, `;.css`, `;.js`, `;.png` | Critical |
+| API | `POST /app/rest/users` without prior `TCSESSIONID` cookie | High |
+| User | New user with `SYSTEM_ADMIN` role, no creator audit trail | Critical |
+| File | New artifact in `/opt/teamcity/webapps/ROOT/WEB-INF/plugins/` | Medium |
+| Build | Build triggered by rogue admin containing `curl`/`wget` exfil commands | High |
+
+#### SIEM Hunting Queries
+
+**Splunk SPL** — jsp trick path-pattern hunt:
+
+```spl
+index=teamcity sourcetype=access_log
+| rex field=uri "(?<jsp_attack>(\?|&)jsp=\/app\/rest\/|;\.(jsp|css|js|png)$)"
+| where isnotnull(jsp_attack)
+| stats count by src_ip, uri, status
+| sort -count
+```
+
+**Microsoft Sentinel KQL** — unauthenticated admin creation:
+
+```kql
+W3CIISLog
+| where csUriQuery contains "jsp=/app/rest/" or csUriStem endswith ";.jsp"
+| project TimeGenerated, cIP, csUriStem, csUriQuery, scStatus
+| extend severity = "Critical"
+```
+
+**Splunk SPL** — TeamCity audit-log rogue admin correlation:
+
+```spl
+index=teamcity sourcetype=teamcity_server "Creating user"
+| rex field=_raw "Creating user (?<created_user>\S+)"
+| join created_user [
+    search index=teamcity sourcetype=access_log uri="*jsp=/app/rest/users*"
+  ]
+| table _time created_user src_ip
+```
+
+---
+
 ## Tools & References
 
 - [vulhub/teamcity/CVE-2024-27198](https://github.com/vulhub/vulhub/tree/master/teamcity/CVE-2024-27198)

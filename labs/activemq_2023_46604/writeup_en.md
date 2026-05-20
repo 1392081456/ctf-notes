@@ -170,6 +170,98 @@ The same OpenWire-deserialization pattern is repeated across other JMS brokers a
 
 ---
 
+### SOC Artifacts
+
+#### Sigma Rule — broker JVM spawns shell
+
+```yaml
+title: ActiveMQ JVM Spawns Shell — OpenWire RCE (CVE-2023-46604)
+id: c4e5b1a2-2f0d-4d4a-8d6e-2d3c4a5b6c7d
+status: experimental
+description: Detects ActiveMQ JVM spawning shell or download utilities, indicative of CVE-2023-46604 ClassPathXmlApplicationContext exploitation
+references:
+  - https://nvd.nist.gov/vuln/detail/CVE-2023-46604
+  - https://activemq.apache.org/news/cve-2023-46604
+logsource:
+  category: process_creation
+  product: linux
+detection:
+  selection:
+    ParentImage|endswith:
+      - '/java'
+    ParentCommandLine|contains: 'activemq'
+    Image|endswith:
+      - '/bash'
+      - '/sh'
+      - '/curl'
+      - '/wget'
+      - '/python3'
+      - '/nc'
+  condition: selection
+falsepositives:
+  - Custom ActiveMQ administrative scripts (rare; whitelist by hash)
+level: critical
+tags:
+  - attack.execution
+  - attack.t1059
+  - cve.2023.46604
+```
+
+#### Suricata Rule (hardened)
+
+```
+alert tcp any any -> any 61616 (msg:"ActiveMQ OpenWire ClassPathXmlApplicationContext (CVE-2023-46604)";
+  flow:to_server,established;
+  content:"|01 00 00|"; offset:0; depth:3;
+  content:"org.springframework.context.support.ClassPathXmlApplicationContext"; distance:0;
+  classtype:attempted-admin; sid:2023046604; rev:3;
+  reference:cve,2023-46604;)
+```
+
+#### Structured IOCs
+
+| Type | Indicator | Confidence |
+|---|---|---|
+| Port | TCP/61616 inbound from internet | High |
+| Network | OpenWire frame containing `ClassPathXmlApplicationContext` | Critical |
+| HTTP egress | Broker container fetching `*.xml` URL after a 61616 conn | High |
+| Process | `java` (activemq) → `bash`/`curl`/`wget`/`python` | Critical |
+| Threat actor | HelloKitty / Andariel ransomware campaigns (CISA-confirmed) | High |
+| File | Newer JAR in `/opt/activemq/lib/` than `activemq.jar` | High |
+
+#### SIEM Hunting Queries
+
+**Splunk SPL** — broker-to-XML egress correlation:
+
+```spl
+index=netflow dest_port=61616
+| join src_ip type=inner [
+    search index=proxy http_method=GET url="*.xml" earliest=-5m@m
+  ]
+| stats values(url) values(dest_ip) by src_ip
+```
+
+**Microsoft Sentinel KQL** — JVM child anomaly:
+
+```kql
+DeviceProcessEvents
+| where InitiatingProcessFileName == "java"
+  and InitiatingProcessCommandLine has "activemq"
+  and FileName in ("bash", "sh", "curl", "wget", "python", "python3", "nc")
+| project Timestamp, DeviceName, ProcessCommandLine, InitiatingProcessCommandLine
+```
+
+**Elastic ES|QL** — egress after suspicious 61616 ingress:
+
+```esql
+FROM logs-network-* | WHERE destination.port == 61616
+| LOOKUP JOIN logs-proxy-* ON source.ip
+| WHERE url.path LIKE "*.xml"
+| STATS attempts = COUNT(*) BY source.ip
+```
+
+---
+
 ## Tools & References
 
 - [vulhub/activemq/CVE-2023-46604](https://github.com/vulhub/vulhub/tree/master/activemq/CVE-2023-46604)
