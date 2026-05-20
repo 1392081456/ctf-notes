@@ -32,11 +32,17 @@ CTFtime: [@colorfulwhitez](https://ctftime.org/user/colorfulwhitez) (team APWN)
 - [axb_2019_brop64 — ret2libc and the libc-subversion trap](pwn/axb2019_brop64.md) — glibc version detection / Partial RELRO ret2libc
 - [SCTF 2019 easy_heap — null-byte off-by-one → tcache poison → mmap shellcode](pwn/sctf2019_easy_heap.md) — glibc 2.27 / consolidation leak / RWX page
 
+- [ACTF 2019 — babyheap: UAF + tcache reuse + printf %s GOT leak](pwn/actf2019_babyheap.md) — glibc 2.27 / system@PLT pre-resolved / no libc leak needed
+- [ACTF 2019 — babystack: stack pivot ret2libc](pwn/actf2019_babystack.md) — 16-byte overflow / stack address leak / leave;ret pivot
+- [CISCN 2019 — n_3: 32-bit tcache UAF + strbuf overwrite](pwn/ciscn2019_n_3.md) — record-struct funcptr → `system("sh;#")`
+- [NPUCTF 2020 — easyheap: off-by-one overlapping ×2](pwn/npuctf2020_easyheap.md) — leak + write primitive / `__free_hook` hijack
+- [SUCTF 2018 — stack: classic ret2win backdoor](pwn/suctf2018_stack.md) — `system("/bin/sh")` gadget / +1 stack alignment
 ### Reverse Engineering
 
 - [WMCTF 2020 — easy_re: unpacking a PerlApp binary](reverse/wmctf2020_easy_re.md) — PerlApp BFS resource extraction
 - [SCTF 2019 — creakme: AES-CBC, Base64, and SEH self-decrypting section](reverse/sctf2019_creakme.md) — multi-layer crackme
 - [Wangding Cup 2020 Qinglong — jocker: SMC and stack-pointer repair](reverse/wangdingcup2020_jocker.md) — self-modifying code analysis
+- [Great Wall Cup 3rd — vvvmmm: UPX + Unicorn-embedded RISC-V VM](reverse/changcheng3_vvvmmm.md) — hardcoded-key polynomial hash drives 12 stream words XOR'd with the user input; trap is the `UC_RISCV_REG` enum offset (`0xb = X10 = a0`, not `a1`)
 
 ### Cryptography
 
@@ -44,7 +50,13 @@ CTFtime: [@colorfulwhitez](https://ctftime.org/user/colorfulwhitez) (team APWN)
 - [GKCTF 2021 — XOR: recovering prime factors from XOR + product](crypto/gkctf2021_xor.md) — Hensel-style lifting / product-range pruning / bit-reversal coupling
 - [MRCTF 2020 Easy_RSA — factoring `n` from `φ(n)` and from `e·d`](crypto/mrctf2020_easy_rsa.md) — two-stage Vieta's reduction / small-k brute force
 - [LitCTF 2025 — math: RSA `hint = (p+noise)(q+noise)` leak](crypto/litctf2025_math.md) — Pollard rho on `hint−n` to recover 40-bit noise / Vieta closing to `p, q`
+- [XCTF 9th Finals — Tch3s: predictable `srand(time())` seed](crypto/xctf2025_tch3s.md) — brute the Unix-timestamp seed off Test 1 plaintext, then inject the recovered key into the binary via gdb-python and call its own decrypt
 
+- [GHCTF 2025 — baby_signin: e=4 non-coprime AMM root extraction](crypto/ghctf2025_baby_signin.md) — square root signin via AMM
+- [GHCTF 2025 — EZ_Fermat: polynomial-GCD RSA factoring](crypto/ghctf2025_ez_fermat.md) — Fermat's little theorem / poly-GCD over `Z/n`
+- [GHCTF 2025 — MIMT_RSA: meet-in-the-middle 36-bit composite key recovery](crypto/ghctf2025_mimt_rsa.md) — multiplicative-homomorphism MITM
+- [UTCTF 2020 — basic-crypto: 4-layer encoding onion](crypto/utctf2020_basic_crypto.md) — Binary → Base64 → ROT10 → Substitution
+- [Yangqibei 2025 — big_e_rsa: Eisenstein integer RSA](crypto/yangqibei2025_big_e_rsa.md) — Eisenstein primes / floating-point `d` recovery
 ### Web Exploitation
 
 - [Drupalgeddon2 — CVE-2018-7600 render array RCE](web/drupalgeddon2_rce.md) — Drupal 8 / Form API AJAX / `#post_render` injection
@@ -53,6 +65,21 @@ CTFtime: [@colorfulwhitez](https://ctftime.org/user/colorfulwhitez) (team APWN)
 - [CISCN 2019 Dropbox — PHP Phar deserialization + POP chain](web/ciscn2019_dropbox.md) — `__call` bridge / `GIF89a` stub / `file_exists` trigger
 - [DASCTF 2023 EzFlask — Python class pollution via `__globals__`](web/dasctf2023_ezflask.md) — Flask / recursive merge / `__file__` overwrite
 
+- [CISCN 2019 East-South — double_secret: Flask RC4 leak + Jinja2 SSTI RCE](web/ciscn2019_double_secret.md) — debug-page RC4 / SSTI command exec
+- [CISCN 2019 Finals — easyweb: `\0` quote-eating SQLi + Cookie XOR forge + log-shell](web/ciscn2019_easyweb.md) — multi-stage chain
+- [GHCTF 2025 — EZ_readfile: MD5 strong collision + file read](web/ghctf2025_ez_readfile.md) — `docker-entrypoint` info disclosure
+- [GHCTF 2025 — SQL: UNION injection with strict WAF](web/ghctf2025_sql.md) — direct column-name guessing bypassing all function calls
+- [LitCTF 2025 — easy_file: PHP LFI + upload chain](web/litctf2025_easy_file.md) — silent WAF baseline / `<?=` short-tag upload bypass
+- [LitCTF 2025 — multiverse_diary: Express prototype pollution → `isAdmin`](web/litctf2025_multiverse_diary.md) — Node.js merge pollution
+- [LitCTF 2025 — nest_js: Next.js weak password + JS bundle flag leak](web/litctf2025_nest_js.md) — client-side bundle disclosure
+- [LitCTF 2025 — star_wish: Jinja2 SSTI `{% %}` tag bypass](web/litctf2025_star_wish.md) — command concatenation
+- [NewStarCTF 2023 — medium_sql: boolean blind injection + `%53ELECT` bypass](web/newstarctf2023_medium_sql.md) — `innodb_table_stats` fallback
+- [NPUCTF 2020 — yanzhengma: saferEval regex bypass + arrow-function parameter shadowing](web/npuctf2020_yanzhengma.md) — `String → Function` prototype chain RCE
+- [SWPUCTF 2025 — sql_not_just_sql: numeric injection + `multi_query` stacking + UDF RCE](web/swpuctf2025_sql_not_just_sql.md) — privilege escalation chain
+- [Wangding Cup 2020 Baihu — picdown: arbitrary file read + `/proc/fd` secret recovery](web/wangdingbei2020_picdown.md) — hidden route RCE
+- [Xuanwu Cup 2025 — ez_fastapi: blind SSTI memory shell + `sudo chmod` escalation](web/xuanwu2025_ez_fastapi.md) — FastAPI in-memory route hijack
+- [Xuanwu Cup 2025 — jinja: Jinja2 SSTI without filters](web/xuanwu2025_jinja.md) — entry-level SSTI
+- [Yangcheng Cup 2020 — break_the_wall: `eval` backdoor + function-name blacklist bypass](web/yangchengbei2020_break_the_wall.md) — flag in environment variable
 ### Forensics / Incident Response
 
 - [OtterCTF 2018 — Name Game (memory forensics)](forensics/otterctf2018_name_game.md) — Volatility 3 `pslist` fallback / WZ record parsing / dump anchoring
@@ -63,7 +90,14 @@ CTFtime: [@colorfulwhitez](https://ctftime.org/user/colorfulwhitez) (team APWN)
 - [Xuanji Supply Chain Part 3 — Jenkins + Gitea CI/CD compromise](forensics/xuanji_sc_supply_chain_part3.md) — webhook hijacking / command injection / credential exfiltration
 - [Tieren Triathlon 2024 Finals — APK + Tomcat + PAM backdoor (18-question full chain)](forensics/tieren_2024_apk_pam_incident.md) — JWT role forgery / Behinder per-session AES / PAM `repz cmpsb` magic password / `/tmp/.sshlog` credential exfil
 - [Xuanji Lab 2025 — Cobalt Strike Traffic Analysis (11-question IR)](forensics/xuanji_2025_cs_traffic_analysis.md) — CS 4.4 stager extraction / 1768.py config parse / Docker 2375 unauth → teamserver keystore / RSA-1024 private key recovery / per-session AES traffic decrypt
+- [0x401 CTF 2025 — FlagSyndicate (Xianji #328 / #329, 18-question IR)](forensics/0x401ctf2025_flag_syndicate.md) — VMDK NBD read-only mount / yescrypt cracking with john / ELF reverse with **AES key+IV appended to ciphertext** / base64-in-base64 payload / MySQL 8.0.36 InnoDB offline revival via Docker
+- [Zhenxing Cup 2025 — Phishing Oversight (EML forensics)](forensics/zhenxing2025_phishing_oversight.md) — `X-HAS-ATTACH: no` forgery / base64 decoy that is actually the XOR key (`ctf_is_good_boy`) / docx repair from XOR-encrypted ZIP
+- [Zhenxing Cup 2025 — ICS C2 (OPC UA traffic)](forensics/zhenxing2025_ics_c2.md) — OPC UA node values abused as bidirectional C2 (`REACTOR-001-SEG##` commands / `RESULT-SEG##` answers) / segmented base64 reassembly into JSON / no encryption used
 
+- [GHCTF 2025 — mybrave: bkcrack ZipCrypto known-plaintext + PNG steganography](forensics/ghctf2025_mybrave.md) — ZIP crypto break + image stego
+- [GHCTF 2025 — mypcap: Tomcat Behinder webshell AES traffic decrypt + MySQL data extraction](forensics/ghctf2025_mypcap.md) — per-session AES key recovery
+- [NewStarCTF 2023 — last_traffic: boolean-blind PCAP reconstruction](forensics/newstarctf2023_last_traffic.md) — HTTP response length True/False distinction
+- [Xuanji DMZ2 Ubuntu — IR: Nacos CVE-2021-29442 + UID=0 hidden backdoor `sys-update`](forensics/xuanji_dmz2_ubuntu.md) — multi-stage server triage
 ### Labs (Vulnerability Reproduction)
 
 Attacker-perspective writeups for published CVEs reproduced in **local Docker labs** (primarily vulhub). Complements the forensics chapter, which covers the defender view of the same vulnerability classes. See [`labs/README.md`](labs/README.md) for the full chapter overview and constraints.

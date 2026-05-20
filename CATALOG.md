@@ -6,7 +6,7 @@
 
 ---
 
-## Pwn — Binary Exploitation (65 entries)
+## Pwn — Binary Exploitation (70 entries)
 
 - **32位程序与64位程序运行时栈帧分布区别** — `Pwn/32位程序与64位程序运行时栈帧分布区别.md` (162 lines)
 - **Linux系统调用号表** — `Pwn/Linux系统调用号表.md` (739 lines)
@@ -73,9 +73,15 @@
 - **warmup_csaw_2016** — `Pwn/BUUCTF/warmup_csaw_2016/warmup_csaw_2016.md` (69 lines)
 - **wustctf2020_getshell** — `Pwn/BUUCTF/wustctf2020_getshell/wustctf2020_getshell.md` (64 lines)
 - **[HarekazeCTF2019]baby_rop** — `Pwn/BUUCTF/[HarekazeCTF2019]baby_rop/[HarekazeCTF2019]baby_rop.md` (51 lines)
+- **[actf2019_babyheap]** — `pwn/actf2019_babyheap.md` (~50 lines) — BUUCTF / glibc 2.27 UAF + tcache reuse + printf %s GOT leak + system@PLT
+- **[actf2019_babystack]** — `pwn/actf2019_babystack.md` (~32 lines) — BUUCTF / 栈迁移 ret2libc, 16 字节溢出 + 栈地址泄露 + leave;ret pivot
+- **[ciscn2019_n_3]** — `pwn/ciscn2019_n_3.md` (~71 lines) — BUUCTF / 32-bit tcache UAF, strbuf 覆盖旧 record 函数指针 → system("sh;#")
+- **[npuctf2020_easyheap]** — `pwn/npuctf2020_easyheap.md` (~50 lines) — BUUCTF / off-by-one overlapping ×2 (leak + write) + __free_hook
+- **[suctf2018_stack]** — `pwn/suctf2018_stack.md` (~27 lines) — BUUCTF / 经典 ret2win 后门 system("/bin/sh") + +1 栈对齐
 
-## Reverse Engineering (56 entries)
+## Reverse Engineering (57 entries)
 
+- **[长城杯三 2025] vvvmmm** — `reverse/changcheng3_vvvmmm.md` (~270 lines) — UPX-packed + Unicorn-embedded RISC-V VM; hardcoded-key polynomial hash drives 12 stream words XOR'd with the 48-byte user input; the trap is `UC_RISCV_REG_X10 = 11 = a0` (not `a1`). Detailed Chinese debug-log version at `Reverse/第三届"长城杯"初赛-vvvmmm/WRITEUP_CN.md`
 - **[2019红帽杯]easyRE** — `Reverse/BUUCTF/[2019红帽杯]easyRE.md` (107 lines)
 - **解题过程** — `Reverse/BUUCTF/helloword/helloworld.md` (27 lines)
 - **crackMe** — `Reverse/BUUCTF/crackMe/crackMe.md` (18 lines)
@@ -133,7 +139,7 @@
 - **相册** — `Reverse/BUUCTF/相册/相册.md` (42 lines)
 - **解题过程** — `Reverse/BUUCTF/简单注册器/简单注册器.md` (47 lines)
 
-## Web Exploitation (167 entries)
+## Web Exploitation (182 entries)
 
 - **babyweb** — `Web/BUUCTF/babyweb.md` (32 lines)
 - **SSRF Me** — `Web/BUUCTF/SSRF Me.md` (184 lines)
@@ -302,8 +308,23 @@
 - **Contributing to PHPUnit** — `Web/BUUCTF/[GYCTF2020]EasyThinking/web/vendor/topthink/framework/vendor/phpunit/phpunit/.github/CONTRIBUTING.md` (68 lines)
 - **ISSUE_TEMPLATE** — `Web/BUUCTF/[GYCTF2020]EasyThinking/web/vendor/topthink/framework/vendor/phpunit/phpunit/.github/ISSUE_TEMPLATE.md` (15 lines)
 - **README** — `Web/BUUCTF/[GYCTF2020]EasyThinking/web/vendor/topthink/framework/vendor/mockery/mockery/docs/README.md` (3 lines)
+- **[ciscn2019_double_secret]** — `web/ciscn2019_double_secret.md` (~47 lines) — CISCN 2019 华东南 / Flask RC4 解密 + Jinja2 SSTI RCE
+- **[ciscn2019_easyweb]** — `web/ciscn2019_easyweb.md` (~53 lines) — CISCN 2019 总决赛 / \0 吃引号 SQLi + Cookie XOR 伪造 + Client-IP 日志写 Shell
+- **[ghctf2025_ez_readfile]** — `web/ghctf2025_ez_readfile.md` (~42 lines) — GHCTF 2025 / MD5 强碰撞 + 文件读取 + docker-entrypoint 信息收集
+- **[ghctf2025_sql]** — `web/ghctf2025_sql.md` (~45 lines) — GHCTF 2025 / SQL 注入 + WAF 绕过 / 直接猜 flag 表/列
+- **[litctf2025_easy_file]** — `web/litctf2025_easy_file.md` (~95 lines) — LitCTF 2025 / PHP LFI + 上传 / 黑名单静默 + <?= 短标签绕过
+- **[litctf2025_multiverse_diary]** — `web/litctf2025_multiverse_diary.md` (~72 lines) — LitCTF 2025 / Express 原型污染 isAdmin 提权
+- **[litctf2025_nest_js]** — `web/litctf2025_nest_js.md` (~49 lines) — LitCTF 2025 / Next.js 弱口令 + JS bundle flag 泄露
+- **[litctf2025_star_wish]** — `web/litctf2025_star_wish.md` (~46 lines) — LitCTF 2025 / Jinja2 SSTI {% %} 标签绕过 + 命令拼接
+- **[newstarctf2023_medium_sql]** — `web/newstarctf2023_medium_sql.md` (~48 lines) — NewStarCTF 2023 / 布尔盲注 + %53ELECT 绕过 + innodb_table_stats 替代
+- **[npuctf2020_yanzhengma]** — `web/npuctf2020_yanzhengma.md` (~62 lines) — NPUCTF 2020 / saferEval 正则白名单 + 箭头函数参数遮蔽 + 原型链 String→Function RCE
+- **[swpuctf2025_sql_not_just_sql]** — `web/swpuctf2025_sql_not_just_sql.md` (~40 lines) — SWPUCTF 2025 / 数字型注入 + multi_query 堆叠 + UDF 提权 RCE
+- **[wangdingbei2020_picdown]** — `web/wangdingbei2020_picdown.md` (~51 lines) — 网鼎杯 2020 白虎 / 任意文件读取 + /proc/fd 恢复 secret + 隐藏路由 RCE
+- **[xuanwu2025_ez_fastapi]** — `web/xuanwu2025_ez_fastapi.md` (~39 lines) — 玄武杯 2025 / FastAPI 盲 SSTI 内存马 + sudo chmod 提权
+- **[xuanwu2025_jinja]** — `web/xuanwu2025_jinja.md` (~39 lines) — 玄武杯 2025 / Jinja2 SSTI 无过滤入门题
+- **[yangchengbei2020_break_the_wall]** — `web/yangchengbei2020_break_the_wall.md` (~43 lines) — 羊城杯 2020 / eval 后门 + 函数名黑名单, flag 在环境变量
 
-## Cryptography (9 entries)
+## Cryptography (15 entries)
 
 - **[GHCTF 2025] baby_signin Writeup** — `CRYPTO/[GHCTF 2025]baby_signin/writeup.md` (97 lines)
 - **[GHCTF 2025] EZ_Fermat Writeup** — `CRYPTO/[GHCTF 2025]EZ_Fermat/writeup.md` (79 lines)
@@ -314,8 +335,14 @@
 - **[央企杯 2025] big_e_rsa Writeup** — `CRYPTO/[央企杯 2025]big_e_rsa/writeup.md` (99 lines)
 - **[网鼎杯 2020 青龙组]you_raise_me_up** — `CRYPTO/[网鼎杯 2020 青龙组]you_raise_me_up/[网鼎杯 2020 青龙组]you_raise_me_up.md` (65 lines)
 - **[LitCTF 2025] math** — `crypto/litctf2025_math.md` (~180 lines) — RSA `hint=(p+noise)(q+noise)` leak: Pollard rho on `hint-n` → 40-bit noise → Vieta → (p,q) → flag
+- **[XCTF 9th Finals 2025] Tch3s** — `crypto/xctf2025_tch3s.md` (~190 lines) — predictable `srand(time())`; brute Unix-timestamp seed from Test 1 plaintext (~95M seconds, ~1 min), regenerate the key, inject it into the running binary via gdb-python, then `call` the binary's own decrypt. Detailed Chinese debug-log version at `CRYPTO/第九届 XCTF 国际网络攻防联赛总决赛-Tch3s/WRITEUP_CN.md`
+- **[ghctf2025_baby_signin]** — `crypto/ghctf2025_baby_signin.md` (~32 lines) — GHCTF 2025 / e=4 不互素 AMM 开根签到
+- **[ghctf2025_ez_fermat]** — `crypto/ghctf2025_ez_fermat.md` (~35 lines) — GHCTF 2025 / 费马小定理 + 多项式 GCD 分解 RSA
+- **[ghctf2025_mimt_rsa]** — `crypto/ghctf2025_mimt_rsa.md` (~40 lines) — GHCTF 2025 / RSA 乘法同态 MITM 恢复 36-bit 合数 KEY
+- **[utctf2020_basic_crypto]** — `crypto/utctf2020_basic_crypto.md` (~34 lines) — UTCTF 2020 / 四层编码洋葱 Binary→Base64→ROT10→Substitution
+- **[yangqibei2025_big_e_rsa]** — `crypto/yangqibei2025_big_e_rsa.md` (~44 lines) — 央企杯 2025 / Eisenstein RSA + 浮点精度 d 恢复
 
-## Miscellaneous & Forensics (12 entries)
+## Miscellaneous & Forensics (19 entries)
 
 - **easycap** — `Misc/easycap.md` (2 lines)
 - **Misc 环境清单（2026-05-06 实装版）** — `Misc/setup.md` (232 lines)
@@ -330,6 +357,10 @@
 - **[OtterCTF 2018] Name Game — Writeup** — `Misc/[OtterCTF 2018]Name Game/writeup.md` (142 lines)
 - **[鹤城杯 2021] 流量分析 — Writeup** — `Misc/[鹤城杯 2021]流量分析/writeup.md` (140 lines)
 
+- **[0x401 CTF 2025] FlagSyndicate (玄机 #328 + #329, 18-question IR)** — `forensics/0x401ctf2025_flag_syndicate.md` (~280 lines) — VMDK read-only NBD mount / yescrypt password cracking / ELF reversing of an AES+random-key TCP server (key+IV appended to ciphertext) / base64-in-base64 ZIP payload / MySQL 8.0.36 InnoDB datadir offline revival via Docker. Chinese debug-log version at `Misc/0x401-FlagSyndicate-1/WRITEUP_CN.md` (同步到 -2)
+- **[振兴杯 2025] 钓鱼佬的疏忽 (EML 取证)** — `forensics/zhenxing2025_phishing_oversight.md` (~110 lines) — `X-HAS-ATTACH: no` 假头 / 正文 base64 冷鱼 `Y3RmX2lzX2dvb2RfYm95` 后来是 docx XOR key / 从 XOR-加密 ZIP 恢复 Office 文档. Chinese version at `Misc/2025振兴杯-应急处置-钓鱼佬的疏忽/WRITEUP_CN.md`
+- **[振兴杯 2025] ICS C2 (OPC UA 流量)** — `forensics/zhenxing2025_ics_c2.md` (~130 lines) — OPC UA Node 9/10 值被滥用为双向 C2 (下行 REACTOR-001-SEG## 指令 / 上行 RESULT-SEG## 响应) / 分段 base64 重组后是 JSON / 工控协议无加密是核心盲点. Chinese version at `Misc/2025振兴杯-应急处置-ics_c2/WRITEUP_CN.md`
+
 ### Deep IR writeups added 2026-05-18
 
 These are full English incident-response walkthroughs published under `forensics/` in this repository (not the private `Misc/` study notes above):
@@ -340,6 +371,10 @@ These are full English incident-response walkthroughs published under `forensics
 - **[Xuanji] Supply-Chain Part 3** — `forensics/xuanji_sc_supply_chain_part3.md` (~170 lines) — Jenkins+Gitea CI/CD: webhook hijack, command injection, credential exfil
 - **[铁人三项决赛 2024] APK + Tomcat + PAM** — `forensics/tieren_2024_apk_pam_incident.md` (~280 lines) — 18-question full chain: APK JWT forgery, Behinder per-session AES JSP shell, `/etc/passwd` direct hash injection, PAM `ssh_back_pwd` magic password + `/tmp/.sshlog` credential logger
 - **[玄机 2025] CobaltStrike 流量分析** — `forensics/xuanji_2025_cs_traffic_analysis.md` (~280 lines) — 11-question CS 4.4 IR: stager extraction → 1768.py profile parse → Docker 2375 unauth → `.cobaltstrike.beacon_keys` Java keystore → RSA-1024 priv → metadata raw_aes_key → AES-256-CBC per-session traffic decrypt
+- **[ghctf2025_mybrave]** — `forensics/ghctf2025_mybrave.md` (~35 lines) — GHCTF 2025 / bkcrack ZipCrypto 已知明文攻击 + PNG 隐写
+- **[ghctf2025_mypcap]** — `forensics/ghctf2025_mypcap.md` (~41 lines) — GHCTF 2025 / Tomcat 冰蝎 webshell AES 流量解密 + MySQL 数据提取
+- **[newstarctf2023_last_traffic]** — `forensics/newstarctf2023_last_traffic.md` (~34 lines) — NewStarCTF 2023 / 布尔盲注流量还原 (HTTP 响应长度区分 True/False)
+- **[xuanji_dmz2_ubuntu]** — `forensics/xuanji_dmz2_ubuntu.md` (~67 lines) — 玄机 DMZ2 应急响应 / Nacos CVE-2021-29442 + UID=0 隐藏后门 sys-update
 
 ---
 
