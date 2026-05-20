@@ -8,7 +8,7 @@
 
 ## About this repo
 
-These are reconstructed writeups from challenges I worked through on publicly hosted CTF platforms (BUUCTF, SCTF, NSSCTF, NewStarCTF, etc.). They are written as a personal technical reference and to share methodology that has been publicly documented for years.
+This is a **defensive cybersecurity research portfolio**. It contains reconstructed writeups from challenges I worked through on publicly hosted CTF platforms (BUUCTF, SCTF, NSSCTF, NewStarCTF, etc.) and reproduction notes for published CVEs in isolated local Docker labs (vulhub). The repository serves three purposes: (1) personal technical reference; (2) training material for security analysts learning offensive-side TTPs in order to design better detection logic; (3) a public record of the methodology that backs my peer-reviewed academic work in adversarial machine learning.
 
 Each writeup follows the same structure:
 
@@ -18,11 +18,38 @@ Each writeup follows the same structure:
 4. **Full exploit** — annotated payload script
 5. **Traps / Lessons learned** — what cost me hours and what I'd do differently
 
+For the `labs/` chapter specifically (CVE reproduction in vulhub Docker containers), writeups additionally include a **Defense section** covering vendor patches, Suricata/Sigma detection rules, threat-hunting queries, and IOCs — see the labs chapter for the constraint statement.
+
+## Peer-reviewed Publication
+
+The author of this repository has a peer-reviewed publication in *Computer Engineering and Applications* (《计算机工程与应用》, Peking University Core Journal + CSCD index):
+
+> **Data-Free Black-Box Adversarial Attack Method Based on GAN**
+> *Computer Engineering and Applications*, 2025, 61(7): 204.
+> DOI: [10.3778/j.issn.1002-8331.2311-0227](https://doi.org/10.3778/j.issn.1002-8331.2311-0227)
+> Article page: <http://cea.ceaj.org/CN/Y2025/V61/I7/204>
+
+**Abstract.** Adversarial examples can make deep neural networks output wrong results with high confidence. In black-box attacks, existing alternative model training methods require all or part of the training data of the target model to achieve good attack effects, but the training data of the target model is difficult to obtain in practical applications. Therefore, this paper proposes a GAN-based data-free black-box adversarial attack method. Without the training data of the target model, the noise of mixed label information is used to generate the training samples required by the substitute model. The label information of the target model and diversified loss functions are used to make the training samples evenly distributed and contain more feature information, so that the substitute model can effectively learn the classification function of the target model. Compared with DaST and MAZE, the proposed method reduces the number of adversarial perturbations and queries by 35%–60%, while increasing the success rate of FGSM, BIM, PGD attacks on CIFAR-100, CIFAR-10, SVHN, FMNIST, MNIST datasets by 6–10 percentage points on average. In the actual application of the black-box model scenario Microsoft Azure, the method achieves more than 78% attack success rate.
+
+**Keywords.** black-box adversarial attack; generative adversarial network; substitute training; transfer attack; deep neural network
+
+The original article is published in Chinese; the abstract and metadata above are the journal's officially published English translation (verifiable through the DOI link). The publication evidences the author's academic standing in adversarial ML and defensive AI security research.
+
+## Use of AI Assistants
+
+This repository documents work produced with the assistance of large language model coding assistants (primarily Claude). The assistant is used for:
+
+- **Reverse engineering support** — disassembling and symbolizing binaries, decoding custom VMs, identifying cryptographic primitives in obfuscated code
+- **Detection engineering** — translating attack chains observed in CTF and vulhub challenges into Suricata / Sigma / YARA rules and threat-hunting queries
+- **Documentation and translation** — producing English writeups from Chinese-language research notes so that methodology can be shared internationally
+- **Academic literature triage** — surveying published work on adversarial ML and AI-system security
+
+All targets analyzed in this repository are one of: (a) public CTF challenge binaries distributed by event organizers, (b) vulhub Docker images of vendor-patched CVEs run on `127.0.0.1` with no external network access, or (c) the author's own intentionally vulnerable lab VMs. **No production system, third-party service, or unauthorized target is involved at any stage.** The intent of this work is consistently defensive — understanding offensive techniques deeply enough to detect them, patch them, and write durable security controls.
+
 ## Author
 
-Security researcher with peer-reviewed publication on adversarial ML.
-DOI: [10.3778/j.issn.1002-8331.2311-0227](https://doi.org/10.3778/j.issn.1002-8331.2311-0227)
 CTFtime: [@colorfulwhitez](https://ctftime.org/user/colorfulwhitez) (team APWN)
+Academic identity verifiable through the DOI publication record above.
 
 ## Index
 
@@ -126,6 +153,20 @@ Common patterns I document across writeups:
 ## Scope and Disclaimer
 
 Everything documented here concerns challenges from **publicly hosted CTF events, training platforms, and isolated local Docker labs of published CVEs** (vulhub-style). CTF binaries are organizer-distributed for educational purposes; lab targets are vulhub Docker images of vendor-patched software, run on `127.0.0.1` with no remote access. Nothing in this repository is intended to be applied to real systems, third-party services, or production software. Techniques described are general reverse-engineering and exploitation methodology that has been publicly documented in academic literature and conference talks for years.
+
+### Authorization and Targets
+
+| Target class | Authorization basis |
+|---|---|
+| CTF challenge binaries | Distributed by competition organizers as training material; participants are explicitly authorized to analyze and exploit them |
+| vulhub CVE labs | Vendor-patched vulnerabilities reproduced in local Docker containers on `127.0.0.1`; the author owns the host and the containers; no external traffic involved |
+| Lab VMs | Author-owned virtual machines on author-owned hardware |
+
+No target in this repository is a third-party production system, a service the author does not own, or a network the author has not been explicitly authorized to assess. Any reader who wishes to reproduce this work must arrange equivalent authorization (own the lab, run vulhub in isolation, or have written permission from a CTF organizer).
+
+### Defensive Orientation
+
+The `labs/` chapter is structured so that the **Defense** section (hardening, vendor patches, Suricata/Sigma detection rules, threat-hunting queries, IOCs, post-compromise triage) occupies the majority of each writeup. Attack reproduction steps are kept concise and serve only to justify and validate the detection logic that follows. This reflects the author's research focus: offensive understanding in service of detection engineering and incident response, not offensive capability for its own sake.
 
 ## License
 
