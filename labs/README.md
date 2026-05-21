@@ -24,16 +24,23 @@ The other chapters of this repo (`pwn`, `reverse`, `crypto`, `web`, `forensics`)
 | Lab | CVE | Class | Difficulty | Date |
 |---|---|---|---|---|
 | [Apache Shiro 1.2.4 — `rememberMe` deserialization RCE](shiro_550/writeup_en.md) | CVE-2016-4437 | Java deserialization (hardcoded key) | ★★☆☆☆ | 2026-05-16 |
+| [Log4j — JNDI Lookup RCE (Log4Shell)](log4j_2021_44228/writeup_en.md) | CVE-2021-44228 | JNDI injection → remote class loading | ★★☆☆☆ | 2026-05-21 |
+| [Spring Framework — Spring4Shell RCE](spring_2022_22965/writeup_en.md) | CVE-2022-22965 | ClassLoader manipulation via data binding | ★★☆☆☆ | 2026-05-21 |
 | [Apache ActiveMQ — OpenWire deserialization RCE](activemq_2023_46604/writeup_en.md) | CVE-2023-46604 | Java deserialization (non-HTTP protocol) | ★★★☆☆ | 2026-05-19 |
-| [Jenkins CLI — `expandAtFiles` arbitrary file read → RCE](jenkins_2024_23897/writeup_en.md) | CVE-2024-23897 | Arbitrary file read chained to credential decryption | ★★★☆☆ | 2026-05-19 |
+| [Metabase — Pre-Auth JDBC URL injection → RCE](metabase_2023_38646/writeup_en.md) | CVE-2023-38646 | JDBC URL injection (H2 INIT parameter) | ★★★☆☆ | 2026-05-19 |
+| [JimuReport — FreeMarker SSTI → RCE](jimureport_2023_4450/writeup_en.md) | CVE-2023-4450 | Server-Side Template Injection (FreeMarker) | ★★☆☆☆ | 2026-05-19 |
+| [GeoServer — XPath property name evaluation → RCE](geoserver_2024_36401/writeup_en.md) | CVE-2024-36401 | XPath/EL injection in OGC request parameters | ★★☆☆☆ | 2026-05-19 |
 | [Grafana — DuckDB SQL injection → RCE](grafana_2024_9264/writeup_en.md) | CVE-2024-9264 | SQL injection via DuckDB engine (shellfs extension) | ★★★☆☆ | 2026-05-19 |
 | [TeamCity — Authentication bypass → admin account creation](teamcity_2024_27198/writeup_en.md) | CVE-2024-27198 | Auth bypass (path parameter trick) → REST API abuse | ★★★☆☆ | 2026-05-19 |
-| [Metabase — Pre-Auth JDBC URL injection → RCE](metabase_2023_38646/writeup_en.md) | CVE-2023-38646 | JDBC URL injection (H2 INIT parameter) | ★★★☆☆ | 2026-05-19 |
-| [GeoServer — XPath property name evaluation → RCE](geoserver_2024_36401/writeup_en.md) | CVE-2024-36401 | XPath/EL injection in OGC request parameters | ★★☆☆☆ | 2026-05-19 |
-| [JimuReport — FreeMarker SSTI → RCE](jimureport_2023_4450/writeup_en.md) | CVE-2023-4450 | Server-Side Template Injection (FreeMarker) | ★★☆☆☆ | 2026-05-19 |
 | [Nexus Repository — Unauthenticated path traversal](nexus_2024_4956/writeup_en.md) | CVE-2024-4956 | Path traversal via Jetty URI normalization bug | ★★☆☆☆ | 2026-05-19 |
+| [Redis 4.x Unauthorized Access → RCE](redis_4_unacc/writeup_en.md) | N/A | Unauthenticated Redis → crontab/SSH key/webshell | ★★☆☆☆ | 2026-05-21 |
+| [Fastjson 1.2.24 — Deserialization RCE](fastjson_1224_rce/writeup_en.md) | N/A | Java deserialization via autoType (JNDI/TemplatesImpl) | ★★☆☆☆ | 2026-05-21 |
 | [Next.js — Middleware authorization bypass](nextjs_2025_29927/writeup_en.md) | CVE-2025-29927 | Internal header abuse skips middleware auth | ★☆☆☆☆ | 2026-05-19 |
 | [Langflow — Pre-Auth RCE via Python decorator exec](langflow_2025_3248/writeup_en.md) | CVE-2025-3248 | Python code validation endpoint executes decorators | ★★☆☆☆ | 2026-05-19 |
+| [DataEase — JWT Signature Bypass → Admin Access](dataease_2025_49001/writeup_en.md) | CVE-2025-49001 | JWT verification exception caught but not aborted | ★★☆☆☆ | 2026-05-21 |
+| [ComfyUI — CRLF Injection → Config Manipulation → RCE](comfyui_2026_22777/writeup_en.md) | CVE-2026-22777 | CRLF injection in config writer downgrades security | ★★★☆☆ | 2026-05-21 |
+| [OpenClaw — Cross-Site WebSocket Hijacking → RCE](openclaw_2026_25253/writeup_en.md) | CVE-2026-25253 | CSWSH token leak → config injection → sandbox disable → RCE | ★★★★☆ | 2026-05-21 |
+| [Tomcat Tribes — EncryptInterceptor Bypass → Deserialization RCE](tomcat_2026_34486/writeup_en.md) | CVE-2026-34486 | Decrypt failure not aborted → raw bytes deserialized | ★★★☆☆ | 2026-05-21 |
 
 ## Writeup structure
 
