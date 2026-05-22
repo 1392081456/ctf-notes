@@ -55,15 +55,16 @@ Academic identity verifiable through the DOI publication record above.
 
 ### Pwn (Binary Exploitation)
 
-- [axb_2019_heap — format string leak + unsafe unlink → BSS self-reference](pwn/axb2019_heap.md) — glibc 2.23 / unsafe unlink / `__free_hook` hijack
-- [axb_2019_brop64 — ret2libc and the libc-subversion trap](pwn/axb2019_brop64.md) — glibc version detection / Partial RELRO ret2libc
-- [SCTF 2019 easy_heap — null-byte off-by-one → tcache poison → mmap shellcode](pwn/sctf2019_easy_heap.md) — glibc 2.27 / consolidation leak / RWX page
+- [axb_2019_heap — format string leak + unsafe unlink → BSS self-reference](pwn/axb_2019_heap.md) — glibc 2.23 / unsafe unlink / `__free_hook` hijack
+- [axb_2019_brop64 — ret2libc and the libc-subversion trap](pwn/axb_2019_brop64.md) — glibc version detection / Partial RELRO ret2libc
+- [SCTF 2019 easy_heap — null-byte off-by-one → tcache poison → mmap shellcode](pwn/sctf_2019_easy_heap.md) — glibc 2.27 / consolidation leak / RWX page
 
-- [ACTF 2019 — babyheap: UAF + tcache reuse + printf %s GOT leak](pwn/actf2019_babyheap.md) — glibc 2.27 / system@PLT pre-resolved / no libc leak needed
-- [ACTF 2019 — babystack: stack pivot ret2libc](pwn/actf2019_babystack.md) — 16-byte overflow / stack address leak / leave;ret pivot
-- [CISCN 2019 — n_3: 32-bit tcache UAF + strbuf overwrite](pwn/ciscn2019_n_3.md) — record-struct funcptr → `system("sh;#")`
-- [NPUCTF 2020 — easyheap: off-by-one overlapping ×2](pwn/npuctf2020_easyheap.md) — leak + write primitive / `__free_hook` hijack
-- [SUCTF 2018 — stack: classic ret2win backdoor](pwn/suctf2018_stack.md) — `system("/bin/sh")` gadget / +1 stack alignment
+- [ACTF 2019 — babyheap: UAF + tcache reuse + printf %s GOT leak](pwn/actf_2019_babyheap.md) — glibc 2.27 / system@PLT pre-resolved / no libc leak needed
+- [ACTF 2019 — babystack: stack pivot ret2libc](pwn/actf_2019_babystack.md) — 16-byte overflow / stack address leak / leave;ret pivot
+- [CISCN 2019 — n_3: 32-bit tcache UAF + strbuf overwrite](pwn/ciscn_2019_n_3.md) — record-struct funcptr → `system("sh;#")`
+- [CISCN 2019 — final_2: UAF + tcache poison → overwrite `stdin->_fileno`](pwn/ciscn_2019_final_2.md) — glibc 2.27 / I/O FILE manipulation / `dup2(flag, 666)` win primitive
+- [NPUCTF 2020 — easyheap: off-by-one overlapping ×2](pwn/npuctf_2020_easyheap.md) — leak + write primitive / `__free_hook` hijack
+- [SUCTF 2018 — stack: classic ret2win backdoor](pwn/suctf_2018_stack.md) — `system("/bin/sh")` gadget / +1 stack alignment
 ### Reverse Engineering
 
 - [WMCTF 2020 — easy_re: unpacking a PerlApp binary](reverse/wmctf2020_easy_re.md) — PerlApp BFS resource extraction

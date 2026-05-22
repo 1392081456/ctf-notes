@@ -6,7 +6,7 @@
 
 ---
 
-## Pwn — Binary Exploitation (70 entries)
+## Pwn — Binary Exploitation (71 entries)
 
 - **32位程序与64位程序运行时栈帧分布区别** — `Pwn/32位程序与64位程序运行时栈帧分布区别.md` (162 lines)
 - **Linux系统调用号表** — `Pwn/Linux系统调用号表.md` (739 lines)
@@ -73,11 +73,12 @@
 - **warmup_csaw_2016** — `Pwn/BUUCTF/warmup_csaw_2016/warmup_csaw_2016.md` (69 lines)
 - **wustctf2020_getshell** — `Pwn/BUUCTF/wustctf2020_getshell/wustctf2020_getshell.md` (64 lines)
 - **[HarekazeCTF2019]baby_rop** — `Pwn/BUUCTF/[HarekazeCTF2019]baby_rop/[HarekazeCTF2019]baby_rop.md` (51 lines)
-- **[actf2019_babyheap]** — `pwn/actf2019_babyheap.md` (~50 lines) — BUUCTF / glibc 2.27 UAF + tcache reuse + printf %s GOT leak + system@PLT
-- **[actf2019_babystack]** — `pwn/actf2019_babystack.md` (~32 lines) — BUUCTF / 栈迁移 ret2libc, 16 字节溢出 + 栈地址泄露 + leave;ret pivot
-- **[ciscn2019_n_3]** — `pwn/ciscn2019_n_3.md` (~71 lines) — BUUCTF / 32-bit tcache UAF, strbuf 覆盖旧 record 函数指针 → system("sh;#")
-- **[npuctf2020_easyheap]** — `pwn/npuctf2020_easyheap.md` (~50 lines) — BUUCTF / off-by-one overlapping ×2 (leak + write) + __free_hook
-- **[suctf2018_stack]** — `pwn/suctf2018_stack.md` (~27 lines) — BUUCTF / 经典 ret2win 后门 system("/bin/sh") + +1 栈对齐
+- **[actf_2019_babyheap]** — `pwn/actf_2019_babyheap.md` (~50 lines) — BUUCTF / glibc 2.27 UAF + tcache reuse + printf %s GOT leak + system@PLT
+- **[actf_2019_babystack]** — `pwn/actf_2019_babystack.md` (~32 lines) — BUUCTF / 栈迁移 ret2libc, 16 字节溢出 + 栈地址泄露 + leave;ret pivot
+- **[ciscn_2019_n_3]** — `pwn/ciscn_2019_n_3.md` (~71 lines) — BUUCTF / 32-bit tcache UAF, strbuf 覆盖旧 record 函数指针 → system("sh;#")
+- **[ciscn_2019_final_2]** — `pwn/ciscn_2019_final_2.md` (~120 lines) — BUUCTF / 64-bit glibc 2.27 type-switch UAF + tcache poison → 改 `stdin->_fileno = 666` 让 scanf 读 flag
+- **[npuctf_2020_easyheap]** — `pwn/npuctf_2020_easyheap.md` (~50 lines) — BUUCTF / off-by-one overlapping ×2 (leak + write) + __free_hook
+- **[suctf_2018_stack]** — `pwn/suctf_2018_stack.md` (~27 lines) — BUUCTF / 经典 ret2win 后门 system("/bin/sh") + +1 栈对齐
 
 ## Reverse Engineering (57 entries)
 
