@@ -230,5 +230,5 @@ p.interactive()
 
 ## 11. Related techniques
 
-- [axb_2019_heap](axb2019_heap.md) — same era's BUU challenge but on glibc 2.23: unsafe unlink instead of off-by-null / tcache poison. The two together make a good pair for understanding what each glibc version's defenses changed.
+- [axb_2019_heap](axb_2019_heap.md) — same era's BUU challenge but on glibc 2.23: unsafe unlink instead of off-by-null / tcache poison. The two together make a good pair for understanding what each glibc version's defenses changed.
 - [`how2heap` lab "tcache_poisoning"](https://github.com/shellphish/how2heap/blob/master/glibc_2.27/tcache_poisoning.c) — the minimal repro of the primitive used here.

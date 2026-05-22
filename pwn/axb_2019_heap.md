@@ -304,6 +304,6 @@ The general lessons I keep coming back to:
 
 ## 10. Related techniques
 
-- [Stack Pivot via `leave;ret`](../pwn/axb2019_brop64.md) — same competition but a stack-based primitive
+- [Stack Pivot via `leave;ret`](../pwn/axb_2019_brop64.md) — same competition but a stack-based primitive
 - glibc 2.23 unlink macro internals — see [phrack 66/10](http://phrack.org/issues/66/10.html) for the original write-up of malloc maleficarum, where this primitive was first systematised
   
