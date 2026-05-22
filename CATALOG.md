@@ -379,7 +379,7 @@ These are full English incident-response walkthroughs published under `forensics
 
 ---
 
-## Labs — Vulnerability Reproduction (5 entries)
+## Labs — Vulnerability Reproduction (19 entries)
 
 Attacker-perspective writeups for published CVEs reproduced in local Docker labs (vulhub). Each writeup includes a three-part Defense chapter (Hardening / Detection / Threat Hunting). See `labs/README.md` for chapter overview.
 
@@ -394,6 +394,14 @@ Attacker-perspective writeups for published CVEs reproduced in local Docker labs
 - **Nexus Repository Path Traversal** — `labs/nexus_2024_4956/writeup_en.md` (~160 lines) — CVE-2024-4956: Jetty `URIUtil.canonicalPath()` treats empty segments as root → `%2F%2F..%2F` traversal reads arbitrary files (admin.password, configs)
 - **Next.js Middleware Auth Bypass** — `labs/nextjs_2025_29927/writeup_en.md` (~160 lines) — CVE-2025-29927: `x-middleware-subrequest` header with 5× middleware name repetition triggers recursion limit → middleware skipped entirely → auth bypass
 - **Langflow Pre-Auth RCE** — `labs/langflow_2025_3248/writeup_en.md` (~170 lines) — CVE-2025-3248: `/api/v1/validate/code` uses `exec()` on user Python → `@exec()` decorator evaluated at definition time → pre-auth RCE with output in response
+- **Apache Log4Shell JNDI Injection RCE** — `labs/log4j_2021_44228/writeup_en.md` (~298 lines) — CVE-2021-44228: `${jndi:ldap://...}` substitution in log message triggers JNDI lookup → remote class load → arbitrary code execution; the canonical 2021 advisory
+- **Spring4Shell — Spring Framework RCE via Data Binding** — `labs/spring_2022_22965/writeup_en.md` (~277 lines) — CVE-2022-22965: `class.module.classLoader.resources.context.parent.pipeline.first.*` data binding chain → write JSP webshell to Tomcat ROOT
+- **Fastjson 1.2.24 AutoType Deserialization RCE** — `labs/fastjson_1224_rce/writeup_en.md` (~254 lines) — CVE-2017-18349: `@type` AutoType + `JdbcRowSetImpl` JNDI → LDAP referral → CommonsBeanutils gadget chain
+- **Redis Unauthorized Access — Arbitrary File Write / SSH Key Injection** — `labs/redis_4_unacc/writeup_en.md` (~285 lines) — `CONFIG SET dir/dbfilename` + `SAVE` writes attacker-controlled RDB to `~/.ssh/authorized_keys`; the classical no-auth Redis takeover
+- **Apache Tomcat Tribes EncryptInterceptor Bypass RCE** — `labs/tomcat_2026_34486/writeup_en.md` (~275 lines) — CVE-2026-34486: missing receiver-side encryption enforcement → cluster RPC deserialization → cross-node code execution
+- **DataEase JWT Authentication Bypass** — `labs/dataease_2025_49001/writeup_en.md` (~305 lines) — CVE-2025-49001: hardcoded JWT signing key + flawed token issuance flow → admin impersonation → BI platform takeover
+- **ComfyUI-Manager CRLF Injection in Configuration Handler** — `labs/comfyui_2026_22777/writeup_en.md` (~292 lines) — CVE-2026-22777: insufficient header sanitization in plugin/configuration endpoint → CRLF smuggling → cache poisoning / response splitting
+- **OpenClaw Cross-Site WebSocket Hijacking → RCE** — `labs/openclaw_2026_25253/writeup_en.md` (~246 lines) — CVE-2026-25253: WebSocket origin check missing + HMAC challenge-response bypassed via leaked token → unauthenticated RCE via Node.js plugin runtime
 
 ---
 
