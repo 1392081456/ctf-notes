@@ -63,6 +63,7 @@ Academic identity verifiable through the DOI publication record above.
 - [ACTF 2019 — babystack: stack pivot ret2libc](pwn/actf_2019_babystack.md) — 16-byte overflow / stack address leak / leave;ret pivot
 - [CISCN 2019 — n_3: 32-bit tcache UAF + strbuf overwrite](pwn/ciscn_2019_n_3.md) — record-struct funcptr → `system("sh;#")`
 - [CISCN 2019 — final_2: UAF + tcache poison → overwrite `stdin->_fileno`](pwn/ciscn_2019_final_2.md) — glibc 2.27 / I/O FILE manipulation / `dup2(flag, 666)` win primitive
+- [WUSTCTF 2020 — babyfmt: 4-stage format string + `stdout->_fileno` redirect](pwn/wustctf2020_babyfmt.md) — glibc 2.23 / `%hhn` single-shot guard bypass / pre-rewrite stdout to escape `close(1)+open(/flag)` trap
 - [NPUCTF 2020 — easyheap: off-by-one overlapping ×2](pwn/npuctf_2020_easyheap.md) — leak + write primitive / `__free_hook` hijack
 - [SUCTF 2018 — stack: classic ret2win backdoor](pwn/suctf_2018_stack.md) — `system("/bin/sh")` gadget / +1 stack alignment
 ### Reverse Engineering
