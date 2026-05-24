@@ -1,0 +1,14 @@
+services:
+  zeroshell-vuln:
+    build: .
+    image: zeroshell-cve-2019-12725:latest
+    container_name: zeroshell-cve-2019-12725
+    ports:
+      - "127.0.0.1:8080:80"
+    restart: "no"
+    # security_opt: ["no-new-privileges:false"]   # keep default — sudo must work
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost/cgi-bin/kerbynet?Action=Render&Object=sysinfo || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
