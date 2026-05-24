@@ -127,6 +127,8 @@ Academic identity verifiable through the DOI publication record above.
 - [GHCTF 2025 — mypcap: Tomcat Behinder webshell AES traffic decrypt + MySQL data extraction](forensics/ghctf2025_mypcap.md) — per-session AES key recovery
 - [NewStarCTF 2023 — last_traffic: boolean-blind PCAP reconstruction](forensics/newstarctf2023_last_traffic.md) — HTTP response length True/False distinction
 - [Xuanji DMZ2 Ubuntu — IR: Nacos CVE-2021-29442 + UID=0 hidden backdoor `sys-update`](forensics/xuanji_dmz2_ubuntu.md) — multi-stage server triage
+- [CISCN / Changcheng Cup 2024 — WinFT (Windows IR, 6-question full chain)](forensics/ciscn2024_winft.md) — VMDK NBD RO mount / C2 beacon hunt / AES-CBC side-channel / phishing decode
+- [Pengcheng Cup 2025 — The Rogue Beacon (CAN-bus chassis forensic)](forensics/pengchengbei2025_rogue_beacon.md) — SocketCAN 125 / rogue ID filtering / peak-speed frame localization
 ### Labs (Vulnerability Reproduction)
 
 Attacker-perspective writeups for published CVEs reproduced in **local Docker labs** (primarily vulhub). Complements the forensics chapter, which covers the defender view of the same vulnerability classes. See [`labs/README.md`](labs/README.md) for the full chapter overview and constraints.
@@ -137,6 +139,13 @@ Attacker-perspective writeups for published CVEs reproduced in **local Docker la
 - [Grafana — DuckDB SQL injection → RCE (CVE-2024-9264)](labs/grafana_2024_9264/writeup_en.md) — SQL Expressions API / `read_blob()` file read / `shellfs` extension command execution
 - [TeamCity — Authentication bypass → admin RCE (CVE-2024-27198)](labs/teamcity_2024_27198/writeup_en.md) — Servlet path-parameter trick / unauthenticated REST API / admin account creation
 - [ZeroShell — `kerbynet` pre-auth command injection → root (CVE-2019-12725)](labs/zeroshell_2019_12725/writeup_en.md) — unmaintained vendor / detection-only defense (Sigma + Suricata + Splunk + Sentinel) / paired Docker reproducer + ELF IOC extractor
+- [Apache ActiveMQ — Jolokia addNetworkConnector → Spring XML RCE (CVE-2026-34197)](labs/activemq_2026_34197/writeup_en.md) — `static:(vm://rce?brokerConfig=xbean:http://...)` URI chain / MethodInvokingFactoryBean / CDATA XML safety
+- [GNU InetUtils — telnetd USER argument injection auth bypass (CVE-2026-24061)](labs/inetutils_2026_24061/writeup_en.md) — `USER=-froot` → `login -f` / NEW-ENVIRON telnet negotiation / direct root shell
+- [Chartbrew — MongoDB dataset `new Function()` injection RCE (CVE-2026-25887)](labs/chartbrew_2026_25887/writeup_en.md) — Node.js sandbox escape / `global.process.mainModule.require('child_process')` / AST validation fix
+
+### Misc / Special
+
+- [2025 ZhuJian Cup — Dimensionality Reduction Strike (Peano L-System QR recovery)](2025-zhujian-dimensionality-reduction.md) — 729=3⁶ Peano curve / 3-frame subpixel phase separation / turtle graphics pixel reordering
 
 ---
 
