@@ -380,7 +380,7 @@ These are full English incident-response walkthroughs published under `forensics
 
 ---
 
-## Labs — Vulnerability Reproduction (19 entries)
+## Labs — Vulnerability Reproduction (20 entries)
 
 Attacker-perspective writeups for published CVEs reproduced in local Docker labs (vulhub). Each writeup includes a three-part Defense chapter (Hardening / Detection / Threat Hunting). See `labs/README.md` for chapter overview.
 
@@ -403,6 +403,7 @@ Attacker-perspective writeups for published CVEs reproduced in local Docker labs
 - **DataEase JWT Authentication Bypass** — `labs/dataease_2025_49001/writeup_en.md` (~305 lines) — CVE-2025-49001: hardcoded JWT signing key + flawed token issuance flow → admin impersonation → BI platform takeover
 - **ComfyUI-Manager CRLF Injection in Configuration Handler** — `labs/comfyui_2026_22777/writeup_en.md` (~292 lines) — CVE-2026-22777: insufficient header sanitization in plugin/configuration endpoint → CRLF smuggling → cache poisoning / response splitting
 - **OpenClaw Cross-Site WebSocket Hijacking → RCE** — `labs/openclaw_2026_25253/writeup_en.md` (~246 lines) — CVE-2026-25253: WebSocket origin check missing + HMAC challenge-response bypassed via leaked token → unauthenticated RCE via Node.js plugin runtime
+- **ZeroShell kerbynet Pre-Auth Command Injection → root** — `labs/zeroshell_2019_12725/writeup_en.md` (~417 lines) — CVE-2019-12725: `%0A` newline injection in `NoAuthREQ` `x509type` → apache RCE → `sudo tar --checkpoint-action` GTFOBins → root. Vendor project unmaintained (no patch exists) — defense is detection-only: Sigma + 3× Suricata + Splunk SPL ×2 + Sentinel KQL ×2 + IOC table. Paired with vulhub-style Docker reproducer and ELF IOC-extraction tooling. Defense section occupies ~48% of the writeup.
 
 ---
 

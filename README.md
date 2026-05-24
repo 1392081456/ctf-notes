@@ -136,6 +136,7 @@ Attacker-perspective writeups for published CVEs reproduced in **local Docker la
 - [Jenkins CLI — `expandAtFiles` arbitrary file read → RCE (CVE-2024-23897)](labs/jenkins_2024_23897/writeup_en.md) — args4j `@filename` expansion / anonymous CLI / credential decryption pivot
 - [Grafana — DuckDB SQL injection → RCE (CVE-2024-9264)](labs/grafana_2024_9264/writeup_en.md) — SQL Expressions API / `read_blob()` file read / `shellfs` extension command execution
 - [TeamCity — Authentication bypass → admin RCE (CVE-2024-27198)](labs/teamcity_2024_27198/writeup_en.md) — Servlet path-parameter trick / unauthenticated REST API / admin account creation
+- [ZeroShell — `kerbynet` pre-auth command injection → root (CVE-2019-12725)](labs/zeroshell_2019_12725/writeup_en.md) — unmaintained vendor / detection-only defense (Sigma + Suricata + Splunk + Sentinel) / paired Docker reproducer + ELF IOC extractor
 
 ---
 
