@@ -41,6 +41,11 @@ The other chapters of this repo (`pwn`, `reverse`, `crypto`, `web`, `forensics`)
 | [ComfyUI — CRLF Injection → Config Manipulation → RCE](comfyui_2026_22777/writeup_en.md) | CVE-2026-22777 | CRLF injection in config writer downgrades security | ★★★☆☆ | 2026-05-21 |
 | [OpenClaw — Cross-Site WebSocket Hijacking → RCE](openclaw_2026_25253/writeup_en.md) | CVE-2026-25253 | CSWSH token leak → config injection → sandbox disable → RCE | ★★★★☆ | 2026-05-21 |
 | [Tomcat Tribes — EncryptInterceptor Bypass → Deserialization RCE](tomcat_2026_34486/writeup_en.md) | CVE-2026-34486 | Decrypt failure not aborted → raw bytes deserialized | ★★★☆☆ | 2026-05-21 |
+| [ZeroShell — `kerbynet` Pre-Auth Command Injection → Root](zeroshell_2019_12725/writeup_en.md) | CVE-2019-12725 | Command injection in `/kerbynet` CGI parameter | ★★☆☆☆ | 2026-05-22 |
+| [Jenkins CLI — `expandAtFiles` Arbitrary File Read → RCE](jenkins_2024_23897/writeup_en.md) | CVE-2024-23897 | args4j `@filename` expansion / anonymous CLI | ★★★☆☆ | 2026-05-19 |
+| [Apache ActiveMQ — Jolokia addNetworkConnector → Spring XML RCE](activemq_2026_34197/writeup_en.md) | CVE-2026-34197 | `static:(vm://...?brokerConfig=xbean:http://)` URI chain | ★★★☆☆ | 2026-05-24 |
+| [GNU InetUtils — telnetd USER Argument Injection Auth Bypass](inetutils_2026_24061/writeup_en.md) | CVE-2026-24061 | `USER=-froot` → `login -f` → root shell | ★☆☆☆☆ | 2026-05-24 |
+| [Chartbrew — MongoDB Dataset `new Function()` Injection RCE](chartbrew_2026_25887/writeup_en.md) | CVE-2026-25887 | Node.js sandbox escape via `require('child_process')` | ★★☆☆☆ | 2026-05-24 |
 
 ## Writeup structure
 
