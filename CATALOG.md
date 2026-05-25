@@ -6,7 +6,7 @@
 
 ---
 
-## Pwn — Binary Exploitation (72 entries)
+## Pwn — Binary Exploitation (73 entries)
 
 - **32位程序与64位程序运行时栈帧分布区别** — `Pwn/32位程序与64位程序运行时栈帧分布区别.md` (162 lines)
 - **Linux系统调用号表** — `Pwn/Linux系统调用号表.md` (739 lines)
@@ -80,6 +80,7 @@
 - **[wustctf2020_babyfmt]** — `pwn/wustctf2020_babyfmt.md` (~180 lines) — BUUCTF / 64-bit glibc 2.23 fmt 漏洞 4 步链：%hhn reset single-shot bool + %p leak PIE/libc + %s 读 secret + 改 `stdout->_fileno=2` 突破 close(1)+open(/flag) 陷阱
 - **[npuctf_2020_easyheap]** — `pwn/npuctf_2020_easyheap.md` (~50 lines) — BUUCTF / off-by-one overlapping ×2 (leak + write) + __free_hook
 - **[suctf_2018_stack]** — `pwn/suctf_2018_stack.md` (~27 lines) — BUUCTF / 经典 ret2win 后门 system("/bin/sh") + +1 栈对齐
+- **[hwb_2019_mergeheap]** — `pwn/hwb_2019_mergeheap.md` (~115 lines) — BUUCTF / 2019 强网杯 / glibc 2.27 / size ≤ 0x400 强制 "fill 7 tcache then unsorted" 套路 / `merge` 不清原指针 → overlapping chunks / tcache poison → `__free_hook = one_gadget` getshell
 
 ## Reverse Engineering (57 entries)
 
@@ -377,10 +378,12 @@ These are full English incident-response walkthroughs published under `forensics
 - **[ghctf2025_mypcap]** — `forensics/ghctf2025_mypcap.md` (~41 lines) — GHCTF 2025 / Tomcat 冰蝎 webshell AES 流量解密 + MySQL 数据提取
 - **[newstarctf2023_last_traffic]** — `forensics/newstarctf2023_last_traffic.md` (~34 lines) — NewStarCTF 2023 / 布尔盲注流量还原 (HTTP 响应长度区分 True/False)
 - **[xuanji_dmz2_ubuntu]** — `forensics/xuanji_dmz2_ubuntu.md` (~67 lines) — 玄机 DMZ2 应急响应 / Nacos CVE-2021-29442 + UID=0 隐藏后门 sys-update
+- **[dasctf2025h1_webshell_plus]** — `forensics/dasctf2025h1_webshell_plus.md` (~186 lines) — DASCTF 2025 H1 / Bluetooth OBEX file reassembly (tshark hex stitching, `--export-objects` unsupported) + JPEG trailer ZIP + Windows ZIP password GBK encoding for `の` (`a4 ce` ≠ UTF-8 `e3 81 ae`) + grayscale PNG R-channel as UTF-8 text. Chinese version at `Misc/DASCTF2025上半年赛-Webshell_Plus/WRITEUP_CN.md`
+- **[zhujian2025_dimensionality_reduction]** — `forensics/zhujian2025_dimensionality_reduction.md` (~168 lines) — 2025 ZhuJian Cup / 729×729 PNG trailer carving (1200×120 RGBA inner) → 3-px subpixel phase separation (3 frames + WASD path) → 3-adic Peano L-System 6-iter pixel reorder → QR code → flag. Contest 0-solve, 44th-rank reproduction. Chinese version at `Misc/2025铸剑杯-降维打击/WRITEUP_CN.md`
 
 ---
 
-## Labs — Vulnerability Reproduction (20 entries)
+## Labs — Vulnerability Reproduction (23 entries)
 
 Attacker-perspective writeups for published CVEs reproduced in local Docker labs (vulhub). Each writeup includes a three-part Defense chapter (Hardening / Detection / Threat Hunting). See `labs/README.md` for chapter overview.
 
@@ -404,6 +407,9 @@ Attacker-perspective writeups for published CVEs reproduced in local Docker labs
 - **ComfyUI-Manager CRLF Injection in Configuration Handler** — `labs/comfyui_2026_22777/writeup_en.md` (~292 lines) — CVE-2026-22777: insufficient header sanitization in plugin/configuration endpoint → CRLF smuggling → cache poisoning / response splitting
 - **OpenClaw Cross-Site WebSocket Hijacking → RCE** — `labs/openclaw_2026_25253/writeup_en.md` (~246 lines) — CVE-2026-25253: WebSocket origin check missing + HMAC challenge-response bypassed via leaked token → unauthenticated RCE via Node.js plugin runtime
 - **ZeroShell kerbynet Pre-Auth Command Injection → root** — `labs/zeroshell_2019_12725/writeup_en.md` (~417 lines) — CVE-2019-12725: `%0A` newline injection in `NoAuthREQ` `x509type` → apache RCE → `sudo tar --checkpoint-action` GTFOBins → root. Vendor project unmaintained (no patch exists) — defense is detection-only: Sigma + 3× Suricata + Splunk SPL ×2 + Sentinel KQL ×2 + IOC table. Paired with vulhub-style Docker reproducer and ELF IOC-extraction tooling. Defense section occupies ~48% of the writeup.
+- **Apache ActiveMQ Jolokia addNetworkConnector RCE** — `labs/activemq_2026_34197/writeup_en.md` (~178 lines) — CVE-2026-34197: Jolokia JMX-HTTP bridge → `static:(vm://?brokerConfig=xbean:http://...)` 异步 fetch 远程 Spring XML → `MethodInvokingFactoryBean` 触发 `Runtime.exec()`，CVSS 8.8 认证后 RCE (默认 admin:admin)，含 Sigma/Suricata/Splunk/Sentinel 全套 SOC artifact
+- **GNU InetUtils telnetd USER 参数注入** — `labs/inetutils_2026_24061/writeup_en.md` (~160 lines) — CVE-2026-24061: telnetd 未净化 NEW-ENVIRON 发来的 `USER` 环境变量直接传给 `/bin/login -f`，`USER="-f root"` → 零交互 root shell，CVSS 9.8 unauth，CWE-88 argument injection 经典
+- **Chartbrew MongoDB Query → Node.js `Function()` RCE** — `labs/chartbrew_2026_25887/writeup_en.md` (~179 lines) — CVE-2026-25887: `runMongo` 把用户 query 直接给 `new Function('MongoClient','collection', query)` → `global.process.mainModule.require('child_process').execSync()`，首位注册即 admin = 实际 pre-auth，CVSS 8.8
 
 ---
 

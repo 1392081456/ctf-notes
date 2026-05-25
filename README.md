@@ -66,6 +66,7 @@ Academic identity verifiable through the DOI publication record above.
 - [WUSTCTF 2020 — babyfmt: 4-stage format string + `stdout->_fileno` redirect](pwn/wustctf2020_babyfmt.md) — glibc 2.23 / `%hhn` single-shot guard bypass / pre-rewrite stdout to escape `close(1)+open(/flag)` trap
 - [NPUCTF 2020 — easyheap: off-by-one overlapping ×2](pwn/npuctf_2020_easyheap.md) — leak + write primitive / `__free_hook` hijack
 - [SUCTF 2018 — stack: classic ret2win backdoor](pwn/suctf_2018_stack.md) — `system("/bin/sh")` gadget / +1 stack alignment
+- [HWB / 强网杯 2019 — mergeheap: merge overlap + tcache poison](pwn/hwb_2019_mergeheap.md) — glibc 2.27 / size≤0x400 forces tcache-fill leak / `merge` doesn't clear original ptrs creating overlap / `__free_hook = one_gadget` getshell
 ### Reverse Engineering
 
 - [WMCTF 2020 — easy_re: unpacking a PerlApp binary](reverse/wmctf2020_easy_re.md) — PerlApp BFS resource extraction
@@ -129,6 +130,8 @@ Academic identity verifiable through the DOI publication record above.
 - [Xuanji DMZ2 Ubuntu — IR: Nacos CVE-2021-29442 + UID=0 hidden backdoor `sys-update`](forensics/xuanji_dmz2_ubuntu.md) — multi-stage server triage
 - [CISCN / Changcheng Cup 2024 — WinFT (Windows IR, 6-question full chain)](forensics/ciscn2024_winft.md) — VMDK NBD RO mount / C2 beacon hunt / AES-CBC side-channel / phishing decode
 - [Pengcheng Cup 2025 — The Rogue Beacon (CAN-bus chassis forensic)](forensics/pengchengbei2025_rogue_beacon.md) — SocketCAN 125 / rogue ID filtering / peak-speed frame localization
+- [DASCTF 2025 H1 — Webshell_Plus (Bluetooth OBEX traffic)](forensics/dasctf2025h1_webshell_plus.md) — Bluetooth H4 / OBEX file reassembly (tshark hex stitching, `--export-objects` not supported) / JPEG trailer ZIP / Windows ZIP password **GBK encoding** for `の` (`a4 ce` ≠ UTF-8 `e3 81 ae`) / grayscale PNG R-channel as UTF-8 text steganography
+
 ### Labs (Vulnerability Reproduction)
 
 Attacker-perspective writeups for published CVEs reproduced in **local Docker labs** (primarily vulhub). Complements the forensics chapter, which covers the defender view of the same vulnerability classes. See [`labs/README.md`](labs/README.md) for the full chapter overview and constraints.
@@ -145,7 +148,7 @@ Attacker-perspective writeups for published CVEs reproduced in **local Docker la
 
 ### Misc / Special
 
-- [2025 ZhuJian Cup — Dimensionality Reduction Strike (Peano L-System QR recovery)](2025-zhujian-dimensionality-reduction.md) — 729=3⁶ Peano curve / 3-frame subpixel phase separation / turtle graphics pixel reordering
+- [2025 ZhuJian Cup — Dimensionality Reduction Strike (Peano L-System QR recovery)](forensics/zhujian2025_dimensionality_reduction.md) — 729=3⁶ Peano curve / 3-frame subpixel phase separation / turtle graphics pixel reordering
 
 ---
 
