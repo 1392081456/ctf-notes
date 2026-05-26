@@ -23,9 +23,13 @@ The other chapters of this repo (`pwn`, `reverse`, `crypto`, `web`, `forensics`)
 
 The Sigma and Suricata content embedded in each writeup below is also packaged as a stand-alone, CI-linted distribution:
 
-➜ [**`1392081456/sigma-detection-rules`**](https://github.com/1392081456/sigma-detection-rules) — 30 Sigma rules + 24 Suricata signatures, regenerable from this directory via [`scripts/extract_rules.py`](https://github.com/1392081456/sigma-detection-rules/blob/main/scripts/extract_rules.py).
+➜ [**`1392081456/sigma-detection-rules`**](https://github.com/1392081456/sigma-detection-rules) — 30 Sigma rules + 24 Suricata signatures + 6-CVE threat-hunting query bundle (3 SIEM dialects each). Regenerable from this directory via [`scripts/extract_rules.py`](https://github.com/1392081456/sigma-detection-rules/blob/main/scripts/extract_rules.py).
 
 If you only want to deploy the detection content (not read the writeups), pull that repo instead.
+
+## IOC index across all 23 CVEs
+
+➜ [**`IOCS.md`**](IOCS.md) — flat indicator table for every CVE in this chapter (cookie patterns, URI patterns, body strings, process-creation signatures, network indicators), tagged with confidence levels. Used as the lookup during incident triage when an alert from one of the Sigma rules fires.
 
 ## Index
 
