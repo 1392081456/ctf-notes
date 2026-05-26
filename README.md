@@ -46,9 +46,11 @@ This repository documents work produced with the assistance of large language mo
 
 All targets analyzed in this repository are one of: (a) public CTF challenge binaries distributed by event organizers, (b) vulhub Docker images of vendor-patched CVEs run on `127.0.0.1` with no external network access, or (c) the author's own intentionally vulnerable lab VMs. **No production system, third-party service, or unauthorized target is involved at any stage.** The intent of this work is consistently defensive — understanding offensive techniques deeply enough to detect them, patch them, and write durable security controls.
 
+**Authorship statement.** I am the sole author and decision-maker on every writeup in this repository. Claude is used as a research, translation, and drafting assistant; all exploit logic, vulnerability analysis, detection rules (Sigma / Suricata / YARA / SIEM queries), and methodological choices are designed, verified, and signed off by me. Where commits in this repository carry a `Co-Authored-By: Claude` trailer, that trailer is a transparency disclosure of AI assistance — not an attribution of intellectual authorship.
+
 ## Author
 
-CTFtime: [@colorfulwhitez](https://ctftime.org/user/colorfulwhitez) (team APWN)
+CTFtime: [@colorfulwhitez](https://ctftime.org/user/261101) (team APWN)
 Academic identity verifiable through the DOI publication record above.
 
 ## Index
