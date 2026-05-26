@@ -50,8 +50,9 @@ All targets analyzed in this repository are one of: (a) public CTF challenge bin
 
 ## Author
 
-CTFtime: [@colorfulwhitez](https://ctftime.org/user/261101) (team APWN)
-Academic identity verifiable through the DOI publication record above.
+- Blog: <https://1392081456.github.io> — methodology notes on detection engineering and adversarial-ML research
+- CTFtime: [@colorfulwhitez](https://ctftime.org/user/261101) (team APWN)
+- Academic identity verifiable through the DOI publication record above
 
 ## Index
 
