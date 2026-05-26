@@ -19,6 +19,14 @@ The other chapters of this repo (`pwn`, `reverse`, `crypto`, `web`, `forensics`)
 - All CVEs documented here are **published, patched, and have been public for years** — these are reconstruction exercises against software whose vendors have shipped fixes long ago.
 - Every writeup ends with a **Mitigation** section: knowing how a class of bug works is the first step to writing the detection or hardening that catches the next one.
 
+## Companion repository — rules packaged for distribution
+
+The Sigma and Suricata content embedded in each writeup below is also packaged as a stand-alone, CI-linted distribution:
+
+➜ [**`1392081456/sigma-detection-rules`**](https://github.com/1392081456/sigma-detection-rules) — 30 Sigma rules + 24 Suricata signatures, regenerable from this directory via [`scripts/extract_rules.py`](https://github.com/1392081456/sigma-detection-rules/blob/main/scripts/extract_rules.py).
+
+If you only want to deploy the detection content (not read the writeups), pull that repo instead.
+
 ## Index
 
 | Lab | CVE | Class | Difficulty | Date |
