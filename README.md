@@ -136,7 +136,7 @@ Academic identity verifiable through the DOI publication record above.
 
 ### Labs (Vulnerability Reproduction)
 
-Attacker-perspective writeups for published CVEs reproduced in **local Docker labs** (primarily vulhub). Complements the forensics chapter, which covers the defender view of the same vulnerability classes. See [`labs/README.md`](labs/README.md) for the full chapter overview and constraints.
+Attacker-perspective writeups for published CVEs reproduced in **local Docker labs** (primarily vulhub). Complements the forensics chapter, which covers the defender view of the same vulnerability classes. The list below is a **curated subset** highlighting representative cases — the **full index of 23 CVE writeups** with difficulty / class metadata is in [`labs/README.md`](labs/README.md), and the [`labs/`](labs/) directory itself holds the underlying reproductions, Sigma rules, Suricata SIDs, IOC tables, and SIEM hunting queries.
 
 - [Apache Shiro 1.2.4 — `rememberMe` deserialization RCE (CVE-2016-4437)](labs/shiro_550/writeup_en.md) — hardcoded AES key / CommonsBeanutils1 gadget chain / `TemplatesImpl` bytecode loading
 - [Apache ActiveMQ — OpenWire deserialization RCE (CVE-2023-46604)](labs/activemq_2023_46604/writeup_en.md) — Spring `ClassPathXmlApplicationContext` gadget over OpenWire wire protocol
