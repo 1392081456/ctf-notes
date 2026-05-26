@@ -6,7 +6,7 @@
 
 ---
 
-## Pwn — Binary Exploitation (73 entries)
+## Pwn — Binary Exploitation (75 entries)
 
 - **32位程序与64位程序运行时栈帧分布区别** — `Pwn/32位程序与64位程序运行时栈帧分布区别.md` (162 lines)
 - **Linux系统调用号表** — `Pwn/Linux系统调用号表.md` (739 lines)
@@ -77,6 +77,8 @@
 - **[actf_2019_babystack]** — `pwn/actf_2019_babystack.md` (~32 lines) — BUUCTF / 栈迁移 ret2libc, 16 字节溢出 + 栈地址泄露 + leave;ret pivot
 - **[ciscn_2019_n_3]** — `pwn/ciscn_2019_n_3.md` (~71 lines) — BUUCTF / 32-bit tcache UAF, strbuf 覆盖旧 record 函数指针 → system("sh;#")
 - **[ciscn_2019_final_2]** — `pwn/ciscn_2019_final_2.md` (~120 lines) — BUUCTF / 64-bit glibc 2.27 type-switch UAF + tcache poison → 改 `stdin->_fileno = 666` 让 scanf 读 flag
+- **[ciscn_2019_c_3]** — `pwn/ciscn_2019_c_3.md` (~110 lines) — BUUCTF / 64-bit glibc 2.27 / 9-slot UAF + selfloop 填 tcache（同 chunk free 7 次自指）+ 第 8 次进 unsorted bin leak libc + backdoor 累加器伪造 fd → `__free_hook = one_gadget`
+- **[ciscn_2019_c_5]** — `pwn/ciscn_2019_c_5.md` (~110 lines) — BUUCTF / 64-bit glibc 2.27 Full RELRO + FORTIFY / `__printf_chk(1, user_buf)` 格式串 leak（第 7 个 %p = `_IO_2_1_stderr_`）+ tcache double-free (libc 2.27 无 key 检查) → `__free_hook = system` + `free("/bin/sh")`
 - **[wustctf2020_babyfmt]** — `pwn/wustctf2020_babyfmt.md` (~180 lines) — BUUCTF / 64-bit glibc 2.23 fmt 漏洞 4 步链：%hhn reset single-shot bool + %p leak PIE/libc + %s 读 secret + 改 `stdout->_fileno=2` 突破 close(1)+open(/flag) 陷阱
 - **[npuctf_2020_easyheap]** — `pwn/npuctf_2020_easyheap.md` (~50 lines) — BUUCTF / off-by-one overlapping ×2 (leak + write) + __free_hook
 - **[suctf_2018_stack]** — `pwn/suctf_2018_stack.md` (~27 lines) — BUUCTF / 经典 ret2win 后门 system("/bin/sh") + +1 栈对齐

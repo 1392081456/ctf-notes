@@ -63,6 +63,8 @@ Academic identity verifiable through the DOI publication record above.
 - [ACTF 2019 — babystack: stack pivot ret2libc](pwn/actf_2019_babystack.md) — 16-byte overflow / stack address leak / leave;ret pivot
 - [CISCN 2019 — n_3: 32-bit tcache UAF + strbuf overwrite](pwn/ciscn_2019_n_3.md) — record-struct funcptr → `system("sh;#")`
 - [CISCN 2019 — final_2: UAF + tcache poison → overwrite `stdin->_fileno`](pwn/ciscn_2019_final_2.md) — glibc 2.27 / I/O FILE manipulation / `dup2(flag, 666)` win primitive
+- [CISCN 2019 — c_3: 9-slot UAF + selfloop tcache fill + backdoor accumulator](pwn/ciscn_2019_c_3.md) — glibc 2.27 / `dele` doesn't NULL → repeated free fills tcache via self-loops / `backdoor` as fd accumulator → `__free_hook = one_gadget`
+- [CISCN 2019 — c_5: `__printf_chk` format-string leak + tcache double-free](pwn/ciscn_2019_c_5.md) — glibc 2.27 / Full RELRO + FORTIFY / 7th `%p` = `_IO_2_1_stderr_` → libc base / `__free_hook = system` + `free("/bin/sh")`
 - [WUSTCTF 2020 — babyfmt: 4-stage format string + `stdout->_fileno` redirect](pwn/wustctf2020_babyfmt.md) — glibc 2.23 / `%hhn` single-shot guard bypass / pre-rewrite stdout to escape `close(1)+open(/flag)` trap
 - [NPUCTF 2020 — easyheap: off-by-one overlapping ×2](pwn/npuctf_2020_easyheap.md) — leak + write primitive / `__free_hook` hijack
 - [SUCTF 2018 — stack: classic ret2win backdoor](pwn/suctf_2018_stack.md) — `system("/bin/sh")` gadget / +1 stack alignment
