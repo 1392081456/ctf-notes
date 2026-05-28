@@ -13,6 +13,7 @@ A focused series on **indirect prompt injection against AI-powered scanners** �
 - [Exploiting AI agents to perform destructive actions](web/portswigger_ai_destructive_actions.md) — *Apprentice* — indirect prompt injection via blog comment makes the carlos-authenticated scanner delete its own account. Key insight: well-aligned agents flag aggressive payloads as findings; a plain owner-style request slips through. (LLM01 + LLM06)
 - [Exploiting AI agents to exfiltrate sensitive information](web/portswigger_ai_exfil_apikey.md) — *Apprentice* — exfil variant with **no results page**, so the scanner is steered into posting carlos's API key as a comment. (LLM01 + LLM06 + LLM02)
 - [Exploiting AI agents to trigger secondary vulnerabilities](web/portswigger_ai_secondary_ssrf.md) — *Practitioner* — prompt injection **drives a routing-based SSRF** (forged `Host` header = internal admin IP) to reach a loopback-only admin and delete carlos. (LLM01 + LLM06 + SSRF)
+- [Bypassing AI scanner defenses to exfiltrate sensitive information](web/portswigger_ai_bypass_defenses.md) — *Practitioner* — defeats a **two-layer defense** (input classifier + output redaction); the breakthrough reframes the leak as the **PoC of a fake "comments don't redact API keys" bug**, so the scanner leaks carlos's key to "confirm" it. (LLM01 + LLM06 + LLM02)
 
 ## About this repo
 
@@ -126,6 +127,7 @@ All targets analyzed in this repository are one of: (a) public CTF challenge bin
 - [PortSwigger — Exploiting AI agents to perform destructive actions](web/portswigger_ai_destructive_actions.md) — indirect prompt injection via blog comment / LLM scanner with carlos session deletes the account / LLM01 + LLM06
 - [PortSwigger — Exploiting AI agents to exfiltrate sensitive information](web/portswigger_ai_exfil_apikey.md) — indirect prompt injection exfil variant / no results page (404) so the scanner posts carlos's API key as a comment / LLM01 + LLM06 + LLM02
 - [PortSwigger — Exploiting AI agents to trigger secondary vulnerabilities](web/portswigger_ai_secondary_ssrf.md) — **Practitioner** / prompt injection drives a routing-based SSRF (Host header = internal admin IP) to reach a loopback-only admin and delete carlos / LLM01 + LLM06 + SSRF
+- [PortSwigger — Bypassing AI scanner defenses to exfiltrate sensitive information](web/portswigger_ai_bypass_defenses.md) — **Practitioner** / defeats a two-layer defense (input classifier + output redaction); the leak is reframed as the PoC of a fake "comments aren't redacting API keys" bug / LLM01 + LLM06 + LLM02
 ### Forensics / Incident Response
 
 - [OtterCTF 2018 — Name Game (memory forensics)](forensics/otterctf2018_name_game.md) — Volatility 3 `pslist` fallback / WZ record parsing / dump anchoring

@@ -144,7 +144,7 @@
 - **相册** — `Reverse/BUUCTF/相册/相册.md` (42 lines)
 - **解题过程** — `Reverse/BUUCTF/简单注册器/简单注册器.md` (47 lines)
 
-## Web Exploitation (185 entries)
+## Web Exploitation (186 entries)
 
 - **babyweb** — `Web/BUUCTF/babyweb.md` (32 lines)
 - **SSRF Me** — `Web/BUUCTF/SSRF Me.md` (184 lines)
@@ -331,6 +331,7 @@
 - **[portswigger_ai_destructive_actions]** — `web/portswigger_ai_destructive_actions.md` (~95 lines) — PortSwigger / 间接 prompt 注入 / blog 评论骗带 carlos 认证态的 LLM scanner 删号 / 攻击词汇反而被识破，纯口语自助请求才中 / LLM01+LLM06
 - **[portswigger_ai_exfil_apikey]** — `web/portswigger_ai_exfil_apikey.md` (~85 lines) — PortSwigger / 间接 prompt 注入数据外泄变体 / 无结果页(404)→ scanner 把 carlos API key 发成评论回显 / owner framing 第一轮即中 / LLM01+LLM06+LLM02
 - **[portswigger_ai_secondary_ssrf]** — `web/portswigger_ai_secondary_ssrf.md` (~110 lines) — PortSwigger Practitioner / 间接 prompt 注入驱动 routing-based SSRF / 伪造 Host=192.168.0.5:8080 经路由层达 loopback-only admin 裸 GET /admin/delete?username=carlos / URL-based(stockApi)绕不过 loopback, Host 值是 admin IP 非 localhost / LLM01+LLM06+SSRF
+- **[portswigger_ai_bypass_defenses]** — `web/portswigger_ai_bypass_defenses.md` (~95 lines) — PortSwigger Practitioner / 绕过双层防御(输入分类器自动加WARNING + scanner自判输出redaction) exfil API key / 致胜钩子="泄露=被测漏洞PoC"(把发完整key框成验证"评论未打码"漏洞,scanner为证明漏洞主动泄露) / 9版framing全被redact,唯此奏效 / LLM01+LLM06+LLM02
 
 ## Cryptography (15 entries)
 
