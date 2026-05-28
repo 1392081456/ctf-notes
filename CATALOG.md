@@ -144,7 +144,7 @@
 - **相册** — `Reverse/BUUCTF/相册/相册.md` (42 lines)
 - **解题过程** — `Reverse/BUUCTF/简单注册器/简单注册器.md` (47 lines)
 
-## Web Exploitation (182 entries)
+## Web Exploitation (185 entries)
 
 - **babyweb** — `Web/BUUCTF/babyweb.md` (32 lines)
 - **SSRF Me** — `Web/BUUCTF/SSRF Me.md` (184 lines)
@@ -328,6 +328,9 @@
 - **[xuanwu2025_ez_fastapi]** — `web/xuanwu2025_ez_fastapi.md` (~39 lines) — 玄武杯 2025 / FastAPI 盲 SSTI 内存马 + sudo chmod 提权
 - **[xuanwu2025_jinja]** — `web/xuanwu2025_jinja.md` (~39 lines) — 玄武杯 2025 / Jinja2 SSTI 无过滤入门题
 - **[yangchengbei2020_break_the_wall]** — `web/yangchengbei2020_break_the_wall.md` (~43 lines) — 羊城杯 2020 / eval 后门 + 函数名黑名单, flag 在环境变量
+- **[portswigger_ai_destructive_actions]** — `web/portswigger_ai_destructive_actions.md` (~95 lines) — PortSwigger / 间接 prompt 注入 / blog 评论骗带 carlos 认证态的 LLM scanner 删号 / 攻击词汇反而被识破，纯口语自助请求才中 / LLM01+LLM06
+- **[portswigger_ai_exfil_apikey]** — `web/portswigger_ai_exfil_apikey.md` (~85 lines) — PortSwigger / 间接 prompt 注入数据外泄变体 / 无结果页(404)→ scanner 把 carlos API key 发成评论回显 / owner framing 第一轮即中 / LLM01+LLM06+LLM02
+- **[portswigger_ai_secondary_ssrf]** — `web/portswigger_ai_secondary_ssrf.md` (~110 lines) — PortSwigger Practitioner / 间接 prompt 注入驱动 routing-based SSRF / 伪造 Host=192.168.0.5:8080 经路由层达 loopback-only admin 裸 GET /admin/delete?username=carlos / URL-based(stockApi)绕不过 loopback, Host 值是 admin IP 非 localhost / LLM01+LLM06+SSRF
 
 ## Cryptography (15 entries)
 

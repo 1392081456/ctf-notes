@@ -6,6 +6,14 @@
 ![Language](https://img.shields.io/badge/lang-EN-blue)
 ![Topics](https://img.shields.io/badge/topics-pwn%20|%20reverse%20|%20crypto%20|%20web%20|%20forensics%20|%20labs-red)
 
+## ⭐ Featured: Web LLM / AI-agent attacks (PortSwigger Web Security Academy)
+
+A focused series on **indirect prompt injection against AI-powered scanners** — manipulating an LLM agent, via third-party content, into destructive actions, data exfiltration, and chaining into secondary network vulnerabilities. Each writeup includes a defense section (OWASP LLM Top 10 mapping + detection ideas).
+
+- [Exploiting AI agents to perform destructive actions](web/portswigger_ai_destructive_actions.md) — *Apprentice* — indirect prompt injection via blog comment makes the carlos-authenticated scanner delete its own account. Key insight: well-aligned agents flag aggressive payloads as findings; a plain owner-style request slips through. (LLM01 + LLM06)
+- [Exploiting AI agents to exfiltrate sensitive information](web/portswigger_ai_exfil_apikey.md) — *Apprentice* — exfil variant with **no results page**, so the scanner is steered into posting carlos's API key as a comment. (LLM01 + LLM06 + LLM02)
+- [Exploiting AI agents to trigger secondary vulnerabilities](web/portswigger_ai_secondary_ssrf.md) — *Practitioner* — prompt injection **drives a routing-based SSRF** (forged `Host` header = internal admin IP) to reach a loopback-only admin and delete carlos. (LLM01 + LLM06 + SSRF)
+
 ## About this repo
 
 This is a **defensive cybersecurity research portfolio**. It contains reconstructed writeups from challenges I worked through on publicly hosted CTF platforms (BUUCTF, SCTF, NSSCTF, NewStarCTF, etc.) and reproduction notes for published CVEs in isolated local Docker labs (vulhub). The repository serves three purposes: (1) personal technical reference; (2) training material for security analysts learning offensive-side TTPs in order to design better detection logic; (3) a public record of the methodology that backs my peer-reviewed academic work in adversarial machine learning.
@@ -115,6 +123,9 @@ All targets analyzed in this repository are one of: (a) public CTF challenge bin
 - [Xuanwu Cup 2025 — ez_fastapi: blind SSTI memory shell + `sudo chmod` escalation](web/xuanwu2025_ez_fastapi.md) — FastAPI in-memory route hijack
 - [Xuanwu Cup 2025 — jinja: Jinja2 SSTI without filters](web/xuanwu2025_jinja.md) — entry-level SSTI
 - [Yangcheng Cup 2020 — break_the_wall: `eval` backdoor + function-name blacklist bypass](web/yangchengbei2020_break_the_wall.md) — flag in environment variable
+- [PortSwigger — Exploiting AI agents to perform destructive actions](web/portswigger_ai_destructive_actions.md) — indirect prompt injection via blog comment / LLM scanner with carlos session deletes the account / LLM01 + LLM06
+- [PortSwigger — Exploiting AI agents to exfiltrate sensitive information](web/portswigger_ai_exfil_apikey.md) — indirect prompt injection exfil variant / no results page (404) so the scanner posts carlos's API key as a comment / LLM01 + LLM06 + LLM02
+- [PortSwigger — Exploiting AI agents to trigger secondary vulnerabilities](web/portswigger_ai_secondary_ssrf.md) — **Practitioner** / prompt injection drives a routing-based SSRF (Host header = internal admin IP) to reach a loopback-only admin and delete carlos / LLM01 + LLM06 + SSRF
 ### Forensics / Incident Response
 
 - [OtterCTF 2018 — Name Game (memory forensics)](forensics/otterctf2018_name_game.md) — Volatility 3 `pslist` fallback / WZ record parsing / dump anchoring
