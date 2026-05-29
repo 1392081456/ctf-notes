@@ -249,7 +249,7 @@
 - **解题过程
 ** — `Reverse/BUUCTF/简单注册器/简单注册器.md` (47 lines)
 
-## Web Exploitation (206 entries)
+## Web Exploitation (207 entries)
 - **[portswigger_sqli_series_1_18]** — `web/portswigger_sqli_series_1_18.md` — PortSwigger SQLi 1-18 整合页 / 18 题总览表 + 盲注提取决策树 + 检测映射
 - **[portswigger_xss_series]** — `web/portswigger_xss_series.md` — PortSwigger XSS 1-30 整合页 / HTML、attribute、JS string、DOM sink、AngularJS、SVG、CSP 上下文 / cookie、password、CSRF impact labs + 同站回传替代不必要 OAST
 - **[portswigger_csrf_series]** — `web/portswigger_csrf_series.md` — PortSwigger CSRF 1-12 整合页 / token 校验缺陷、token-cookie 绑定错位、SameSite Lax/Strict 绕过、Referer 缺陷、sibling-domain CSWSH
@@ -266,6 +266,7 @@
 - **[portswigger_path_traversal_series]** — `web/portswigger_path_traversal_series.md` — PortSwigger Path Traversal 1-6 整合页 / `../`、绝对路径、非递归 strip、双重 URL decode、路径前缀校验、null byte 后缀绕过
 - **[portswigger_access_control_series]** — `web/portswigger_access_control_series.md` — PortSwigger Access Control 1-13 整合页 / 未保护 admin、角色伪造、mass assignment、IDOR、redirect body 泄露、URL/method/workflow/Referer 授权错位
 - **[portswigger_authentication_series]** — `web/portswigger_authentication_series.md` — PortSwigger Authentication 1-14 整合页 / 用户名枚举、爆破保护缺陷、2FA 状态/绑定、密码重置、remember-me、离线破解、批量凭据
+- **[portswigger_websockets_series]** — `web/portswigger_websockets_series.md` — PortSwigger WebSockets 1-3 整合页 / 消息篡改 XSS、CSWSH 读取聊天历史、握手 header 绕过 IP/过滤限制
 
 - **babyweb
 ** — `Web/BUUCTF/babyweb.md` (32 lines)
