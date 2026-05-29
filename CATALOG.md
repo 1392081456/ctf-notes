@@ -249,8 +249,9 @@
 - **解题过程
 ** — `Reverse/BUUCTF/简单注册器/简单注册器.md` (47 lines)
 
-## Web Exploitation (196 entries)
+## Web Exploitation (197 entries)
 - **[portswigger_sqli_series_1_18]** — `web/portswigger_sqli_series_1_18.md` — PortSwigger SQLi 1-18 整合页 / 18 题总览表 + 盲注提取决策树 + 检测映射
+- **[portswigger_xss_series]** — `web/portswigger_xss_series.md` — PortSwigger XSS 1-30 整合页 / HTML、attribute、JS string、DOM sink、AngularJS、SVG、CSP 上下文 / cookie、password、CSRF impact labs + 同站回传替代不必要 OAST
 - **[portswigger_web_llm_series]** — `web/portswigger_web_llm_series.md` — PortSwigger Web LLM attacks 1-8 整合页 / LLM 工具题(excessive agency/命令注入/间接注入/不安全输出) + AI scanner 题(删号/exfil/二级 SSRF/绕防御) / 去攻击化 framing + 回显通道 + OWASP LLM Top10
 - **[portswigger_wcd_series]** — `web/portswigger_wcd_series.md` — PortSwigger Web Cache Deception 1-5 整合页 / 缓存↔源站路径不一致(路径映射 / `;` 分隔符 / 源站vs缓存归一化镜像 / 精确匹配+CSRF链 Expert)/ 三维辨析 + 302自我投毒/grab-race/投递限流等实战时序坑
 - **[portswigger_clickjacking_series]** — `web/portswigger_clickjacking_series.md` — PortSwigger Clickjacking 1-5 整合页 / CSRF-protected 删除、URL 预填、sandbox 压 frame-buster、DOM XSS 触发、多步确认点击 / iframe viewport 坐标校准
