@@ -117,6 +117,7 @@ All targets analyzed in this repository are one of: (a) public CTF challenge bin
 - [PortSwigger XXE 1-9 — series consolidation](web/portswigger_xxe_series.md) — entity-resolution track: file read, metadata SSRF, blind OOB, parameter entities, external DTD exfiltration, parser-error retrieval, XInclude, SVG/Batik upload, and local DTD repurposing.
 - [PortSwigger SSRF 1-7 — series consolidation](web/portswigger_ssrf_series.md) — server-side URL-fetching track: loopback admin, internal subnet discovery, blind OAST proof, blacklist bypasses, open-redirect pivoting, header-to-CGI Shellshock validation, and whitelist parser disagreement.
 - [PortSwigger HTTP Request Smuggling 1-22 — series consolidation](web/portswigger_request_smuggling_series.md) — parser-boundary track: CL.TE, TE.CL, TE obfuscation, front-end rewrite leaks, request capture, cache poisoning/deception, HTTP/2 downgrade, request tunnelling, CL.0/0.CL, client-side desync, and pause-based desync.
+- [PortSwigger OS Command Injection 1-5 — series consolidation](web/portswigger_os_command_injection_series.md) — execution-channel track: direct output, timing oracle, web-root output redirection, DNS OOB proof, and DNS-label data exfiltration.
 
 - [Drupalgeddon2 — CVE-2018-7600 render array RCE](web/drupalgeddon2_rce.md) — Drupal 8 / Form API AJAX / `#post_render` injection
 - [GYCTF 2020 Ez_Express — Unicode case folding + EJS prototype pollution](web/gyctf2020_ez_express.md) — Node.js / `outputFunctionName` injection / `U+0131` filter bypass
