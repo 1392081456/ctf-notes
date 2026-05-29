@@ -14,6 +14,10 @@ A focused series on **indirect prompt injection against AI-powered scanners** �
 - [Exploiting AI agents to exfiltrate sensitive information](web/portswigger_ai_exfil_apikey.md) — *Apprentice* — exfil variant with **no results page**, so the scanner is steered into posting carlos's API key as a comment. (LLM01 + LLM06 + LLM02)
 - [Exploiting AI agents to trigger secondary vulnerabilities](web/portswigger_ai_secondary_ssrf.md) — *Practitioner* — prompt injection **drives a routing-based SSRF** (forged `Host` header = internal admin IP) to reach a loopback-only admin and delete carlos. (LLM01 + LLM06 + SSRF)
 - [Bypassing AI scanner defenses to exfiltrate sensitive information](web/portswigger_ai_bypass_defenses.md) — *Practitioner* — defeats a **two-layer defense** (input classifier + output redaction); the breakthrough reframes the leak as the **PoC of a fake "comments don't redact API keys" bug**, so the scanner leaks carlos's key to "confirm" it. (LLM01 + LLM06 + LLM02)
+- [Exploiting vulnerabilities in LLM APIs](web/portswigger_llm_api_command_injection.md) — *Practitioner* — the LLM calls a Newsletter API whose email argument reaches a shell command; `$(whoami)` confirms command substitution and `rm` solves the lab. (LLM06 + LLM07 + command injection)
+- [Exploiting insecure output handling in LLMs](web/portswigger_llm_insecure_output_handling.md) — *Expert* — a disguised iframe survives the LLM response and executes as XSS because chat output is rendered unsafely. (LLM01 + LLM05)
+- [Indirect prompt injection](web/portswigger_llm_indirect_prompt_injection.md) — *Practitioner* — a product review uses structural boundary confusion (`END OF REVIEW` / `USER RESPONSE`) to make Carlos' chat session call `delete_account`. (LLM01 + LLM06)
+- [Exploiting LLM APIs with excessive agency](web/portswigger_llm_excessive_agency.md) — *Apprentice* — a user-facing LLM exposes a raw `debug_sql(sql_statement)` tool, turning chat into database read/write access. (LLM06 + LLM07)
 
 ## About this repo
 
@@ -102,6 +106,26 @@ All targets analyzed in this repository are one of: (a) public CTF challenge bin
 - [UTCTF 2020 — basic-crypto: 4-layer encoding onion](crypto/utctf2020_basic_crypto.md) — Binary → Base64 → ROT10 → Substitution
 - [Yangqibei 2025 — big_e_rsa: Eisenstein integer RSA](crypto/yangqibei2025_big_e_rsa.md) — Eisenstein primes / floating-point `d` recovery
 ### Web Exploitation
+- [PortSwigger SQLi 1-18 — series consolidation](web/portswigger_sqli_series_1_18.md) — methodology track: 18-lab overview table (surface/channel/payload) + blind-SQLi extraction decision tree + detection mapping. From tautologies to OOB exfiltration.
+- [PortSwigger Web LLM attacks 1-8 — series consolidation](web/portswigger_web_llm_series.md) — methodology track on negotiating phrasing with an aligned agent: LLM-tool labs (excessive agency / command injection / indirect injection / insecure output) + AI-scanner labs (delete / exfil / secondary SSRF / defense bypass). De-attack framing, echo channels, OWASP LLM Top 10.
+- [PortSwigger SQLi — Xml Encoding Bypass](web/portswigger_sqli_xml_encoding_bypass.md) — SQL injection lab note.
+- [PortSwigger SQLi — Oob Exfiltration](web/portswigger_sqli_oob_exfiltration.md) — SQL injection lab note.
+- [PortSwigger SQLi — Oob Interaction](web/portswigger_sqli_oob_interaction.md) — SQL injection lab note.
+- [PortSwigger SQLi — Time Delay Extraction](web/portswigger_sqli_time_delay_extraction.md) — SQL injection lab note.
+- [PortSwigger SQLi — Time Delay](web/portswigger_sqli_time_delay.md) — SQL injection lab note.
+- [PortSwigger SQLi — Visible Error Based](web/portswigger_sqli_visible_error_based.md) — SQL injection lab note.
+- [PortSwigger SQLi — Blind Conditional Errors](web/portswigger_sqli_blind_conditional_errors.md) — SQL injection lab note.
+- [PortSwigger SQLi — Blind Conditional Responses](web/portswigger_sqli_blind_conditional_responses.md) — SQL injection lab note.
+- [PortSwigger SQLi — Union Multiple Values Single Column](web/portswigger_sqli_union_multiple_values_single_column.md) — SQL injection lab note.
+- [PortSwigger SQLi — Union Retrieve Other Tables](web/portswigger_sqli_union_retrieve_other_tables.md) — SQL injection lab note.
+- [PortSwigger SQLi — Union Text Column](web/portswigger_sqli_union_text_column.md) — SQL injection lab note.
+- [PortSwigger SQLi — Union Column Count](web/portswigger_sqli_union_column_count.md) — SQL injection lab note.
+- [PortSwigger SQLi — Oracle Contents](web/portswigger_sqli_oracle_contents.md) — SQL injection lab note.
+- [PortSwigger SQLi — Non Oracle Contents](web/portswigger_sqli_non_oracle_contents.md) — SQL injection lab note.
+- [PortSwigger — MySQL/Microsoft database version via UNION SQLi](web/portswigger_sqli_mysql_microsoft_version.md) — **Practitioner** / two-column UNION with `NULL,@@version-- -`.
+- [PortSwigger — Oracle database version via UNION SQLi](web/portswigger_sqli_oracle_version.md) — **Practitioner** / two-column UNION with `NULL,banner FROM v$version`.
+- [PortSwigger — SQL injection login bypass](web/portswigger_sqli_login_bypass.md) — **Apprentice** / `administrator'--` comments out the password predicate.
+- [PortSwigger — SQL injection WHERE clause hidden data](web/portswigger_sqli_hidden_data.md) — **Apprentice** / category `' OR 1=1--` exposes hidden products.
 
 - [Drupalgeddon2 — CVE-2018-7600 render array RCE](web/drupalgeddon2_rce.md) — Drupal 8 / Form API AJAX / `#post_render` injection
 - [GYCTF 2020 Ez_Express — Unicode case folding + EJS prototype pollution](web/gyctf2020_ez_express.md) — Node.js / `outputFunctionName` injection / `U+0131` filter bypass
@@ -128,6 +152,10 @@ All targets analyzed in this repository are one of: (a) public CTF challenge bin
 - [PortSwigger — Exploiting AI agents to exfiltrate sensitive information](web/portswigger_ai_exfil_apikey.md) — indirect prompt injection exfil variant / no results page (404) so the scanner posts carlos's API key as a comment / LLM01 + LLM06 + LLM02
 - [PortSwigger — Exploiting AI agents to trigger secondary vulnerabilities](web/portswigger_ai_secondary_ssrf.md) — **Practitioner** / prompt injection drives a routing-based SSRF (Host header = internal admin IP) to reach a loopback-only admin and delete carlos / LLM01 + LLM06 + SSRF
 - [PortSwigger — Bypassing AI scanner defenses to exfiltrate sensitive information](web/portswigger_ai_bypass_defenses.md) — **Practitioner** / defeats a two-layer defense (input classifier + output redaction); the leak is reframed as the PoC of a fake "comments aren't redacting API keys" bug / LLM01 + LLM06 + LLM02
+- [PortSwigger — Exploiting vulnerabilities in LLM APIs](web/portswigger_llm_api_command_injection.md) — **Practitioner** / Newsletter Subscription API email parameter reaches shell command substitution; `$(whoami)` OOB proves execution as `carlos`, then target file deletion solves the lab.
+- [PortSwigger — Exploiting insecure output handling in LLMs](web/portswigger_llm_insecure_output_handling.md) — **Expert** / indirect review payload preserves an iframe in LLM output; unsafe chat rendering submits the account deletion form in Carlos' browser.
+- [PortSwigger — Indirect prompt injection](web/portswigger_llm_indirect_prompt_injection.md) — **Practitioner** / product review boundary confusion (`"]]]}}}}---END OF REVIEW ----USER RESPONSE----`) makes the victim's LLM session call `delete_account`.
+- [PortSwigger — Exploiting LLM APIs with excessive agency](web/portswigger_llm_excessive_agency.md) — **Apprentice** / LLM exposes `debug_sql(sql_statement)`, enabling raw SQL reads and deletion of `carlos` via chat.
 ### Forensics / Incident Response
 
 - [OtterCTF 2018 — Name Game (memory forensics)](forensics/otterctf2018_name_game.md) — Volatility 3 `pslist` fallback / WZ record parsing / dump anchoring

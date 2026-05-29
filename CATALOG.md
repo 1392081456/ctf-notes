@@ -8,15 +8,24 @@
 
 ## Pwn — Binary Exploitation (75 entries)
 
-- **32位程序与64位程序运行时栈帧分布区别** — `Pwn/32位程序与64位程序运行时栈帧分布区别.md` (162 lines)
-- **Linux系统调用号表** — `Pwn/Linux系统调用号表.md` (739 lines)
-- **PWN的基础知识** — `Pwn/PLT表与GOT表.md` (181 lines)
-- **二进制的保护机制** — `Pwn/二进制的保护机制：.md` (161 lines)
-- **堆题目的一些基础函数** — `Pwn/堆题目的一些基础函数.md` (340 lines)
-- **栈（Stack）的工作原理：** — `Pwn/栈（Stack）的工作原理：.md` (96 lines)
-- **格式化字符串原理介绍** — `Pwn/格式化字符串原理介绍.md` (989 lines)
-- **格式化字符串漏洞** — `Pwn/格式化字符串漏洞.md` (227 lines)
-- **格式化字符串漏洞基础** — `Pwn/格式化字符串漏洞基础.md` (338 lines)
+- **32位程序与64位程序运行时栈帧分布区别
+** — `Pwn/32位程序与64位程序运行时栈帧分布区别.md` (162 lines)
+- **Linux系统调用号表
+** — `Pwn/Linux系统调用号表.md` (739 lines)
+- **PWN的基础知识
+** — `Pwn/PLT表与GOT表.md` (181 lines)
+- **二进制的保护机制
+** — `Pwn/二进制的保护机制：.md` (161 lines)
+- **堆题目的一些基础函数
+** — `Pwn/堆题目的一些基础函数.md` (340 lines)
+- **栈（Stack）的工作原理：
+** — `Pwn/栈（Stack）的工作原理：.md` (96 lines)
+- **格式化字符串原理介绍
+** — `Pwn/格式化字符串原理介绍.md` (989 lines)
+- **格式化字符串漏洞
+** — `Pwn/格式化字符串漏洞.md` (227 lines)
+- **格式化字符串漏洞基础
+** — `Pwn/格式化字符串漏洞基础.md` (338 lines)
 - **常见的ubuntu中的ld与libc收集** — `Pwn/ubuntu_libc_ld-master/readme.md` (41 lines)
 - **writeup** — `Pwn/actf_2019_babystack/writeup.md` (91 lines)
 - **writeup** — `Pwn/babyheap_actf_2019/writeup.md` (92 lines)
@@ -26,53 +35,96 @@
 - **axb_2019_brop64 — 解题笔记** — `Pwn/BUUCTF/axb_2019_brop64/notes.md` (230 lines)
 - **axb_2019_brop64 — 分析 & 调试复盘** — `Pwn/BUUCTF/axb_2019_brop64/writeup.md` (210 lines)
 - **axb_2019_heap 解题过程复盘** — `Pwn/BUUCTF/axb_2019_heap/axb_2019_heap_writeup.md` (271 lines)
-- **babyheap_0ctf_2017** — `Pwn/BUUCTF/babyheap_0ctf_2017/babyheap_0ctf_2017.md` (689 lines)
-- **babyheap_0ctf_2017** — `Pwn/BUUCTF/babyheap_0ctf_2017/babyheap_0ctf_2017_重新整理.md` (670 lines)
-- **jarvisoj_tell_me_something** — `Pwn/BUUCTF/jarvisoj_tell_me_something/jarvisoj_tell_me_something.md` (54 lines)
-- **jarvisoj_test_your_memory** — `Pwn/BUUCTF/jarvisoj_test_your_memory/jarvisoj_test_your_memory.md` (79 lines)
-- **[mrctf2020_shellcode](D:\Security\Pwn\BUUCTF\mrctf2020_shellcode\mrctf2020_shellcode) ** — `Pwn/BUUCTF/mrctf2020_shellcode/mrctf2020_shellcode.md` (305 lines)
-- **not_the_same_3dsctf_2016** — `Pwn/BUUCTF/not_the_same_3dsctf_2016/not_the_same_3dsctf_2016.md` (161 lines)
+- **babyheap_0ctf_2017
+** — `Pwn/BUUCTF/babyheap_0ctf_2017/babyheap_0ctf_2017.md` (689 lines)
+- **babyheap_0ctf_2017
+** — `Pwn/BUUCTF/babyheap_0ctf_2017/babyheap_0ctf_2017_重新整理.md` (670 lines)
+- **jarvisoj_tell_me_something
+** — `Pwn/BUUCTF/jarvisoj_tell_me_something/jarvisoj_tell_me_something.md` (54 lines)
+- **jarvisoj_test_your_memory
+** — `Pwn/BUUCTF/jarvisoj_test_your_memory/jarvisoj_test_your_memory.md` (79 lines)
+- **[mrctf2020_shellcode](D:\Security\Pwn\BUUCTF\mrctf2020_shellcode\mrctf2020_shellcode) 
+** — `Pwn/BUUCTF/mrctf2020_shellcode/mrctf2020_shellcode.md` (305 lines)
+- **not_the_same_3dsctf_2016
+** — `Pwn/BUUCTF/not_the_same_3dsctf_2016/not_the_same_3dsctf_2016.md` (161 lines)
 - **npuctf_2020_easyheap — 解题笔记** — `Pwn/BUUCTF/npuctf_2020_easyheap/notes.md` (294 lines)
 - **npuctf_2020_easyheap — 分析 & 调试复盘** — `Pwn/BUUCTF/npuctf_2020_easyheap/writeup.md` (229 lines)
-- **others_shellcode** — `Pwn/BUUCTF/others_shellcode/others_shellcode.md` (68 lines)
-- **picoctf_2018_buffer overflow 1** — `Pwn/BUUCTF/picoctf_2018_buffer overflow 1/picoctf_2018_buffer overflow 1.md` (55 lines)
-- **picoctf_2018_rop chain** — `Pwn/BUUCTF/picoctf_2018_rop chain/picoctf_2018_rop chain.md` (68 lines)
-- **bjdctf_2020_babyrop** — `Pwn/BUUCTF/bjdctf_2020_babyrop/bjdctf_2020_babyrop.md` (174 lines)
-- **bjdctf_2020_babyrop2** — `Pwn/BUUCTF/bjdctf_2020_babyrop2/bjdctf_2020_babyrop2.md` (245 lines)
-- **bjdctf_2020_babystack** — `Pwn/BUUCTF/bjdctf_2020_babystack/bjdctf_2020_babystack.md` (36 lines)
-- **bjdctf_2020_babystack2** — `Pwn/BUUCTF/bjdctf_2020_babystack2/bjdctf_2020_babystack2.md` (70 lines)
-- **bjdctf_2020_router** — `Pwn/BUUCTF/bjdctf_2020_router/bjdctf_2020_router.md` (55 lines)
-- **ciscn_2019_c_1** — `Pwn/BUUCTF/ciscn_2019_c_1/ciscn_2019_c_1.md` (206 lines)
-- **ciscn_2019_en_2** — `Pwn/BUUCTF/ciscn_2019_en_2/ciscn_2019_en_2.md` (88 lines)
-- **ciscn_2019_es_2** — `Pwn/BUUCTF/ciscn_2019_es_2/ciscn_2019_es_2.md` (496 lines)
-- **inndy_rop** — `Pwn/BUUCTF/inndy_rop/inndy_rop.md` (429 lines)
-- **jarvisoj_fm** — `Pwn/BUUCTF/jarvisoj_fm/jarvisoj_fm.md` (84 lines)
-- **jarvisoj_level0** — `Pwn/BUUCTF/jarvisoj_level0/jarvisoj_level0.md` (50 lines)
-- **jarvisoj_level2** — `Pwn/BUUCTF/jarvisoj_level2/jarvisoj_level2.md` (55 lines)
-- **jarvisoj_level2_x64** — `Pwn/BUUCTF/jarvisoj_level2_x64/jarvisoj_level2_x64.md` (53 lines)
-- **jarvisoj_level3** — `Pwn/BUUCTF/jarvisoj_level3/jarvisoj_level3.md` (138 lines)
-- **jarvisoj_level3_x64** — `Pwn/BUUCTF/jarvisoj_level3_x64/jarvisoj_level3_x64.md` (278 lines)
-- **jarvisoj_level4** — `Pwn/BUUCTF/jarvisoj_level4/jarvisoj_level4.md` (105 lines)
-- **ciscn_2019_ne_5** — `Pwn/BUUCTF/ciscn_2019_ne_5/ciscn_2019_ne_5.md` (79 lines)
-- **ciscn_2019_n_1** — `Pwn/BUUCTF/ciscn_2019_n_1/ciscn_2019_n_1.md` (111 lines)
+- **others_shellcode
+** — `Pwn/BUUCTF/others_shellcode/others_shellcode.md` (68 lines)
+- **picoctf_2018_buffer overflow 1
+** — `Pwn/BUUCTF/picoctf_2018_buffer overflow 1/picoctf_2018_buffer overflow 1.md` (55 lines)
+- **picoctf_2018_rop chain
+** — `Pwn/BUUCTF/picoctf_2018_rop chain/picoctf_2018_rop chain.md` (68 lines)
+- **bjdctf_2020_babyrop
+** — `Pwn/BUUCTF/bjdctf_2020_babyrop/bjdctf_2020_babyrop.md` (174 lines)
+- **bjdctf_2020_babyrop2
+** — `Pwn/BUUCTF/bjdctf_2020_babyrop2/bjdctf_2020_babyrop2.md` (245 lines)
+- **bjdctf_2020_babystack
+** — `Pwn/BUUCTF/bjdctf_2020_babystack/bjdctf_2020_babystack.md` (36 lines)
+- **bjdctf_2020_babystack2
+** — `Pwn/BUUCTF/bjdctf_2020_babystack2/bjdctf_2020_babystack2.md` (70 lines)
+- **bjdctf_2020_router
+** — `Pwn/BUUCTF/bjdctf_2020_router/bjdctf_2020_router.md` (55 lines)
+- **ciscn_2019_c_1
+** — `Pwn/BUUCTF/ciscn_2019_c_1/ciscn_2019_c_1.md` (206 lines)
+- **ciscn_2019_en_2
+** — `Pwn/BUUCTF/ciscn_2019_en_2/ciscn_2019_en_2.md` (88 lines)
+- **ciscn_2019_es_2
+** — `Pwn/BUUCTF/ciscn_2019_es_2/ciscn_2019_es_2.md` (496 lines)
+- **inndy_rop
+** — `Pwn/BUUCTF/inndy_rop/inndy_rop.md` (429 lines)
+- **jarvisoj_fm
+** — `Pwn/BUUCTF/jarvisoj_fm/jarvisoj_fm.md` (84 lines)
+- **jarvisoj_level0
+** — `Pwn/BUUCTF/jarvisoj_level0/jarvisoj_level0.md` (50 lines)
+- **jarvisoj_level2
+** — `Pwn/BUUCTF/jarvisoj_level2/jarvisoj_level2.md` (55 lines)
+- **jarvisoj_level2_x64
+** — `Pwn/BUUCTF/jarvisoj_level2_x64/jarvisoj_level2_x64.md` (53 lines)
+- **jarvisoj_level3
+** — `Pwn/BUUCTF/jarvisoj_level3/jarvisoj_level3.md` (138 lines)
+- **jarvisoj_level3_x64
+** — `Pwn/BUUCTF/jarvisoj_level3_x64/jarvisoj_level3_x64.md` (278 lines)
+- **jarvisoj_level4
+** — `Pwn/BUUCTF/jarvisoj_level4/jarvisoj_level4.md` (105 lines)
+- **ciscn_2019_ne_5
+** — `Pwn/BUUCTF/ciscn_2019_ne_5/ciscn_2019_ne_5.md` (79 lines)
+- **ciscn_2019_n_1
+** — `Pwn/BUUCTF/ciscn_2019_n_1/ciscn_2019_n_1.md` (111 lines)
 - **ciscn_2019_n_3 — Writeup** — `Pwn/BUUCTF/ciscn_2019_n_3/writeup.md` (133 lines)
-- **ciscn_2019_n_5** — `Pwn/BUUCTF/ciscn_2019_n_5/ciscn_2019_n_5.md` (176 lines)
-- **ciscn_2019_n_8** — `Pwn/BUUCTF/ciscn_2019_n_8/ciscn_2019_n_8.md` (44 lines)
-- **ciscn_2019_s_3** — `Pwn/BUUCTF/ciscn_2019_s_3/ciscn_2019_s_3.md` (401 lines)
-- **ez_pz_hackover_2016** — `Pwn/BUUCTF/ez_pz_hackover_2016/ez_pz_hackover_2016.md` (181 lines)
-- **get_started_3dsctf_2016** — `Pwn/BUUCTF/get_started_3dsctf_2016/get_started_3dsctf_2016.md` (210 lines)
-- **[HarekazeCTF2019]baby_rop2** — `Pwn/BUUCTF/[HarekazeCTF2019]baby_rop2/[HarekazeCTF2019]baby_rop2.md` (243 lines)
-- **[OGeek2019]babyrop** — `Pwn/BUUCTF/[OGeek2019]babyrop/[OGeek2019]babyrop.md` (183 lines)
-- **[ZJCTF 2019]EasyHeap** — `Pwn/BUUCTF/[ZJCTF 2019]EasyHeap/[ZJCTF 2019]EasyHeap.md` (378 lines)
-- **[第五空间2019 决赛]PWN5** — `Pwn/BUUCTF/[第五空间2019 决赛]PWN5/[第五空间2019 决赛]PWN5.md` (115 lines)
-- **铁人三项(第五赛区)_2018_rop** — `Pwn/BUUCTF/铁人三项(第五赛区)_2018_rop/铁人三项(第五赛区)_2018_rop.md` (65 lines)
+- **ciscn_2019_n_5
+** — `Pwn/BUUCTF/ciscn_2019_n_5/ciscn_2019_n_5.md` (176 lines)
+- **ciscn_2019_n_8
+** — `Pwn/BUUCTF/ciscn_2019_n_8/ciscn_2019_n_8.md` (44 lines)
+- **ciscn_2019_s_3
+** — `Pwn/BUUCTF/ciscn_2019_s_3/ciscn_2019_s_3.md` (401 lines)
+- **ez_pz_hackover_2016
+** — `Pwn/BUUCTF/ez_pz_hackover_2016/ez_pz_hackover_2016.md` (181 lines)
+- **get_started_3dsctf_2016
+** — `Pwn/BUUCTF/get_started_3dsctf_2016/get_started_3dsctf_2016.md` (210 lines)
+- **[HarekazeCTF2019]baby_rop2
+** — `Pwn/BUUCTF/[HarekazeCTF2019]baby_rop2/[HarekazeCTF2019]baby_rop2.md` (243 lines)
+- **[OGeek2019]babyrop
+** — `Pwn/BUUCTF/[OGeek2019]babyrop/[OGeek2019]babyrop.md` (183 lines)
+- **[ZJCTF 2019]EasyHeap
+** — `Pwn/BUUCTF/[ZJCTF 2019]EasyHeap/[ZJCTF 2019]EasyHeap.md` (378 lines)
+- **[第五空间2019 决赛]PWN5
+** — `Pwn/BUUCTF/[第五空间2019 决赛]PWN5/[第五空间2019 决赛]PWN5.md` (115 lines)
+- **铁人三项(第五赛区)_2018_rop
+** — `Pwn/BUUCTF/铁人三项(第五赛区)_2018_rop/铁人三项(第五赛区)_2018_rop.md` (65 lines)
 - **README** — `Pwn/LibcSearcher/libc-database/README.md` (42 lines)
-- **[pwn1_sctf_2016](D:\Security\Pwn\BUUCTF\pwn1_sctf_2016\pwn1_sctf_2016) ** — `Pwn/BUUCTF/pwn1_sctf_2016/pwn1_sctf_2016.md` (55 lines)
-- **pwn2_sctf_2016** — `Pwn/BUUCTF/pwn2_sctf_2016/pwn2_sctf_2016.md` (173 lines)
-- **rip 1** — `Pwn/BUUCTF/rip/rip 1.md` (136 lines)
-- **warmup_csaw_2016** — `Pwn/BUUCTF/warmup_csaw_2016/warmup_csaw_2016.md` (69 lines)
-- **wustctf2020_getshell** — `Pwn/BUUCTF/wustctf2020_getshell/wustctf2020_getshell.md` (64 lines)
-- **[HarekazeCTF2019]baby_rop** — `Pwn/BUUCTF/[HarekazeCTF2019]baby_rop/[HarekazeCTF2019]baby_rop.md` (51 lines)
+- **[pwn1_sctf_2016](D:\Security\Pwn\BUUCTF\pwn1_sctf_2016\pwn1_sctf_2016) 
+** — `Pwn/BUUCTF/pwn1_sctf_2016/pwn1_sctf_2016.md` (55 lines)
+- **pwn2_sctf_2016
+** — `Pwn/BUUCTF/pwn2_sctf_2016/pwn2_sctf_2016.md` (173 lines)
+- **rip 1
+** — `Pwn/BUUCTF/rip/rip 1.md` (136 lines)
+- **warmup_csaw_2016
+** — `Pwn/BUUCTF/warmup_csaw_2016/warmup_csaw_2016.md` (69 lines)
+- **wustctf2020_getshell
+** — `Pwn/BUUCTF/wustctf2020_getshell/wustctf2020_getshell.md` (64 lines)
+- **[HarekazeCTF2019]baby_rop
+** — `Pwn/BUUCTF/[HarekazeCTF2019]baby_rop/[HarekazeCTF2019]baby_rop.md` (51 lines)
 - **[actf_2019_babyheap]** — `pwn/actf_2019_babyheap.md` (~50 lines) — BUUCTF / glibc 2.27 UAF + tcache reuse + printf %s GOT leak + system@PLT
 - **[actf_2019_babystack]** — `pwn/actf_2019_babystack.md` (~32 lines) — BUUCTF / 栈迁移 ret2libc, 16 字节溢出 + 栈地址泄露 + leave;ret pivot
 - **[ciscn_2019_n_3]** — `pwn/ciscn_2019_n_3.md` (~71 lines) — BUUCTF / 32-bit tcache UAF, strbuf 覆盖旧 record 函数指针 → system("sh;#")
@@ -87,115 +139,233 @@
 ## Reverse Engineering (57 entries)
 
 - **[长城杯三 2025] vvvmmm** — `reverse/changcheng3_vvvmmm.md` (~270 lines) — UPX-packed + Unicorn-embedded RISC-V VM; hardcoded-key polynomial hash drives 12 stream words XOR'd with the 48-byte user input; the trap is `UC_RISCV_REG_X10 = 11 = a0` (not `a1`). Detailed Chinese debug-log version at `Reverse/第三届"长城杯"初赛-vvvmmm/WRITEUP_CN.md`
-- **[2019红帽杯]easyRE** — `Reverse/BUUCTF/[2019红帽杯]easyRE.md` (107 lines)
-- **解题过程** — `Reverse/BUUCTF/helloword/helloworld.md` (27 lines)
-- **crackMe** — `Reverse/BUUCTF/crackMe/crackMe.md` (18 lines)
-- **解题过程** — `Reverse/BUUCTF/CrackRTF/CrackRTF.md` (111 lines)
-- **解题过程** — `Reverse/BUUCTF/findit/findit.md` (52 lines)
-- **解题过程** — `Reverse/BUUCTF/[ACTF新生赛2020]easyre/[ACTF新生赛2020]easyre.md` (46 lines)
-- **[ACTF新生赛2020]Oruga** — `Reverse/BUUCTF/[ACTF新生赛2020]Oruga/[ACTF新生赛2020]Oruga.md` (111 lines)
-- **解题过程** — `Reverse/BUUCTF/[ACTF新生赛2020]rome/[ACTF新生赛2020]rome.md` (60 lines)
-- **[ACTF新生赛2020]Universe_final_answer** — `Reverse/BUUCTF/[ACTF新生赛2020]Universe_final_answer/[ACTF新生赛2020]Universe_final_answer.md` (84 lines)
-- **[ACTF新生赛2020]usualCrypt** — `Reverse/BUUCTF/[ACTF新生赛2020]usualCrypt/[ACTF新生赛2020]usualCrypt.md` (88 lines)
-- **解题过程** — `Reverse/BUUCTF/[BJDCTF2020]JustRE/[BJDCTF2020]JustRE.md` (54 lines)
-- **[UTCTF2020]basic-re** — `Reverse/BUUCTF/[UTCTF2020]basic-re/[UTCTF2020]basic-re.md` (14 lines)
+- **[2019红帽杯]easyRE
+** — `Reverse/BUUCTF/[2019红帽杯]easyRE.md` (107 lines)
+- **解题过程
+** — `Reverse/BUUCTF/helloword/helloworld.md` (27 lines)
+- **crackMe
+** — `Reverse/BUUCTF/crackMe/crackMe.md` (18 lines)
+- **解题过程
+** — `Reverse/BUUCTF/CrackRTF/CrackRTF.md` (111 lines)
+- **解题过程
+** — `Reverse/BUUCTF/findit/findit.md` (52 lines)
+- **解题过程
+** — `Reverse/BUUCTF/[ACTF新生赛2020]easyre/[ACTF新生赛2020]easyre.md` (46 lines)
+- **[ACTF新生赛2020]Oruga
+** — `Reverse/BUUCTF/[ACTF新生赛2020]Oruga/[ACTF新生赛2020]Oruga.md` (111 lines)
+- **解题过程
+** — `Reverse/BUUCTF/[ACTF新生赛2020]rome/[ACTF新生赛2020]rome.md` (60 lines)
+- **[ACTF新生赛2020]Universe_final_answer
+** — `Reverse/BUUCTF/[ACTF新生赛2020]Universe_final_answer/[ACTF新生赛2020]Universe_final_answer.md` (84 lines)
+- **[ACTF新生赛2020]usualCrypt
+** — `Reverse/BUUCTF/[ACTF新生赛2020]usualCrypt/[ACTF新生赛2020]usualCrypt.md` (88 lines)
+- **解题过程
+** — `Reverse/BUUCTF/[BJDCTF2020]JustRE/[BJDCTF2020]JustRE.md` (54 lines)
+- **[UTCTF2020]basic-re
+** — `Reverse/BUUCTF/[UTCTF2020]basic-re/[UTCTF2020]basic-re.md` (14 lines)
 - **[WMCTF 2020] easy_re 逆向分析 writeup** — `Reverse/BUUCTF/[WMCTF2020]easy_re/writeup.md` (412 lines)
-- **[WUSTCTF2020]Cr0ssfun** — `Reverse/BUUCTF/[WUSTCTF2020]Cr0ssfun/[WUSTCTF2020]Cr0ssfun.md` (67 lines)
-- **解题过程** — `Reverse/BUUCTF/[WUSTCTF2020]level1/[WUSTCTF2020]level1.md` (33 lines)
-- **[WUSTCTF2020]level2** — `Reverse/BUUCTF/[WUSTCTF2020]level2/[WUSTCTF2020]level2.md` (20 lines)
-- **[WUSTCTF2020]level3** — `Reverse/BUUCTF/[WUSTCTF2020]level3/[WUSTCTF2020]level3.md` (84 lines)
-- **[WUSTCTF2020]level4** — `Reverse/BUUCTF/[WUSTCTF2020]level4/[WUSTCTF2020]level4.md` (110 lines)
-- **[FlareOn3]Challenge1** — `Reverse/BUUCTF/[FlareOn3]Challenge1/[FlareOn3]Challenge1.md` (38 lines)
-- **[FlareOn4]IgniteMe** — `Reverse/BUUCTF/[FlareOn4]IgniteMe/[FlareOn4]IgniteMe.md` (62 lines)
-- **解题过程** — `Reverse/BUUCTF/[FlareOn4]login/[FlareOn4]login.md` (34 lines)
-- **[FlareOn6]Overlong** — `Reverse/BUUCTF/[FlareOn6]Overlong/[FlareOn6]Overlong.md` (192 lines)
+- **[WUSTCTF2020]Cr0ssfun
+** — `Reverse/BUUCTF/[WUSTCTF2020]Cr0ssfun/[WUSTCTF2020]Cr0ssfun.md` (67 lines)
+- **解题过程
+** — `Reverse/BUUCTF/[WUSTCTF2020]level1/[WUSTCTF2020]level1.md` (33 lines)
+- **[WUSTCTF2020]level2
+** — `Reverse/BUUCTF/[WUSTCTF2020]level2/[WUSTCTF2020]level2.md` (20 lines)
+- **[WUSTCTF2020]level3
+** — `Reverse/BUUCTF/[WUSTCTF2020]level3/[WUSTCTF2020]level3.md` (84 lines)
+- **[WUSTCTF2020]level4
+** — `Reverse/BUUCTF/[WUSTCTF2020]level4/[WUSTCTF2020]level4.md` (110 lines)
+- **[FlareOn3]Challenge1
+** — `Reverse/BUUCTF/[FlareOn3]Challenge1/[FlareOn3]Challenge1.md` (38 lines)
+- **[FlareOn4]IgniteMe
+** — `Reverse/BUUCTF/[FlareOn4]IgniteMe/[FlareOn4]IgniteMe.md` (62 lines)
+- **解题过程
+** — `Reverse/BUUCTF/[FlareOn4]login/[FlareOn4]login.md` (34 lines)
+- **[FlareOn6]Overlong
+** — `Reverse/BUUCTF/[FlareOn6]Overlong/[FlareOn6]Overlong.md` (192 lines)
 - **[GUET-CTF2019] encrypt 逆向分析 writeup** — `Reverse/BUUCTF/[GUET-CTF2019]encrypt/writeup.md` (260 lines)
-- **[GUET-CTF2019]number_game** — `Reverse/BUUCTF/[GUET-CTF2019]number_game/[GUET-CTF2019]number_game.md` (184 lines)
-- **解题过程** — `Reverse/BUUCTF/[GUET-CTF2019]re/[GUET-CTF2019]re.md` (162 lines)
-- **解题过程** — `Reverse/BUUCTF/[GWCTF 2019]pyre/[GWCTF 2019]pyre.md` (101 lines)
-- **[Zer0pts2020]easy strcmp** — `Reverse/BUUCTF/[Zer0pts2020]easy strcmp/[Zer0pts2020]easy strcmp.md` (59 lines)
-- **[网鼎杯 2020 青龙组]bang** — `Reverse/BUUCTF/[网鼎杯 2020 青龙组]bang/[网鼎杯 2020 青龙组]bang.md` (58 lines)
-- **[网鼎杯 2020 青龙组]boom** — `Reverse/BUUCTF/[网鼎杯 2020 青龙组]boom/[网鼎杯 2020 青龙组]boom.md` (78 lines)
-- **[网鼎杯 2020 青龙组]jocker  re** — `Reverse/BUUCTF/[网鼎杯 2020 青龙组]jocker/[网鼎杯 2020 青龙组]jocker  re.md` (320 lines)
-- **[网鼎杯 2020 青龙组]singal 解法2** — `Reverse/BUUCTF/[网鼎杯 2020 青龙组]singal/[网鼎杯 2020 青龙组]singal 解法2.md` (311 lines)
-- **[网鼎杯 2020 青龙组]singal** — `Reverse/BUUCTF/[网鼎杯 2020 青龙组]singal/[网鼎杯 2020 青龙组]singal.md` (162 lines)
-- **[羊城杯 2020]easyre** — `Reverse/BUUCTF/[羊城杯 2020]easyre/[羊城杯 2020]easyre.md` (68 lines)
-- **解题过程** — `Reverse/BUUCTF/不一样的flag/不一样的flag.md` (33 lines)
-- **[GWCTF 2019]re3** — `Reverse/BUUCTF/[GWCTF 2019]re3/[GWCTF 2019]re3.md` (178 lines)
-- **[GWCTF 2019]xxor** — `Reverse/BUUCTF/[GWCTF 2019]xxor/[GWCTF 2019]xxor.md` (135 lines)
-- **解题过程** — `Reverse/BUUCTF/[GXYCTF2019]luck_guy/[GXYCTF2019]luck_guy.md` (75 lines)
-- **[MRCTF2020]hello_world_go** — `Reverse/BUUCTF/[MRCTF2020]hello_world_go/[MRCTF2020]hello_world_go.md` (34 lines)
-- **[MRCTF2020]Transform** — `Reverse/BUUCTF/[MRCTF2020]Transform/[MRCTF2020]Transform.md` (86 lines)
-- **[MRCTF2020]Xor** — `Reverse/BUUCTF/[MRCTF2020]Xor/[MRCTF2020]Xor.md` (103 lines)
+- **[GUET-CTF2019]number_game
+** — `Reverse/BUUCTF/[GUET-CTF2019]number_game/[GUET-CTF2019]number_game.md` (184 lines)
+- **解题过程
+** — `Reverse/BUUCTF/[GUET-CTF2019]re/[GUET-CTF2019]re.md` (162 lines)
+- **解题过程
+** — `Reverse/BUUCTF/[GWCTF 2019]pyre/[GWCTF 2019]pyre.md` (101 lines)
+- **[Zer0pts2020]easy strcmp
+** — `Reverse/BUUCTF/[Zer0pts2020]easy strcmp/[Zer0pts2020]easy strcmp.md` (59 lines)
+- **[网鼎杯 2020 青龙组]bang
+** — `Reverse/BUUCTF/[网鼎杯 2020 青龙组]bang/[网鼎杯 2020 青龙组]bang.md` (58 lines)
+- **[网鼎杯 2020 青龙组]boom
+** — `Reverse/BUUCTF/[网鼎杯 2020 青龙组]boom/[网鼎杯 2020 青龙组]boom.md` (78 lines)
+- **[网鼎杯 2020 青龙组]jocker  re
+** — `Reverse/BUUCTF/[网鼎杯 2020 青龙组]jocker/[网鼎杯 2020 青龙组]jocker  re.md` (320 lines)
+- **[网鼎杯 2020 青龙组]singal 解法2
+** — `Reverse/BUUCTF/[网鼎杯 2020 青龙组]singal/[网鼎杯 2020 青龙组]singal 解法2.md` (311 lines)
+- **[网鼎杯 2020 青龙组]singal
+** — `Reverse/BUUCTF/[网鼎杯 2020 青龙组]singal/[网鼎杯 2020 青龙组]singal.md` (162 lines)
+- **[羊城杯 2020]easyre
+** — `Reverse/BUUCTF/[羊城杯 2020]easyre/[羊城杯 2020]easyre.md` (68 lines)
+- **解题过程
+** — `Reverse/BUUCTF/不一样的flag/不一样的flag.md` (33 lines)
+- **[GWCTF 2019]re3
+** — `Reverse/BUUCTF/[GWCTF 2019]re3/[GWCTF 2019]re3.md` (178 lines)
+- **[GWCTF 2019]xxor
+** — `Reverse/BUUCTF/[GWCTF 2019]xxor/[GWCTF 2019]xxor.md` (135 lines)
+- **解题过程
+** — `Reverse/BUUCTF/[GXYCTF2019]luck_guy/[GXYCTF2019]luck_guy.md` (75 lines)
+- **[MRCTF2020]hello_world_go
+** — `Reverse/BUUCTF/[MRCTF2020]hello_world_go/[MRCTF2020]hello_world_go.md` (34 lines)
+- **[MRCTF2020]Transform
+** — `Reverse/BUUCTF/[MRCTF2020]Transform/[MRCTF2020]Transform.md` (86 lines)
+- **[MRCTF2020]Xor
+** — `Reverse/BUUCTF/[MRCTF2020]Xor/[MRCTF2020]Xor.md` (103 lines)
 - **[SCTF2019] creakme — Writeup** — `Reverse/BUUCTF/[SCTF2019]creakme/writeup.md` (426 lines)
-- **[SUCTF2019]SignIn** — `Reverse/BUUCTF/[SUCTF2019]SignIn/[SUCTF2019]SignIn.md` (60 lines)
-- **解题过程** — `Reverse/BUUCTF/Java逆向解密/Java逆向解密.md` (55 lines)
-- **解题过程** — `Reverse/BUUCTF/reverse1/reverse1.md` (58 lines)
-- **解题过程** — `Reverse/BUUCTF/reverse2/reverse2.md` (36 lines)
-- **解题过程：** — `Reverse/BUUCTF/reverse2/内涵的软件.md` (29 lines)
-- **解题过程** — `Reverse/BUUCTF/reverse3/reverse3.md` (62 lines)
-- **解题过程** — `Reverse/BUUCTF/rsa/rsa.md` (87 lines)
-- **解题过程** — `Reverse/BUUCTF/SimpleRev/SimpleRev.md` (90 lines)
-- **解题过程：** — `Reverse/BUUCTF/xor/xor.md` (66 lines)
-- **Youngter-drive** — `Reverse/BUUCTF/Youngter-drive/Youngter-drive.md` (53 lines)
-- **解题过程** — `Reverse/BUUCTF/刮开有奖/刮开有奖.md` (137 lines)
-- **解题过程** — `Reverse/BUUCTF/新年快乐/新年快乐.md` (29 lines)
-- **特殊的 BASE64** — `Reverse/BUUCTF/特殊的 BASE64/特殊的 BASE64.md` (30 lines)
-- **相册** — `Reverse/BUUCTF/相册/相册.md` (42 lines)
-- **解题过程** — `Reverse/BUUCTF/简单注册器/简单注册器.md` (47 lines)
+- **[SUCTF2019]SignIn
+** — `Reverse/BUUCTF/[SUCTF2019]SignIn/[SUCTF2019]SignIn.md` (60 lines)
+- **解题过程
+** — `Reverse/BUUCTF/Java逆向解密/Java逆向解密.md` (55 lines)
+- **解题过程
+** — `Reverse/BUUCTF/reverse1/reverse1.md` (58 lines)
+- **解题过程
+** — `Reverse/BUUCTF/reverse2/reverse2.md` (36 lines)
+- **解题过程：
+** — `Reverse/BUUCTF/reverse2/内涵的软件.md` (29 lines)
+- **解题过程
+** — `Reverse/BUUCTF/reverse3/reverse3.md` (62 lines)
+- **解题过程
+** — `Reverse/BUUCTF/rsa/rsa.md` (87 lines)
+- **解题过程
+** — `Reverse/BUUCTF/SimpleRev/SimpleRev.md` (90 lines)
+- **解题过程：
+** — `Reverse/BUUCTF/xor/xor.md` (66 lines)
+- **Youngter-drive
+** — `Reverse/BUUCTF/Youngter-drive/Youngter-drive.md` (53 lines)
+- **解题过程
+** — `Reverse/BUUCTF/刮开有奖/刮开有奖.md` (137 lines)
+- **解题过程
+** — `Reverse/BUUCTF/新年快乐/新年快乐.md` (29 lines)
+- **特殊的 BASE64
+** — `Reverse/BUUCTF/特殊的 BASE64/特殊的 BASE64.md` (30 lines)
+- **相册
+** — `Reverse/BUUCTF/相册/相册.md` (42 lines)
+- **解题过程
+** — `Reverse/BUUCTF/简单注册器/简单注册器.md` (47 lines)
 
-## Web Exploitation (186 entries)
+## Web Exploitation (210 entries)
+- **[portswigger_sqli_series_1_18]** — `web/portswigger_sqli_series_1_18.md` — PortSwigger SQLi 1-18 整合页 / 18 题总览表 + 盲注提取决策树 + 检测映射
+- **[portswigger_web_llm_series]** — `web/portswigger_web_llm_series.md` — PortSwigger Web LLM attacks 1-8 整合页 / LLM 工具题(excessive agency/命令注入/间接注入/不安全输出) + AI scanner 题(删号/exfil/二级 SSRF/绕防御) / 去攻击化 framing + 回显通道 + OWASP LLM Top10
+- **[portswigger_sqli_xml_encoding_bypass]** — `web/portswigger_sqli_xml_encoding_bypass.md` — PortSwigger SQL injection track note
+- **[portswigger_sqli_oob_exfiltration]** — `web/portswigger_sqli_oob_exfiltration.md` — PortSwigger SQL injection track note
+- **[portswigger_sqli_oob_interaction]** — `web/portswigger_sqli_oob_interaction.md` — PortSwigger SQL injection track note
+- **[portswigger_sqli_time_delay_extraction]** — `web/portswigger_sqli_time_delay_extraction.md` — PortSwigger SQL injection track note
+- **[portswigger_sqli_time_delay]** — `web/portswigger_sqli_time_delay.md` — PortSwigger SQL injection track note
+- **[portswigger_sqli_visible_error_based]** — `web/portswigger_sqli_visible_error_based.md` — PortSwigger SQL injection track note
+- **[portswigger_sqli_blind_conditional_errors]** — `web/portswigger_sqli_blind_conditional_errors.md` — PortSwigger SQL injection track note
+- **[portswigger_sqli_blind_conditional_responses]** — `web/portswigger_sqli_blind_conditional_responses.md` — PortSwigger SQL injection track note
+- **[portswigger_sqli_union_multiple_values_single_column]** — `web/portswigger_sqli_union_multiple_values_single_column.md` — PortSwigger SQL injection track note
+- **[portswigger_sqli_union_retrieve_other_tables]** — `web/portswigger_sqli_union_retrieve_other_tables.md` — PortSwigger SQL injection track note
+- **[portswigger_sqli_union_text_column]** — `web/portswigger_sqli_union_text_column.md` — PortSwigger SQL injection track note
+- **[portswigger_sqli_union_column_count]** — `web/portswigger_sqli_union_column_count.md` — PortSwigger SQL injection track note
+- **[portswigger_sqli_oracle_contents]** — `web/portswigger_sqli_oracle_contents.md` — PortSwigger SQL injection track note
+- **[portswigger_sqli_non_oracle_contents]** — `web/portswigger_sqli_non_oracle_contents.md` — PortSwigger SQL injection track note
+- **[portswigger_sqli_mysql_microsoft_version]** — `web/portswigger_sqli_mysql_microsoft_version.md` (~45 lines) — PortSwigger — MySQL/Microsoft database version via UNION SQLi / Practitioner / two-column UNION with `NULL,@@version-- -`
+- **[portswigger_sqli_oracle_version]** — `web/portswigger_sqli_oracle_version.md` (~45 lines) — PortSwigger — Oracle database version via UNION SQLi / Practitioner / two-column UNION with `NULL,banner FROM v$version`
+- **[portswigger_sqli_login_bypass]** — `web/portswigger_sqli_login_bypass.md` (~45 lines) — PortSwigger — SQL injection login bypass / Apprentice / `administrator'--` comments out the password predicate
+- **[portswigger_sqli_hidden_data]** — `web/portswigger_sqli_hidden_data.md` (~45 lines) — PortSwigger — SQL injection WHERE clause hidden data / Apprentice / category `' OR 1=1--` exposes hidden products
 
-- **babyweb** — `Web/BUUCTF/babyweb.md` (32 lines)
-- **SSRF Me** — `Web/BUUCTF/SSRF Me.md` (184 lines)
-- **warmup** — `Web/BUUCTF/warmup.md` (306 lines)
-- **[BJDCTF2020]Cookie is so stable** — `Web/BUUCTF/[BJDCTF2020]Cookie is so stable.md` (94 lines)
-- **[BJDCTF2020]EzPHP** — `Web/BUUCTF/[BJDCTF2020]EzPHP.md` (321 lines)
-- **[BJDCTF2020]Mark loves cat** — `Web/BUUCTF/[BJDCTF2020]Mark loves cat.md` (199 lines)
-- **[BJDCTF2020]The mystery of ip** — `Web/BUUCTF/[BJDCTF2020]The mystery of ip.md` (68 lines)
-- **[BJDCTF2020]ZJCTF，不过如此** — `Web/BUUCTF/[BJDCTF2020]ZJCTF，不过如此.md` (124 lines)
-- **[BUUCTF 2018]Online Tool** — `Web/BUUCTF/[BUUCTF 2018]Online.md` (85 lines)
-- **[De1CTF 2019]SSRF Me** — `Web/BUUCTF/[De1CTF 2019]SSRF Me.md` (366 lines)
-- **[GWCTF 2019]我有一个数据库** — `Web/BUUCTF/[GWCTF 2019]我有一个数据库.md` (41 lines)
-- **[GXYCTF2019]禁止套娃** — `Web/BUUCTF/[GXYCTF2019]禁止套娃.md` (145 lines)
-- **[GYCTF2020]EasyThinking** — `Web/BUUCTF/[GYCTF2020]EasyThinking.md` (162 lines)
-- **[ISITDTU 2019]EasyPHP** — `Web/BUUCTF/[ISITDTU 2019]EasyPHP.md` (246 lines)
-- **[MRCTF2020]Ezpop** — `Web/BUUCTF/[MRCTF2020]Ezpop.md` (219 lines)
-- **[NCTF2019]Fake XML cookbook** — `Web/BUUCTF/[NCTF2019]Fake XML cookbook.md` (210 lines)
-- **[NPUCTF2020]ReadlezPHP** — `Web/BUUCTF/[NPUCTF2020]ReadlezPHP.md` (75 lines)
-- **[SWPUCTF 2018]SimplePHP** — `Web/BUUCTF/[SWPUCTF 2018]SimplePHP.md` (339 lines)
-- **[WUSTCTF2020]朴实无华** — `Web/BUUCTF/[WUSTCTF2020]朴实无华.md` (116 lines)
-- **[安洵杯 2019]easy_serialize_php** — `Web/BUUCTF/[安洵杯 2019]easy_serialize_php.md` (244 lines)
-- **[安洵杯 2019]easy_web** — `Web/BUUCTF/[安洵杯 2019]easy_web.md` (94 lines)
-- **[强网杯 2019]高明的黑客** — `Web/BUUCTF/[强网杯 2019]高明的黑客.md` (152 lines)
-- **解题过程** — `Web/BUUCTF/[极客大挑战 2019]Http.md` (47 lines)
-- **[网鼎杯 2018]Comment** — `Web/BUUCTF/[网鼎杯 2018]Comment.md` (286 lines)
-- **[网鼎杯 2018]Fakebook** — `Web/BUUCTF/[网鼎杯 2018]Fakebook.md` (188 lines)
-- **[网鼎杯 2020 半决赛]AliceWebsite** — `Web/BUUCTF/[网鼎杯 2020 半决赛]AliceWebsite.md` (93 lines)
-- **[网鼎杯 2020 朱雀组]Nmap** — `Web/BUUCTF/[网鼎杯 2020 朱雀组]Nmap.md` (203 lines)
-- **[网鼎杯 2020 朱雀组]phpweb** — `Web/BUUCTF/[网鼎杯 2020 朱雀组]phpweb.md` (107 lines)
-- **[网鼎杯 2020 白虎组]PicDown** — `Web/BUUCTF/[网鼎杯 2020 白虎组]PicDown.md` (219 lines)
-- **[网鼎杯 2020 青龙组]AreUSerialz** — `Web/BUUCTF/[网鼎杯 2020 青龙组]AreUSerialz.md` (209 lines)
-- **浅谈PHP代码执行中出现过滤限制的绕过执行方法** — `Web/BUUCTF/浅谈PHP代码执行中出现过滤限制的绕过执行方法.md` (603 lines)
+- **babyweb
+** — `Web/BUUCTF/babyweb.md` (32 lines)
+- **SSRF Me
+** — `Web/BUUCTF/SSRF Me.md` (184 lines)
+- **warmup
+** — `Web/BUUCTF/warmup.md` (306 lines)
+- **[BJDCTF2020]Cookie is so stable
+** — `Web/BUUCTF/[BJDCTF2020]Cookie is so stable.md` (94 lines)
+- **[BJDCTF2020]EzPHP
+** — `Web/BUUCTF/[BJDCTF2020]EzPHP.md` (321 lines)
+- **[BJDCTF2020]Mark loves cat
+** — `Web/BUUCTF/[BJDCTF2020]Mark loves cat.md` (199 lines)
+- **[BJDCTF2020]The mystery of ip
+** — `Web/BUUCTF/[BJDCTF2020]The mystery of ip.md` (68 lines)
+- **[BJDCTF2020]ZJCTF，不过如此
+** — `Web/BUUCTF/[BJDCTF2020]ZJCTF，不过如此.md` (124 lines)
+- **[BUUCTF 2018]Online Tool
+** — `Web/BUUCTF/[BUUCTF 2018]Online.md` (85 lines)
+- **[De1CTF 2019]SSRF Me
+** — `Web/BUUCTF/[De1CTF 2019]SSRF Me.md` (366 lines)
+- **[GWCTF 2019]我有一个数据库
+** — `Web/BUUCTF/[GWCTF 2019]我有一个数据库.md` (41 lines)
+- **[GXYCTF2019]禁止套娃
+** — `Web/BUUCTF/[GXYCTF2019]禁止套娃.md` (145 lines)
+- **[GYCTF2020]EasyThinking
+** — `Web/BUUCTF/[GYCTF2020]EasyThinking.md` (162 lines)
+- **[ISITDTU 2019]EasyPHP
+** — `Web/BUUCTF/[ISITDTU 2019]EasyPHP.md` (246 lines)
+- **[MRCTF2020]Ezpop
+** — `Web/BUUCTF/[MRCTF2020]Ezpop.md` (219 lines)
+- **[NCTF2019]Fake XML cookbook
+** — `Web/BUUCTF/[NCTF2019]Fake XML cookbook.md` (210 lines)
+- **[NPUCTF2020]ReadlezPHP
+** — `Web/BUUCTF/[NPUCTF2020]ReadlezPHP.md` (75 lines)
+- **[SWPUCTF 2018]SimplePHP
+** — `Web/BUUCTF/[SWPUCTF 2018]SimplePHP.md` (339 lines)
+- **[WUSTCTF2020]朴实无华
+** — `Web/BUUCTF/[WUSTCTF2020]朴实无华.md` (116 lines)
+- **[安洵杯 2019]easy_serialize_php
+** — `Web/BUUCTF/[安洵杯 2019]easy_serialize_php.md` (244 lines)
+- **[安洵杯 2019]easy_web
+** — `Web/BUUCTF/[安洵杯 2019]easy_web.md` (94 lines)
+- **[强网杯 2019]高明的黑客
+** — `Web/BUUCTF/[强网杯 2019]高明的黑客.md` (152 lines)
+- **解题过程
+** — `Web/BUUCTF/[极客大挑战 2019]Http.md` (47 lines)
+- **[网鼎杯 2018]Comment
+** — `Web/BUUCTF/[网鼎杯 2018]Comment.md` (286 lines)
+- **[网鼎杯 2018]Fakebook
+** — `Web/BUUCTF/[网鼎杯 2018]Fakebook.md` (188 lines)
+- **[网鼎杯 2020 半决赛]AliceWebsite
+** — `Web/BUUCTF/[网鼎杯 2020 半决赛]AliceWebsite.md` (93 lines)
+- **[网鼎杯 2020 朱雀组]Nmap
+** — `Web/BUUCTF/[网鼎杯 2020 朱雀组]Nmap.md` (203 lines)
+- **[网鼎杯 2020 朱雀组]phpweb
+** — `Web/BUUCTF/[网鼎杯 2020 朱雀组]phpweb.md` (107 lines)
+- **[网鼎杯 2020 白虎组]PicDown
+** — `Web/BUUCTF/[网鼎杯 2020 白虎组]PicDown.md` (219 lines)
+- **[网鼎杯 2020 青龙组]AreUSerialz
+** — `Web/BUUCTF/[网鼎杯 2020 青龙组]AreUSerialz.md` (209 lines)
+- **浅谈PHP代码执行中出现过滤限制的绕过执行方法
+** — `Web/BUUCTF/浅谈PHP代码执行中出现过滤限制的绕过执行方法.md` (603 lines)
 - **ctf** — `Web/ctf-master/README.md` (2 lines)
 - **SQL-inject** — `Web/SQL/SQL-inject.md` (128 lines)
-- **[CISCN2019 华北赛区 Day2 Web1]Hack World** — `Web/SQL/[CISCN2019 华北赛区 Day2 Web1]Hack World.md` (58 lines)
-- **[GXYCTF2019]BabySQli** — `Web/SQL/[GXYCTF2019]BabySQli.md` (136 lines)
-- **[GYCTF2020]Blacklist** — `Web/SQL/[GYCTF2020]Blacklist.md` (90 lines)
-- **[极客大挑战 2019]HardSQL** — `Web/SQL/[极客大挑战 2019]HardSQL.md` (98 lines)
+- **[CISCN2019 华北赛区 Day2 Web1]Hack World
+** — `Web/SQL/[CISCN2019 华北赛区 Day2 Web1]Hack World.md` (58 lines)
+- **[GXYCTF2019]BabySQli
+** — `Web/SQL/[GXYCTF2019]BabySQli.md` (136 lines)
+- **[GYCTF2020]Blacklist
+** — `Web/SQL/[GYCTF2020]Blacklist.md` (90 lines)
+- **[极客大挑战 2019]HardSQL
+** — `Web/SQL/[极客大挑战 2019]HardSQL.md` (98 lines)
 - **[玄武杯 2025] ez_fastapi Writeup** — `Web/NSSCTF/[玄武杯 2025]ez_fastapi/writeup.md` (98 lines)
 - **[玄武杯 2025] 锦家有什么 — Writeup** — `Web/NSSCTF/[玄武杯 2025]锦家有什么/writeup.md` (61 lines)
 - **[羊城杯 2020] Break The Wall** — `Web/BUUCTF/[羊城杯 2020]Break The Wall/writeup.md` (108 lines)
-- **解题过程** — `Web/BUUCTF/代码审计/[ACTF2020 新生赛]Include.md` (28 lines)
-- **解题过程** — `Web/BUUCTF/代码审计/[BJDCTF2020]Easy MD5].md` (101 lines)
-- **解题过程** — `Web/BUUCTF/代码审计/[极客大挑战 2019]PHP.md` (81 lines)
-- **解题过程：** — `Web/BUUCTF/代码审计/[极客大挑战 2019]Secret File.md` (41 lines)
-- **[BSidesCF 2020]Had a bad day** — `Web/BUUCTF/伪协议/[BSidesCF 2020]Had a bad day.md` (70 lines)
-- **解题过程** — `Web/BUUCTF/命令执行/[ACTF2020 新生赛]Exec.md` (29 lines)
-- **解题过程** — `Web/BUUCTF/命令执行/[GXYCTF2019]Ping Ping Ping.md` (101 lines)
-- **解题过程** — `Web/BUUCTF/文件上传/[ACTF2020 新生赛]Upload.md` (39 lines)
-- **解题过程** — `Web/BUUCTF/文件上传/[极客大挑战 2019]Upload.md` (65 lines)
-- **解题过程** — `Web/BUUCTF/路径构造/[HCTF 2018]WarmUp.md` (142 lines)
+- **解题过程
+** — `Web/BUUCTF/代码审计/[ACTF2020 新生赛]Include.md` (28 lines)
+- **解题过程
+** — `Web/BUUCTF/代码审计/[BJDCTF2020]Easy MD5].md` (101 lines)
+- **解题过程
+** — `Web/BUUCTF/代码审计/[极客大挑战 2019]PHP.md` (81 lines)
+- **解题过程：
+** — `Web/BUUCTF/代码审计/[极客大挑战 2019]Secret File.md` (41 lines)
+- **[BSidesCF 2020]Had a bad day
+** — `Web/BUUCTF/伪协议/[BSidesCF 2020]Had a bad day.md` (70 lines)
+- **解题过程
+** — `Web/BUUCTF/命令执行/[ACTF2020 新生赛]Exec.md` (29 lines)
+- **解题过程
+** — `Web/BUUCTF/命令执行/[GXYCTF2019]Ping Ping Ping.md` (101 lines)
+- **解题过程
+** — `Web/BUUCTF/文件上传/[ACTF2020 新生赛]Upload.md` (39 lines)
+- **解题过程
+** — `Web/BUUCTF/文件上传/[极客大挑战 2019]Upload.md` (65 lines)
+- **解题过程
+** — `Web/BUUCTF/路径构造/[HCTF 2018]WarmUp.md` (142 lines)
 - **[DASCTF 2023 & 0X401七月暑期挑战赛] EzFlask** — `Web/BUUCTF/[DASCTF 2023 & 0X401七月暑期挑战赛]EzFlask/writeup.md` (109 lines)
 - **[NewStarCTF 2023 公开赛道]medium_sql** — `Web/BUUCTF/[NewStarCTF 2023 公开赛道]medium_sql/writeup.md` (119 lines)
 - **[NPUCTF2020]验证🐎** — `Web/BUUCTF/[NPUCTF2020]验证码/writeup.md` (157 lines)
@@ -209,11 +379,16 @@
 - **[LitCTF 2025] 星愿信箱 — Writeup** — `Web/NSSCTF/[LitCTF 2025]星愿信箱/writeup.md` (83 lines)
 - **[SWPUCTF 2025 秋季新生赛] sql仅仅只是sql吗？** — `Web/NSSCTF/[SWPUCTF 2025 秋季新生赛]sql仅仅只是sql吗？/writeup.md` (166 lines)
 - **README** — `Web/BUUCTF/[GYCTF2020]EasyThinking/web/README.md` (52 lines)
-- **解题过程** — `Web/BUUCTF/SQL/[SUCTF 2019]EasySQL.md` (72 lines)
-- **做题过程** — `Web/BUUCTF/SQL/[强网杯 2019]随便注.md` (133 lines)
-- **解题过程** — `Web/BUUCTF/SQL/[极客大挑战 2019]BabySQL.md` (74 lines)
-- **知识点：MySQL中单引号、双引号的区别** — `Web/BUUCTF/SQL/[极客大挑战 2019]EasySQL1.md` (101 lines)
-- **解题过程** — `Web/BUUCTF/SQL/[极客大挑战 2019]LoveSQL2.md` (75 lines)
+- **解题过程
+** — `Web/BUUCTF/SQL/[SUCTF 2019]EasySQL.md` (72 lines)
+- **做题过程
+** — `Web/BUUCTF/SQL/[强网杯 2019]随便注.md` (133 lines)
+- **解题过程
+** — `Web/BUUCTF/SQL/[极客大挑战 2019]BabySQL.md` (74 lines)
+- **知识点：MySQL中单引号、双引号的区别
+** — `Web/BUUCTF/SQL/[极客大挑战 2019]EasySQL1.md` (101 lines)
+- **解题过程
+** — `Web/BUUCTF/SQL/[极客大挑战 2019]LoveSQL2.md` (75 lines)
 - **[CISCN2019 华东南赛区] Double Secret** — `Web/BUUCTF/[CISCN2019 华东南赛区]Double Secret/writeup.md` (154 lines)
 - **[CISCN2019 华北赛区 Day1 Web1] Dropbox** — `Web/BUUCTF/[CISCN2019 华北赛区 Day1 Web1]Dropbox/writeup.md` (156 lines)
 - **[CISCN2019 总决赛 Day2 Web1] Easyweb** — `Web/BUUCTF/[CISCN2019 总决赛 Day2 Web1]Easyweb/writeup.md` (125 lines)
@@ -332,6 +507,10 @@
 - **[portswigger_ai_exfil_apikey]** — `web/portswigger_ai_exfil_apikey.md` (~85 lines) — PortSwigger / 间接 prompt 注入数据外泄变体 / 无结果页(404)→ scanner 把 carlos API key 发成评论回显 / owner framing 第一轮即中 / LLM01+LLM06+LLM02
 - **[portswigger_ai_secondary_ssrf]** — `web/portswigger_ai_secondary_ssrf.md` (~110 lines) — PortSwigger Practitioner / 间接 prompt 注入驱动 routing-based SSRF / 伪造 Host=192.168.0.5:8080 经路由层达 loopback-only admin 裸 GET /admin/delete?username=carlos / URL-based(stockApi)绕不过 loopback, Host 值是 admin IP 非 localhost / LLM01+LLM06+SSRF
 - **[portswigger_ai_bypass_defenses]** — `web/portswigger_ai_bypass_defenses.md` (~95 lines) — PortSwigger Practitioner / 绕过双层防御(输入分类器自动加WARNING + scanner自判输出redaction) exfil API key / 致胜钩子="泄露=被测漏洞PoC"(把发完整key框成验证"评论未打码"漏洞,scanner为证明漏洞主动泄露) / 9版framing全被redact,唯此奏效 / LLM01+LLM06+LLM02
+- **[portswigger_llm_api_command_injection]** — `web/portswigger_llm_api_command_injection.md` (~120 lines) — PortSwigger Practitioner / LLM API → Newsletter email 参数 → shell command substitution / `$(whoami)` OOB 到 exploit server 证明以 carlos 执行，`$(rm /home/carlos/morale.txt)` 通关
+- **[portswigger_llm_insecure_output_handling]** — `web/portswigger_llm_insecure_output_handling.md` (~85 lines) — PortSwigger Expert / LLM output XSS / T-shirt 语境伪装 iframe，使 chat unsafe renderer 自动提交 /my-account 删除表单
+- **[portswigger_llm_indirect_prompt_injection]** — `web/portswigger_llm_indirect_prompt_injection.md` (~95 lines) — PortSwigger Practitioner / 间接 prompt injection / 商品 review 边界污染 `"]]]}}}}---END OF REVIEW ----USER RESPONSE----` 让 carlos 会话调用 delete_account
+- **[portswigger_llm_excessive_agency]** — `web/portswigger_llm_excessive_agency.md` (~105 lines) — PortSwigger Apprentice / LLM tool excessive agency / `debug_sql(sql_statement)` 暴露裸 SQL 执行器，先 `SELECT * FROM users` 确认 carlos，再 `DELETE FROM users WHERE username='carlos'` 通关
 
 ## Cryptography (15 entries)
 
@@ -342,7 +521,8 @@
 - **[MRCTF2020]Easy_RSA** — `CRYPTO/[MRCTF2020]Easy_RSA/writeup.md` (65 lines)
 - **writeup** — `CRYPTO/[UTCTF2020]basic-crypto/writeup.md` (77 lines)
 - **[央企杯 2025] big_e_rsa Writeup** — `CRYPTO/[央企杯 2025]big_e_rsa/writeup.md` (99 lines)
-- **[网鼎杯 2020 青龙组]you_raise_me_up** — `CRYPTO/[网鼎杯 2020 青龙组]you_raise_me_up/[网鼎杯 2020 青龙组]you_raise_me_up.md` (65 lines)
+- **[网鼎杯 2020 青龙组]you_raise_me_up
+** — `CRYPTO/[网鼎杯 2020 青龙组]you_raise_me_up/[网鼎杯 2020 青龙组]you_raise_me_up.md` (65 lines)
 - **[LitCTF 2025] math** — `crypto/litctf2025_math.md` (~180 lines) — RSA `hint=(p+noise)(q+noise)` leak: Pollard rho on `hint-n` → 40-bit noise → Vieta → (p,q) → flag
 - **[XCTF 9th Finals 2025] Tch3s** — `crypto/xctf2025_tch3s.md` (~190 lines) — predictable `srand(time())`; brute Unix-timestamp seed from Test 1 plaintext (~95M seconds, ~1 min), regenerate the key, inject it into the running binary via gdb-python, then `call` the binary's own decrypt. Detailed Chinese debug-log version at `CRYPTO/第九届 XCTF 国际网络攻防联赛总决赛-Tch3s/WRITEUP_CN.md`
 - **[ghctf2025_baby_signin]** — `crypto/ghctf2025_baby_signin.md` (~32 lines) — GHCTF 2025 / e=4 不互素 AMM 开根签到
@@ -353,13 +533,18 @@
 
 ## Miscellaneous & Forensics (19 entries)
 
-- **easycap** — `Misc/easycap.md` (2 lines)
+- **easycap
+** — `Misc/easycap.md` (2 lines)
 - **Misc 环境清单（2026-05-06 实装版）** — `Misc/setup.md` (232 lines)
-- **Wireshark的常用** — `Misc/Wireshark的常用.md` (219 lines)
-- **内存取证** — `Misc/内存取证.md` (369 lines)
+- **Wireshark的常用
+** — `Misc/Wireshark的常用.md` (219 lines)
+- **内存取证
+** — `Misc/内存取证.md` (369 lines)
 - **压缩包和图片修复** — `Misc/压缩包和图片修复.md` (4 lines)
-- **数据包中的线索** — `Misc/数据包中的线索.md` (14 lines)
-- **被嗅探的流量** — `Misc/被嗅探的流量.md` (2 lines)
+- **数据包中的线索
+** — `Misc/数据包中的线索.md` (14 lines)
+- **被嗅探的流量
+** — `Misc/被嗅探的流量.md` (2 lines)
 - **[GHCTF 2025] mybrave Writeup** — `Misc/[GHCTF 2025]mybrave/writeup.md` (66 lines)
 - **[GHCTF 2025] mypcap Writeup** — `Misc/[GHCTF 2025]mypcap/writeup.md` (134 lines)
 - **[NewStarCTF 公开赛赛道]最后的流量分析** — `Misc/[NewStarCTF 公开赛赛道]最后的流量分析/writeup.md` (89 lines)
