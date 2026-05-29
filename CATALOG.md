@@ -249,7 +249,7 @@
 - **解题过程
 ** — `Reverse/BUUCTF/简单注册器/简单注册器.md` (47 lines)
 
-## Web Exploitation (203 entries)
+## Web Exploitation (204 entries)
 - **[portswigger_sqli_series_1_18]** — `web/portswigger_sqli_series_1_18.md` — PortSwigger SQLi 1-18 整合页 / 18 题总览表 + 盲注提取决策树 + 检测映射
 - **[portswigger_xss_series]** — `web/portswigger_xss_series.md` — PortSwigger XSS 1-30 整合页 / HTML、attribute、JS string、DOM sink、AngularJS、SVG、CSP 上下文 / cookie、password、CSRF impact labs + 同站回传替代不必要 OAST
 - **[portswigger_csrf_series]** — `web/portswigger_csrf_series.md` — PortSwigger CSRF 1-12 整合页 / token 校验缺陷、token-cookie 绑定错位、SameSite Lax/Strict 绕过、Referer 缺陷、sibling-domain CSWSH
@@ -263,6 +263,7 @@
 - **[portswigger_request_smuggling_series]** — `web/portswigger_request_smuggling_series.md` — PortSwigger HTTP Request Smuggling 1-22 整合页 / CL.TE、TE.CL、TE 混淆、HTTP/2 downgrade、request tunnelling、CL.0/0.CL、client-side desync、pause-based desync、cache poisoning/deception
 - **[portswigger_os_command_injection_series]** — `web/portswigger_os_command_injection_series.md` — PortSwigger OS Command Injection 1-5 整合页 / 直接回显、时延 oracle、输出重定向、DNS OOB 交互、DNS label 数据外带
 - **[portswigger_ssti_series]** — `web/portswigger_ssti_series.md` — PortSwigger SSTI 1-7 整合页 / ERB、Tornado、FreeMarker、Handlebars、Django 对象泄露、FreeMarker sandbox breakout、自定义业务对象利用
+- **[portswigger_path_traversal_series]** — `web/portswigger_path_traversal_series.md` — PortSwigger Path Traversal 1-6 整合页 / `../`、绝对路径、非递归 strip、双重 URL decode、路径前缀校验、null byte 后缀绕过
 
 - **babyweb
 ** — `Web/BUUCTF/babyweb.md` (32 lines)
