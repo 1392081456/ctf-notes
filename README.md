@@ -108,6 +108,7 @@ All targets analyzed in this repository are one of: (a) public CTF challenge bin
 ### Web Exploitation
 - [PortSwigger SQLi 1-18 — series consolidation](web/portswigger_sqli_series_1_18.md) — methodology track: 18-lab overview table (surface/channel/payload) + blind-SQLi extraction decision tree + detection mapping. From tautologies to OOB exfiltration.
 - [PortSwigger Web LLM attacks 1-8 — series consolidation](web/portswigger_web_llm_series.md) — methodology track on negotiating phrasing with an aligned agent: LLM-tool labs (excessive agency / command injection / indirect injection / insecure output) + AI-scanner labs (delete / exfil / secondary SSRF / defense bypass). De-attack framing, echo channels, OWASP LLM Top 10.
+- [PortSwigger Web Cache Deception 1-5 — series consolidation](web/portswigger_wcd_series.md) — all five WCD labs: path mapping, path delimiters (`;`), origin vs cache normalization (mirrored), exact-match rules + a CSRF chain (Expert). Three axes (what caches / who normalizes / which delimiter) + the timing/self-poisoning/grab-race gotchas the official solution omits.
 
 - [Drupalgeddon2 — CVE-2018-7600 render array RCE](web/drupalgeddon2_rce.md) — Drupal 8 / Form API AJAX / `#post_render` injection
 - [GYCTF 2020 Ez_Express — Unicode case folding + EJS prototype pollution](web/gyctf2020_ez_express.md) — Node.js / `outputFunctionName` injection / `U+0131` filter bypass
