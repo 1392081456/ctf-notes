@@ -249,7 +249,7 @@
 - **解题过程
 ** — `Reverse/BUUCTF/简单注册器/简单注册器.md` (47 lines)
 
-## Web Exploitation (210 entries)
+## Web Exploitation (211 entries)
 - **[portswigger_sqli_series_1_18]** — `web/portswigger_sqli_series_1_18.md` — PortSwigger SQLi 1-18 整合页 / 18 题总览表 + 盲注提取决策树 + 检测映射
 - **[portswigger_xss_series]** — `web/portswigger_xss_series.md` — PortSwigger XSS 1-30 整合页 / HTML、attribute、JS string、DOM sink、AngularJS、SVG、CSP 上下文 / cookie、password、CSRF impact labs + 同站回传替代不必要 OAST
 - **[portswigger_csrf_series]** — `web/portswigger_csrf_series.md` — PortSwigger CSRF 1-12 整合页 / token 校验缺陷、token-cookie 绑定错位、SameSite Lax/Strict 绕过、Referer 缺陷、sibling-domain CSWSH
@@ -270,6 +270,7 @@
 - **[portswigger_web_cache_poisoning_series]** — `web/portswigger_web_cache_poisoning_series.md` — PortSwigger Web Cache Poisoning 1-13 整合页 / unkeyed header-cookie-query-body、parameter cloaking、URL normalization、DOM gadget、cache key injection、internal cache poisoning
 - **[portswigger_insecure_deserialization_series]** — `web/portswigger_insecure_deserialization_series.md` — PortSwigger Insecure Deserialization 1-10 整合页 / PHP 对象篡改、类型混淆、Java/PHP/Ruby gadget、custom POP chain、PHAR metadata 触发
 - **[portswigger_information_disclosure_series]** — `web/portswigger_information_disclosure_series.md` — PortSwigger Information Disclosure 1-5 整合页 / verbose error、debug page、backup source、TRACE 泄内部 header、Git 历史泄密
+- **[portswigger_business_logic_series]** — `web/portswigger_business_logic_series.md` — PortSwigger Business Logic Vulnerabilities 1-12 整合页 / price-quantity-money、规则不一致、workflow/state machine、encryption oracle、email parser discrepancy
 
 - **babyweb
 ** — `Web/BUUCTF/babyweb.md` (32 lines)
