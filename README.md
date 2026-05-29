@@ -133,6 +133,7 @@ All targets analyzed in this repository are one of: (a) public CTF challenge bin
 - [PortSwigger JWT 1-8 — series consolidation](web/portswigger_jwt_series.md) — token-verification track: unverified signatures, `alg:none`, weak HMAC secrets, `jwk`/`jku`/`kid` key injection, and RS256/HS256 algorithm confusion.
 - [PortSwigger Essential Skills 1-2 — series consolidation](web/portswigger_essential_skills_series.md) — targeted-scanning track: using Burp Scanner as a manual-testing amplifier for file-read discovery and custom insertion points in structured cookies.
 - [PortSwigger Prototype Pollution 1-10 — series consolidation](web/portswigger_prototype_pollution_series.md) — property-lookup track: client-side DOM gadgets, one-pass sanitizer bypasses, server-side merge pollution, non-reflective detection, and child-process option gadgets.
+- [PortSwigger GraphQL API Vulnerabilities 1-5 — series consolidation](web/portswigger_graphql_series.md) — schema-and-transport track: introspection leaks, hidden endpoints, alias batching, resolver authorization gaps, and form-urlencoded GraphQL CSRF.
 
 - [Drupalgeddon2 — CVE-2018-7600 render array RCE](web/drupalgeddon2_rce.md) — Drupal 8 / Form API AJAX / `#post_render` injection
 - [GYCTF 2020 Ez_Express — Unicode case folding + EJS prototype pollution](web/gyctf2020_ez_express.md) — Node.js / `outputFunctionName` injection / `U+0131` filter bypass
