@@ -249,7 +249,7 @@
 - **解题过程
 ** — `Reverse/BUUCTF/简单注册器/简单注册器.md` (47 lines)
 
-## Web Exploitation (200 entries)
+## Web Exploitation (201 entries)
 - **[portswigger_sqli_series_1_18]** — `web/portswigger_sqli_series_1_18.md` — PortSwigger SQLi 1-18 整合页 / 18 题总览表 + 盲注提取决策树 + 检测映射
 - **[portswigger_xss_series]** — `web/portswigger_xss_series.md` — PortSwigger XSS 1-30 整合页 / HTML、attribute、JS string、DOM sink、AngularJS、SVG、CSP 上下文 / cookie、password、CSRF impact labs + 同站回传替代不必要 OAST
 - **[portswigger_csrf_series]** — `web/portswigger_csrf_series.md` — PortSwigger CSRF 1-12 整合页 / token 校验缺陷、token-cookie 绑定错位、SameSite Lax/Strict 绕过、Referer 缺陷、sibling-domain CSWSH
@@ -260,6 +260,7 @@
 - **[portswigger_clickjacking_series]** — `web/portswigger_clickjacking_series.md` — PortSwigger Clickjacking 1-5 整合页 / CSRF-protected 删除、URL 预填、sandbox 压 frame-buster、DOM XSS 触发、多步确认点击 / iframe viewport 坐标校准
 - **[portswigger_xxe_series]** — `web/portswigger_xxe_series.md` — PortSwigger XXE 1-9 整合页 / 文件读取、metadata SSRF、盲 OOB、参数实体、外部 DTD 外带、错误回显、XInclude、SVG/Batik、本地 DTD 重定义
 - **[portswigger_ssrf_series]** — `web/portswigger_ssrf_series.md` — PortSwigger SSRF 1-7 整合页 / loopback admin、内网段枚举、盲 OAST、黑名单绕过、open redirect 跳板、Shellshock header-to-CGI、白名单 parser 分歧
+- **[portswigger_request_smuggling_series]** — `web/portswigger_request_smuggling_series.md` — PortSwigger HTTP Request Smuggling 1-22 整合页 / CL.TE、TE.CL、TE 混淆、HTTP/2 downgrade、request tunnelling、CL.0/0.CL、client-side desync、pause-based desync、cache poisoning/deception
 
 - **babyweb
 ** — `Web/BUUCTF/babyweb.md` (32 lines)
