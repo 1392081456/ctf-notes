@@ -120,6 +120,7 @@ All targets analyzed in this repository are one of: (a) public CTF challenge bin
 - [PortSwigger OS Command Injection 1-5 — series consolidation](web/portswigger_os_command_injection_series.md) — execution-channel track: direct output, timing oracle, web-root output redirection, DNS OOB proof, and DNS-label data exfiltration.
 - [PortSwigger SSTI 1-7 — series consolidation](web/portswigger_ssti_series.md) — template-context track: ERB, Tornado, FreeMarker, Handlebars, Django object disclosure, FreeMarker sandbox breakout, and custom business-object exploitation.
 - [PortSwigger Path Traversal 1-6 — series consolidation](web/portswigger_path_traversal_series.md) — canonicalization track: raw traversal, absolute-path bypass, non-recursive stripping, double decoding, prefix validation, and null-byte extension bypass.
+- [PortSwigger Access Control 1-13 — series consolidation](web/portswigger_access_control_series.md) — authorization track: unprotected admin routes, client-controlled roles, IDOR, redirect-body leaks, object references, URL/method/workflow/Referer authorization gaps.
 
 - [Drupalgeddon2 — CVE-2018-7600 render array RCE](web/drupalgeddon2_rce.md) — Drupal 8 / Form API AJAX / `#post_render` injection
 - [GYCTF 2020 Ez_Express — Unicode case folding + EJS prototype pollution](web/gyctf2020_ez_express.md) — Node.js / `outputFunctionName` injection / `U+0131` filter bypass
