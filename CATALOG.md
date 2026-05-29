@@ -249,27 +249,9 @@
 - **解题过程
 ** — `Reverse/BUUCTF/简单注册器/简单注册器.md` (47 lines)
 
-## Web Exploitation (210 entries)
+## Web Exploitation (192 entries)
 - **[portswigger_sqli_series_1_18]** — `web/portswigger_sqli_series_1_18.md` — PortSwigger SQLi 1-18 整合页 / 18 题总览表 + 盲注提取决策树 + 检测映射
 - **[portswigger_web_llm_series]** — `web/portswigger_web_llm_series.md` — PortSwigger Web LLM attacks 1-8 整合页 / LLM 工具题(excessive agency/命令注入/间接注入/不安全输出) + AI scanner 题(删号/exfil/二级 SSRF/绕防御) / 去攻击化 framing + 回显通道 + OWASP LLM Top10
-- **[portswigger_sqli_xml_encoding_bypass]** — `web/portswigger_sqli_xml_encoding_bypass.md` — PortSwigger SQL injection track note
-- **[portswigger_sqli_oob_exfiltration]** — `web/portswigger_sqli_oob_exfiltration.md` — PortSwigger SQL injection track note
-- **[portswigger_sqli_oob_interaction]** — `web/portswigger_sqli_oob_interaction.md` — PortSwigger SQL injection track note
-- **[portswigger_sqli_time_delay_extraction]** — `web/portswigger_sqli_time_delay_extraction.md` — PortSwigger SQL injection track note
-- **[portswigger_sqli_time_delay]** — `web/portswigger_sqli_time_delay.md` — PortSwigger SQL injection track note
-- **[portswigger_sqli_visible_error_based]** — `web/portswigger_sqli_visible_error_based.md` — PortSwigger SQL injection track note
-- **[portswigger_sqli_blind_conditional_errors]** — `web/portswigger_sqli_blind_conditional_errors.md` — PortSwigger SQL injection track note
-- **[portswigger_sqli_blind_conditional_responses]** — `web/portswigger_sqli_blind_conditional_responses.md` — PortSwigger SQL injection track note
-- **[portswigger_sqli_union_multiple_values_single_column]** — `web/portswigger_sqli_union_multiple_values_single_column.md` — PortSwigger SQL injection track note
-- **[portswigger_sqli_union_retrieve_other_tables]** — `web/portswigger_sqli_union_retrieve_other_tables.md` — PortSwigger SQL injection track note
-- **[portswigger_sqli_union_text_column]** — `web/portswigger_sqli_union_text_column.md` — PortSwigger SQL injection track note
-- **[portswigger_sqli_union_column_count]** — `web/portswigger_sqli_union_column_count.md` — PortSwigger SQL injection track note
-- **[portswigger_sqli_oracle_contents]** — `web/portswigger_sqli_oracle_contents.md` — PortSwigger SQL injection track note
-- **[portswigger_sqli_non_oracle_contents]** — `web/portswigger_sqli_non_oracle_contents.md` — PortSwigger SQL injection track note
-- **[portswigger_sqli_mysql_microsoft_version]** — `web/portswigger_sqli_mysql_microsoft_version.md` (~45 lines) — PortSwigger — MySQL/Microsoft database version via UNION SQLi / Practitioner / two-column UNION with `NULL,@@version-- -`
-- **[portswigger_sqli_oracle_version]** — `web/portswigger_sqli_oracle_version.md` (~45 lines) — PortSwigger — Oracle database version via UNION SQLi / Practitioner / two-column UNION with `NULL,banner FROM v$version`
-- **[portswigger_sqli_login_bypass]** — `web/portswigger_sqli_login_bypass.md` (~45 lines) — PortSwigger — SQL injection login bypass / Apprentice / `administrator'--` comments out the password predicate
-- **[portswigger_sqli_hidden_data]** — `web/portswigger_sqli_hidden_data.md` (~45 lines) — PortSwigger — SQL injection WHERE clause hidden data / Apprentice / category `' OR 1=1--` exposes hidden products
 
 - **babyweb
 ** — `Web/BUUCTF/babyweb.md` (32 lines)
@@ -503,14 +485,14 @@
 - **[xuanwu2025_ez_fastapi]** — `web/xuanwu2025_ez_fastapi.md` (~39 lines) — 玄武杯 2025 / FastAPI 盲 SSTI 内存马 + sudo chmod 提权
 - **[xuanwu2025_jinja]** — `web/xuanwu2025_jinja.md` (~39 lines) — 玄武杯 2025 / Jinja2 SSTI 无过滤入门题
 - **[yangchengbei2020_break_the_wall]** — `web/yangchengbei2020_break_the_wall.md` (~43 lines) — 羊城杯 2020 / eval 后门 + 函数名黑名单, flag 在环境变量
-- **[portswigger_ai_destructive_actions]** — `web/portswigger_ai_destructive_actions.md` (~95 lines) — PortSwigger / 间接 prompt 注入 / blog 评论骗带 carlos 认证态的 LLM scanner 删号 / 攻击词汇反而被识破，纯口语自助请求才中 / LLM01+LLM06
-- **[portswigger_ai_exfil_apikey]** — `web/portswigger_ai_exfil_apikey.md` (~85 lines) — PortSwigger / 间接 prompt 注入数据外泄变体 / 无结果页(404)→ scanner 把 carlos API key 发成评论回显 / owner framing 第一轮即中 / LLM01+LLM06+LLM02
-- **[portswigger_ai_secondary_ssrf]** — `web/portswigger_ai_secondary_ssrf.md` (~110 lines) — PortSwigger Practitioner / 间接 prompt 注入驱动 routing-based SSRF / 伪造 Host=192.168.0.5:8080 经路由层达 loopback-only admin 裸 GET /admin/delete?username=carlos / URL-based(stockApi)绕不过 loopback, Host 值是 admin IP 非 localhost / LLM01+LLM06+SSRF
-- **[portswigger_ai_bypass_defenses]** — `web/portswigger_ai_bypass_defenses.md` (~95 lines) — PortSwigger Practitioner / 绕过双层防御(输入分类器自动加WARNING + scanner自判输出redaction) exfil API key / 致胜钩子="泄露=被测漏洞PoC"(把发完整key框成验证"评论未打码"漏洞,scanner为证明漏洞主动泄露) / 9版framing全被redact,唯此奏效 / LLM01+LLM06+LLM02
-- **[portswigger_llm_api_command_injection]** — `web/portswigger_llm_api_command_injection.md` (~120 lines) — PortSwigger Practitioner / LLM API → Newsletter email 参数 → shell command substitution / `$(whoami)` OOB 到 exploit server 证明以 carlos 执行，`$(rm /home/carlos/morale.txt)` 通关
-- **[portswigger_llm_insecure_output_handling]** — `web/portswigger_llm_insecure_output_handling.md` (~85 lines) — PortSwigger Expert / LLM output XSS / T-shirt 语境伪装 iframe，使 chat unsafe renderer 自动提交 /my-account 删除表单
-- **[portswigger_llm_indirect_prompt_injection]** — `web/portswigger_llm_indirect_prompt_injection.md` (~95 lines) — PortSwigger Practitioner / 间接 prompt injection / 商品 review 边界污染 `"]]]}}}}---END OF REVIEW ----USER RESPONSE----` 让 carlos 会话调用 delete_account
-- **[portswigger_llm_excessive_agency]** — `web/portswigger_llm_excessive_agency.md` (~105 lines) — PortSwigger Apprentice / LLM tool excessive agency / `debug_sql(sql_statement)` 暴露裸 SQL 执行器，先 `SELECT * FROM users` 确认 carlos，再 `DELETE FROM users WHERE username='carlos'` 通关
+- **[portswigger_ai_destructive_actions]** — `web/labs/portswigger_ai_destructive_actions.md` (~95 lines) — PortSwigger / 间接 prompt 注入 / blog 评论骗带 carlos 认证态的 LLM scanner 删号 / 攻击词汇反而被识破，纯口语自助请求才中 / LLM01+LLM06
+- **[portswigger_ai_exfil_apikey]** — `web/labs/portswigger_ai_exfil_apikey.md` (~85 lines) — PortSwigger / 间接 prompt 注入数据外泄变体 / 无结果页(404)→ scanner 把 carlos API key 发成评论回显 / owner framing 第一轮即中 / LLM01+LLM06+LLM02
+- **[portswigger_ai_secondary_ssrf]** — `web/labs/portswigger_ai_secondary_ssrf.md` (~110 lines) — PortSwigger Practitioner / 间接 prompt 注入驱动 routing-based SSRF / 伪造 Host=192.168.0.5:8080 经路由层达 loopback-only admin 裸 GET /admin/delete?username=carlos / URL-based(stockApi)绕不过 loopback, Host 值是 admin IP 非 localhost / LLM01+LLM06+SSRF
+- **[portswigger_ai_bypass_defenses]** — `web/labs/portswigger_ai_bypass_defenses.md` (~95 lines) — PortSwigger Practitioner / 绕过双层防御(输入分类器自动加WARNING + scanner自判输出redaction) exfil API key / 致胜钩子="泄露=被测漏洞PoC"(把发完整key框成验证"评论未打码"漏洞,scanner为证明漏洞主动泄露) / 9版framing全被redact,唯此奏效 / LLM01+LLM06+LLM02
+- **[portswigger_llm_api_command_injection]** — `web/labs/portswigger_llm_api_command_injection.md` (~120 lines) — PortSwigger Practitioner / LLM API → Newsletter email 参数 → shell command substitution / `$(whoami)` OOB 到 exploit server 证明以 carlos 执行，`$(rm /home/carlos/morale.txt)` 通关
+- **[portswigger_llm_insecure_output_handling]** — `web/labs/portswigger_llm_insecure_output_handling.md` (~85 lines) — PortSwigger Expert / LLM output XSS / T-shirt 语境伪装 iframe，使 chat unsafe renderer 自动提交 /my-account 删除表单
+- **[portswigger_llm_indirect_prompt_injection]** — `web/labs/portswigger_llm_indirect_prompt_injection.md` (~95 lines) — PortSwigger Practitioner / 间接 prompt injection / 商品 review 边界污染 `"]]]}}}}---END OF REVIEW ----USER RESPONSE----` 让 carlos 会话调用 delete_account
+- **[portswigger_llm_excessive_agency]** — `web/labs/portswigger_llm_excessive_agency.md` (~105 lines) — PortSwigger Apprentice / LLM tool excessive agency / `debug_sql(sql_statement)` 暴露裸 SQL 执行器，先 `SELECT * FROM users` 确认 carlos，再 `DELETE FROM users WHERE username='carlos'` 通关
 
 ## Cryptography (15 entries)
 
