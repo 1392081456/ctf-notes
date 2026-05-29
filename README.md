@@ -129,6 +129,7 @@ All targets analyzed in this repository are one of: (a) public CTF challenge bin
 - [PortSwigger Business Logic Vulnerabilities 1-12 — series consolidation](web/portswigger_business_logic_series.md) — invariant-testing track: price/quantity/money flaws, inconsistent controls, workflow/state-machine bypasses, encryption oracles, and email parser discrepancies.
 - [PortSwigger HTTP Host Header Attacks 1-7 — series consolidation](web/portswigger_host_header_series.md) — host-trust track: reset poisoning, Host-based auth bypass, ambiguous-request cache poisoning, routing-based SSRF, connection-state bypass, and dangling markup.
 - [PortSwigger OAuth Authentication 1-6 — series consolidation](web/portswigger_oauth_series.md) — OAuth-binding track: implicit-flow profile trust, dynamic-registration SSRF, missing-state linking CSRF, redirect_uri hijacking, open redirects, and postMessage token proxying.
+- [PortSwigger File Upload Vulnerabilities 1-7 — series consolidation](web/portswigger_file_upload_series.md) — upload-boundary track: MIME trust, path traversal, extension blacklist bypasses, null-byte tricks, image polyglots, and validation race conditions.
 
 - [Drupalgeddon2 — CVE-2018-7600 render array RCE](web/drupalgeddon2_rce.md) — Drupal 8 / Form API AJAX / `#post_render` injection
 - [GYCTF 2020 Ez_Express — Unicode case folding + EJS prototype pollution](web/gyctf2020_ez_express.md) — Node.js / `outputFunctionName` injection / `U+0131` filter bypass
