@@ -125,6 +125,7 @@ All targets analyzed in this repository are one of: (a) public CTF challenge bin
 - [PortSwigger WebSockets 1-3 — series consolidation](web/portswigger_websockets_series.md) — socket-security track: WebSocket frame manipulation, cross-site WebSocket hijacking, and handshake header manipulation.
 - [PortSwigger Web Cache Poisoning 1-13 — series consolidation](web/portswigger_web_cache_poisoning_series.md) — cache-key track: unkeyed headers/cookies/query/body, parameter cloaking, URL normalization, DOM gadgets, cache key injection, and internal cache poisoning.
 - [PortSwigger Insecure Deserialization 1-10 — series consolidation](web/portswigger_insecure_deserialization_series.md) — object-graph track: PHP object mutation/type juggling, app-functionality gadgets, Java/PHP/Ruby pre-built chains, custom gadgets, and PHAR metadata triggers.
+- [PortSwigger Information Disclosure 1-5 — series consolidation](web/portswigger_information_disclosure_series.md) — leak-to-impact track: verbose errors, debug pages, backup source, TRACE-revealed trust headers, and exposed Git history.
 
 - [Drupalgeddon2 — CVE-2018-7600 render array RCE](web/drupalgeddon2_rce.md) — Drupal 8 / Form API AJAX / `#post_render` injection
 - [GYCTF 2020 Ez_Express — Unicode case folding + EJS prototype pollution](web/gyctf2020_ez_express.md) — Node.js / `outputFunctionName` injection / `U+0131` filter bypass
