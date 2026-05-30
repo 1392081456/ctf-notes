@@ -136,6 +136,7 @@ All targets analyzed in this repository are one of: (a) public CTF challenge bin
 - [PortSwigger GraphQL API Vulnerabilities 1-5 — series consolidation](web/portswigger_graphql_series.md) — schema-and-transport track: introspection leaks, hidden endpoints, alias batching, resolver authorization gaps, and form-urlencoded GraphQL CSRF.
 - [PortSwigger Race Conditions 1-6 — series consolidation](web/portswigger_race_conditions_series.md) — state-transition track: limit overruns, lockout races, multi-endpoint checkout, email confirmation mismatch, timestamp tokens, and partial construction.
 - [PortSwigger NoSQL Injection 1-4 — series consolidation](web/portswigger_nosql_injection_series.md) — MongoDB query-shape track: JavaScript condition injection, operator-based authentication bypass, boolean extraction, and unknown field/token discovery.
+- [PortSwigger API Testing 1-5 — series consolidation](web/portswigger_api_testing_series.md) — contract-drift track: exposed documentation, server-side parameter pollution, hidden methods, mass assignment, and REST path pollution.
 
 - [Drupalgeddon2 — CVE-2018-7600 render array RCE](web/drupalgeddon2_rce.md) — Drupal 8 / Form API AJAX / `#post_render` injection
 - [GYCTF 2020 Ez_Express — Unicode case folding + EJS prototype pollution](web/gyctf2020_ez_express.md) — Node.js / `outputFunctionName` injection / `U+0131` filter bypass
