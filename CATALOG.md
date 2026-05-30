@@ -249,7 +249,7 @@
 - **解题过程
 ** — `Reverse/BUUCTF/简单注册器/简单注册器.md` (47 lines)
 
-## Web Exploitation (219 entries)
+## Web Exploitation (220 entries)
 - **[portswigger_sqli_series_1_18]** — `web/portswigger_sqli_series_1_18.md` — PortSwigger SQLi 1-18 整合页 / 18 题总览表 + 盲注提取决策树 + 检测映射
 - **[portswigger_xss_series]** — `web/portswigger_xss_series.md` — PortSwigger XSS 1-30 整合页 / HTML、attribute、JS string、DOM sink、AngularJS、SVG、CSP 上下文 / cookie、password、CSRF impact labs + 同站回传替代不必要 OAST
 - **[portswigger_csrf_series]** — `web/portswigger_csrf_series.md` — PortSwigger CSRF 1-12 整合页 / token 校验缺陷、token-cookie 绑定错位、SameSite Lax/Strict 绕过、Referer 缺陷、sibling-domain CSWSH
@@ -279,6 +279,7 @@
 - **[portswigger_prototype_pollution_series]** — `web/portswigger_prototype_pollution_series.md` — PortSwigger Prototype Pollution 1-10 整合页 / client-side gadgets、server-side merge、constructor.prototype、non-reflective detection、child_process options
 - **[portswigger_graphql_series]** — `web/portswigger_graphql_series.md` — PortSwigger GraphQL API Vulnerabilities 1-5 整合页 / introspection、private fields、hidden endpoint、alias batching、GraphQL CSRF
 - **[portswigger_race_conditions_series]** — `web/portswigger_race_conditions_series.md` — PortSwigger Race Conditions 1-6 整合页 / limit overrun、rate-limit race、multi/single-endpoint race、time-sensitive token、partial construction
+- **[portswigger_nosql_injection_series]** — `web/portswigger_nosql_injection_series.md` — PortSwigger NoSQL Injection 1-4 整合页 / MongoDB operator injection、boolean oracle、$where、unknown field extraction
 
 - **babyweb
 ** — `Web/BUUCTF/babyweb.md` (32 lines)
